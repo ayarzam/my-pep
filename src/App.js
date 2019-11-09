@@ -11,7 +11,7 @@ class App extends React.Component{
   render(){
     return(
       <Router>
-        <div>
+        <div className='navBarDiv'>
           <nav className='navBar'>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>

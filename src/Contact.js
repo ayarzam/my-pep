@@ -5,7 +5,7 @@ import Mailto from 'react-protected-mailto'
 export default class Contact extends React.Component{
   render(){
     return (
-      <div>
+      <div className='content'>
         <p> 
           Phone: <Mailto tel="917-345-6194" />
           <br />
