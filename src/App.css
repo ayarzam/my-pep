@@ -29,6 +29,17 @@
   justify-content: space-around;
   flex-direction: row;
   align-items: center
+  /* left: 0;
+  top: 0;
+  width: 100px;
+  background-color: gray;
+  flex-direction: column;
+  padding: 40px 0 0;
+  right: auto;
+  height: 110vh;
+  justify-content: flex-end;
+  align-items: center; */
+ 
 }
 nav a{
   color: white
