@@ -15,7 +15,7 @@ class App extends React.Component{
           <nav className='navBar'>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects">Portfolio</Link>
             <Link to="/contact">Contact Me</Link>
           </nav>
           <main>
