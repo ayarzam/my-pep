@@ -1,35 +1,34 @@
 import React from 'react';
 
-import{BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import{BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './Home';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import './App.css';
-import Mailto from 'react-protected-mailto'
 
 class App extends React.Component{
   render(){
     return(
       <Router>
-        <div className='navBarDiv'>
-          <nav className='navBar'>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/projects">Portfolio</Link>
+        <div className='content'>
+          {/* <nav className='navBar'> */}
+            {/* <Link to="/">Home</Link> */}
+            {/* <Link to="/about">About</Link> */}
+            {/* <Link to="/projects">Portfolio</Link> */}
             {/* <Link to="/contact">Contact Me</Link> */}
-            <p> 
-          Phone: <Mailto tel="917-345-6194" />
-          <br />
-          Email:{" "}
-          <Mailto
+            {/* <p>  */}
+          {/* Phone: <Mailto tel="917-345-6194" /> */}
+          {/* <br /> */}
+          {/* Email:{" "} */}
+          {/* <Mailto
             email="ayarza.manwaring@gmail.com"
             headers={
               ({ subject: "Question from the website" })
             }
-          />
-        </p>
-          </nav>
+          /> */}
+        {/* </p> */}
+          {/* </nav> */}
           <main>
             {/* <h1> This is the Home Page</h1> */}
           </main>
