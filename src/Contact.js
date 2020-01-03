@@ -1,7 +1,6 @@
 import React from 'react';
 import Mailto from 'react-protected-mailto'
 
-
 export default class Contact extends React.Component{
   render(){
     return (
