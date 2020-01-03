@@ -6,6 +6,7 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import './App.css';
+import Mailto from 'react-protected-mailto'
 
 class App extends React.Component{
   render(){
@@ -16,7 +17,18 @@ class App extends React.Component{
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/projects">Portfolio</Link>
-            <Link to="/contact">Contact Me</Link>
+            {/* <Link to="/contact">Contact Me</Link> */}
+            <p> 
+          Phone: <Mailto tel="917-345-6194" />
+          <br />
+          Email:{" "}
+          <Mailto
+            email="***REMOVED***"
+            headers={
+              ({ subject: "Question from the website" })
+            }
+          />
+        </p>
           </nav>
           <main>
             {/* <h1> This is the Home Page</h1> */}
