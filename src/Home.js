@@ -15,7 +15,7 @@ class Home extends React.Component{
     return (
       <div className='content'>
         <div>
-          <img src='https://media.licdn.com/dms/image/C5603AQGWlDKs0xonxg/profile-displayphoto-shrink_200_200/0?e=1583366400&v=beta&t=fjmXGnmmXpCWi7Dgd0nU_BHG0yFXDJUqXf_8Nm-zK4c' />
+          <img alt="Me" src='https://media.licdn.com/dms/image/C5603AQGWlDKs0xonxg/profile-displayphoto-shrink_200_200/0?e=1583366400&v=beta&t=fjmXGnmmXpCWi7Dgd0nU_BHG0yFXDJUqXf_8Nm-zK4c' />
         </div>
         <div className='content'>
            <h3>Hello! </h3>
