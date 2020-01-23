@@ -1,12 +1,11 @@
+/*********** React ***********/
 .App {
   text-align: center;
   display: flex;
 }
-
 .App-logo {
   height: 40vmin;
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -17,84 +16,147 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #09d3ac;
 }
-/* .home { */
-  /* background-color: gray;
-  height: 75px;
+
+/*********** Navigation Bar ***********/
+#navbar {
+  padding: .5rem 0;
+}
+#navbar-contents {
   width: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center */
-  /* display: flex;
-  left: 0;
-  top: 0;
-  width: 100px;
-  background-color: gray;
-  flex-direction: column;
-  padding: 40px 0 0;
-  right: auto;
-  height: 110vh;
-  justify-content: space-evenly;
-  align-items: center; */
- 
-/* } */
-/* .content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 40px; 
-  width: 70%;
-  padding-left: 10px
-} */
-/* #brand-name {
-  color: white;
-  text-decoration: none;
-} */
-#basic-navbar-nav .mr-auto {
+  padding-left: 1.25rem;
+}
+#navbar-contents .logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+#navbar-contents .navbar-brand {
+  float: left;
+}
+#navbar-contents .navbar-toggler {
+  float: right;
+}
+#navbar .navbar-collapse {
+  padding-right: 1.25rem;
+}
+#navbar .mr-auto {
   margin-right: 0px !important;
   margin-left: auto;
+  text-align: right;
 }
-.home{
-  display: flex;
-  flex-direction: column;
+#navbar .mr-auto .nav-link {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
-.projectsRow{
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
+#navbar .dropdown .btn {
+  border: 0;
+  padding: 0;
+  margin: .5rem 1.25rem;
+  margin-right: 0;
+  background-color: #343a40;
+  color: rgba(255,255,255,.5);
 }
-.projectsCol{
-  /* border: 1px solid gray; */
-  border-radius: 15px;
-  display: flex;
-  /* flex-direction: column; */
+#navbar .dropdown .btn:hover {
+  color: white;
+}
+#navbar .dropdown .btn:focus {
+  box-shadow: none;
+}
+#navbar #dropdown-button-drop-down {
+  margin: 0;
+  padding: .5rem 1.25rem;
+}
+#navbar .dropdown-menu {
+  border-radius: 0;
+  border: 0;
+  background-color: #d2d2d2;
   text-align: center;
-  align-content: center;
-  /* box-shadow: 2px 2px 2px gray; */
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
-  flex-shrink: 2;
 }
-a{
+#navbar .dropdown-item {
   color: grey;
 }
-.projectsImg{
-  width: 80%;
-  height: 70%;
-  border-radius: 10%;
-  padding-top: 10px;
+#navbar .dropdown-item:hover {
+  background-color: #ff7c64;
+  color: white;
 }
-.description{
-  padding-bottom: 200px;
+#navbar .nav-divider {
+  border-color: #424a52;
+}
+
+/*********** Home Page ***********/
+/* .home {
+  display: flex;
+  flex-direction: column;
+} */
+
+/*********** All Projects ***********/
+.projectsRow {
+  margin-top: 50px;
+}
+.projectsCol {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.projectsImg {
+  width: 70%;
+}
+.description {
+  
+}
+.back-to-top {
+  float: right;
+}
+
+/********** Extra large devices (large desktops, 1200px and up) **********/
+@media (min-width: 1200px) { 
+
+}
+
+/********** Large devices (desktops, 992px and up) **********/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/********** Medium devices (tablets, 768px and up) **********/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/********** Small devices (landscape phones, 576px and up) **********/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #navbar .mr-auto {
+    margin-top: 0.5rem;
+    background-color: #424a52;
+  }
+  #navbar .mr-auto .nav-link:hover {
+    color: white;
+    background-color: tomato;
+  }
+  #navbar-contents {
+    padding-right: 1.25rem;
+  }
+  #navbar .navbar-collapse {
+    padding-right: 0;
+  }
+}
+
+/********** Extra small devices (portrait phones, less than 576px) **********/
+@media (max-width: 575.98px) {
+  #navbar .mr-auto {
+    margin-top: 0.5rem;
+    background-color: #424a52;
+  }
+  #navbar .mr-auto .nav-link:hover {
+    color: white;
+    background-color: tomato;
+  }
+  #navbar-contents {
+    padding-right: 1.25rem;
+  }
+  #navbar .navbar-collapse {
+    padding-right: 0;
+  }
 }

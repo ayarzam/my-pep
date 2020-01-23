@@ -5,7 +5,7 @@ import Home from './Home';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Navbar, Nav, Dropdown, SplitButton } from 'react-bootstrap'
 import './App.css';
 
 
@@ -14,51 +14,41 @@ class App extends React.Component{
     return(
       <Router>
         <div className='content'>
-            <Navbar expand='lg' bg="dark" variant="dark">
-              <Navbar.Brand href="#home">
-                 {/* <img
-                  alt=""
-                  src="/logo.svg"
-                  width="30"
-                  height="30"
-                  className="d-inline-block align-top"
-                />{' '} */}
-                React Bootstrap
-              </Navbar.Brand>
+          <Navbar id="navbar" expand={'md' || 'lg' || 'xl'} bg="dark" variant="dark">
+            <div id="navbar-contents">
+              <Link to="/">
+                <Navbar.Brand>
+                  <img className='logo d-inline-block align-top' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox' alt=""/>{' '}
+                  React Bootstrap
+                </Navbar.Brand>
+              </Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              </div>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="#about">About</Nav.Link>
-                  <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-                  <Nav.Link href="#contact">Contact</Nav.Link>
-                {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                  </NavDropdown>  */}
+                  <Nav.Link href="/about">About</Nav.Link>
+                  
+                  <div className="dropdown">
+                        <SplitButton
+                          key='down'
+                          id='dropdown-button-drop-down'
+                          drop='down'
+                          variant="secondary"
+                          title='Portfolio'
+                          href="/projects"
+                        >
+                          <Dropdown.Item eventKey="1">Project1</Dropdown.Item>
+                          <Dropdown.Item eventKey="2">Project2</Dropdown.Item>
+                          <Dropdown.Item eventKey="3">Project3</Dropdown.Item>
+                          <Dropdown.Divider className="nav-divider"/>
+                          <Dropdown.Item eventKey="4">Github</Dropdown.Item>
+                        </SplitButton>{' '}
+                  </div>
+                  <Nav.Link href="/contact">Contact</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-
-          {/* <nav className='navBar'>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/projects">Portfolio</Link>
-            <Link to="/contact">Contact Me</Link>
-            <p> 
-          Phone: <Mailto tel="917-345-6194" />
-          <br />
-          Email:{" "}
-          {<Mailto
-            email="ayarza.manwaring@gmail.com"
-            headers={
-              ({ subject: "Question from the website" })
-            }
-          />}
-        </p>
-          </nav> */}
+          
           <main>
             {/* <h1> This is the Home Page</h1> */}
           </main>
