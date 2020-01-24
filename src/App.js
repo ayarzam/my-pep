@@ -16,7 +16,7 @@ class App extends React.Component{
         <div className='content'>
           <Navbar id="navbar" expand={'md' || 'lg' || 'xl'} bg="dark" variant="dark">
             <div id="navbar-contents">
-              <Link to={process.env.PUBLIC_URL || '/'}>
+              <Link to={process.env.PUBLIC_URL + '/'}>
                 <Navbar.Brand>
                   <img className='logo d-inline-block align-top' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox' alt=""/>{' '}
                   React Bootstrap
