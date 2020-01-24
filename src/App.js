@@ -26,10 +26,12 @@ class App extends React.Component{
               </div>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/about">About</Nav.Link>
+                  <Link to='/about'>About</Link>
+                  {/* <Nav.Link href="/about">About</Nav.Link> */}
                   
                   <div className="dropdown">
-                        <SplitButton
+                    <Link to='/projects'> Portfolio
+                    <SplitButton
                           key='down'
                           id='dropdown-button-drop-down'
                           drop='down'
@@ -43,8 +45,11 @@ class App extends React.Component{
                           <Dropdown.Divider className="nav-divider"/>
                           <Dropdown.Item eventKey="4">Github</Dropdown.Item>
                         </SplitButton>{' '}
+                    </Link>
+                        
                   </div>
-                  <Nav.Link href="/contact">Contact</Nav.Link>
+                  <Link to='/contact'>Contact</Link>
+                  {/* <Nav.Link href="/contact">Contact</Nav.Link> */}
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
