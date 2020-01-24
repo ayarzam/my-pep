@@ -26,7 +26,6 @@ class App extends React.Component{
               </div>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Link to={process.env.PUBLIC_URL + '/about'} />
                   <Nav.Link href="/about">About</Nav.Link>
                   
                   <div className="dropdown">
