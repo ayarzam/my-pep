@@ -16,7 +16,7 @@ class App extends React.Component{
         <div className='content'>
           <Navbar id="navbar" expand={'md' || 'lg' || 'xl'} bg="dark" variant="dark">
             <div id="navbar-contents">
-              <Link to={process.env.PUBLIC_URL || '/'}>
+              <Link to={process.env.PUBLIC_URL || '/my-pep'}>
                 <Navbar.Brand>
                   <img className='logo d-inline-block align-top' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox' alt=""/>{' '}
                   React Bootstrap
@@ -26,7 +26,7 @@ class App extends React.Component{
               </div>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href={process.env.PUBLIC_URL + '/about'}>About</Nav.Link>
+                  <Nav.Link href={process.env.PUBLIC_URL + '/my-pep/about'}>About</Nav.Link>
                   
                   <div className="dropdown">
                         <SplitButton
@@ -35,7 +35,7 @@ class App extends React.Component{
                           drop='down'
                           variant="secondary"
                           title='Portfolio'
-                          href={process.env.PUBLIC_URL + "/projects"}
+                          href={process.env.PUBLIC_URL + "/my-pep/projects"}
                         >
                           <Dropdown.Item eventKey="1">Project1</Dropdown.Item>
                           <Dropdown.Item eventKey="2">Project2</Dropdown.Item>
@@ -44,7 +44,7 @@ class App extends React.Component{
                           <Dropdown.Item eventKey="4">Github</Dropdown.Item>
                         </SplitButton>{' '}
                   </div>
-                  <Nav.Link href={process.env.PUBLIC_URL + "/contact"}>Contact</Nav.Link>
+                  <Nav.Link href={process.env.PUBLIC_URL + "/my-pep/contact"}>Contact</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -53,10 +53,10 @@ class App extends React.Component{
             {/* <h1> This is the Home Page</h1> */}
           </main>
              <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/'} render={routeProps => <Home {...routeProps} />} />
-            <Route exact path={process.env.PUBLIC_URL + "/about"} render={routeProps => <About {...routeProps} />}/>
-            <Route exact path={process.env.PUBLIC_URL + "/projects"} render={routeProps => <Projects {...routeProps} />} />
-            <Route exact path={process.env.PUBLIC_URL + "/contact"} render={routeProps => <Contact {...routeProps} />} />
+            <Route exact path={process.env.PUBLIC_URL + '/my-pep'} render={routeProps => <Home {...routeProps} />} />
+            <Route exact path={process.env.PUBLIC_URL + "/my-pep/about"} render={routeProps => <About {...routeProps} />}/>
+            <Route exact path={process.env.PUBLIC_URL + "/my-pep/projects"} render={routeProps => <Projects {...routeProps} />} />
+            <Route exact path={process.env.PUBLIC_URL + "/my-pep/contact"} render={routeProps => <Contact {...routeProps} />} />
             </Switch>
         </div>
       </Router>
