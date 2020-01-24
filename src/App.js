@@ -12,7 +12,7 @@ import './App.css';
 class App extends React.Component{
   render(){
     return(
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className='content'>
           <Navbar id="navbar" expand={'md' || 'lg' || 'xl'} bg="dark" variant="dark">
             <div id="navbar-contents">
