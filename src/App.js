@@ -30,7 +30,7 @@ class App extends React.Component{
                   {/* <Nav.Link href="/about">About</Nav.Link> */}
                   
                   <div className="dropdown">
-                    <Link to='/projects'> Portfolio
+                    <Link to='/projects'>
                     <SplitButton
                           key='down'
                           id='dropdown-button-drop-down'
