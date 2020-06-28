@@ -1,8 +1,8 @@
-import React from 'react';
-import {Container, Col, Row } from 'react-bootstrap'
+import React, { Component } from 'react';
+import {Container, Col, Row } from 'react-bootstrap';
 
-export default class Projects extends React.Component{
-  render(){
+export default class Projects extends Component {
+  render() {
     return (
       <Container id="projects">
         <Row className="projectsRow">

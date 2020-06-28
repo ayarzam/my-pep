@@ -1,11 +1,11 @@
-import React from 'react';
-import Mailto from 'react-protected-mailto'
+import React, { Component } from 'react';
+import Mailto from 'react-protected-mailto';
 
-export default class Contact extends React.Component{
-  render(){
+export default class Contact extends Component {
+  render() {
     return (
       <div className='content'>
-        <p> 
+        <p>
           Phone: <Mailto tel="917-345-6194" />
           <br />
           Email:{" "}
