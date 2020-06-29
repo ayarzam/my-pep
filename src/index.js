@@ -7,11 +7,15 @@ import * as serviceWorker from './serviceWorker';
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import smooth scrolling
+import Scrollbar from 'smooth-scrollbar';
+Scrollbar.init(document.querySelector('#custom-scrollbar'));
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
