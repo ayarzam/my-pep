@@ -4,6 +4,7 @@ body, html {
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
 .logo {
@@ -75,5 +76,21 @@ body {
     padding-right: 0;
     padding-left: 0.5em;
   }
+}
+
+section {
+  padding: 8em;
+  height: 100vh;
+}
+
+section:nth-of-type(2) {
+  background-color: #c03546;
+  color: white;
+}
+
+.custom {
+  width: 500px;
+  height: 500;
+  overflow: auto;
 }
 /*# sourceMappingURL=App.css.map */
