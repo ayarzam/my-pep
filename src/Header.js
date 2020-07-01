@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, Dropdown, ButtonGroup } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Header() {
     return (
@@ -12,25 +13,14 @@ function Header() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
-                        {/* <Dropdown className="m-auto" as={ButtonGroup}>
-                            <Nav.Link href="/projects">Projects</Nav.Link>
-
-                            <Dropdown.Toggle split variant="transparent" id="dropdown-split-btn" />
-                            <Dropdown.Menu id="dropdown-menu">
-                            <Dropdown.Item eventKey="1">Project1</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Project2</Dropdown.Item>
-                            <Dropdown.Item eventKey="3">Project3</Dropdown.Item>
-                            <Dropdown.Divider className="nav-divider" />
-                            <Dropdown.Item eventKey="4">Github</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown> */}
-
                         <Nav.Link className="m-auto" href="/">Resume</Nav.Link>
                         <Nav.Link className="m-auto" href="/works">Works</Nav.Link>
-                        <Nav.Link className="m-auto" href="/about">About</Nav.Link>
+                        {/* <Nav.Link className="m-auto" href="/about">About</Nav.Link> */}
+                        <Link className="m-auto nav-link" smooth to="/#about">About</Link>
 
                         <div className="btn-background">
-                            <Nav.Link className="m-auto" href="/contact">Contact</Nav.Link>
+                            {/* <Nav.Link className="m-auto" href="/contact">Contact</Nav.Link> */}
+                            <Link className="m-auto nav-link" smooth to="/#contact">Contact</Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

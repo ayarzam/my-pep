@@ -9,19 +9,19 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <section className="hero">
+        <section id="hero">
           <Hero />
         </section>
 
-        <section className="about">
+        <section id="about">
           <About />
         </section>
 
-        <section className="featured">
+        <section id="featured">
           <Featured />
         </section>
 
-        <section className="contact">
+        <section id="contact">
           <Contact />
         </section>
       </div>
