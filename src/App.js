@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import './css/App.scss';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import { HashLink as Link } from 'react-router-hash-link';
+// import HashLinkObserver from "react-hash-link";
+
 import Header from './Header';
-import Footer from './Footer';
 import Home from './views/Home';
 import About from './views/About';
 import Projects from './views/Projects';
 import Contact from './views/Contact';
+import Footer from './Footer';
 
 
 class App extends Component {
