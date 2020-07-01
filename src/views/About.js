@@ -15,7 +15,7 @@ export default class About extends Component {
           interest in code development. I now foster interconnectedness between people
           by creating <span className="colored-text">immersive experiences</span>. I’m motivated to produce products that are
           accessible and <span className="colored-text">end-user focused</span>.</div>
-          <div>Please feel free to reach out to me if you'd like to connect.</div>
+          <div>Please feel free to reach out to me if you'd like to <span className="colored-text">connect</span>!</div>
         </div>
         <div className="background">
           <CodeLogos />
