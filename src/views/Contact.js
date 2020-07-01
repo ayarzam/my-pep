@@ -28,20 +28,21 @@ export default class Contact extends Component {
     this.setState({message: event.target.value})
   }
   
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    // try {
-    //   const res = await axios.post("/backend", this.state);
-    //   const emailMe = this.props.emailMe
-    //   emailMe(res.data)
-
-    // } catch (error) {
-    //   console.log(error)
-    // }
-     
-    console.log(this.state);
-
-    this.resetForm();
+    try {
+      const res = await axios.post("http://localhost:3002/send", this.state)
+      console.log("state before reset", this.state)
+      if (res.data.status === 'success'){
+            alert("Message Sent."); 
+          this.resetForm()
+      }else if(res.data.status === 'fail'){
+           alert("Message failed to send.")
+         }
+      console.log("state after reset", this.state)
+    }catch (error) {
+      console.log(error)
+    }
   }
 
   resetForm() {
