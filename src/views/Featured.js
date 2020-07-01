@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class Featured extends Component {
     render() {
         return (
-            <div>
+            <div className="featured-container">
                 <div className="featured-text">
                     <div>Featured Works</div>
                     <div>Web products that keep the user in mind</div>
