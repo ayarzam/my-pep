@@ -85,7 +85,7 @@ section .card {
     box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
-section.hero {
+section#hero {
     .hero-container {
         height: 100%;
         position: relative;
@@ -123,145 +123,161 @@ section.hero {
 
 }
 
-section.about .card {
-    height: 80vh;
-
-    .background {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        overflow: hidden;
-
-        svg {
-            height: 100%;
-            position: absolute;
-            padding-top: 2em;
-            margin-top: -0.5em;
-            z-index: 1;
-        }
-
-        div {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-color: color(accent1);
-            clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
-        }
-
-        div:nth-of-type(1) {
-            background-color: color(base2);
-            clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
-        }
-    }
-    
-    img {
-        height: 18em;
-        border-radius: 9em;
-        z-index: 1;
-    }
-    
-    .about-text {
-        width: 55vw;
-        font-weight: 500;
-        font-size: 1.5em;
-        line-height: 38px;
-        z-index: 1;
-
-        div {
-            padding-bottom: 1em;
-        }
-
-        div:first-of-type {
-            font-weight: bolder;
-            font-size: 2em;
-            line-height: 85px;
-            padding-bottom: 0.5em;
-        }
-
-        div:last-of-type .colored-text {
-            font-weight: bolder;
-            text-decoration: underline;
-        }
-    }
-}
-
-section.featured {
-    height: 100%;
-
-    .featured-text {
-        height: 30vh;
-        font-weight: 500;
-        font-size: 1.5em;
-        line-height: 38px;
+section#about {
+    .about-container {
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-flow: column;
-        z-index: 1;
-
-        div {
-            padding-bottom: 1em;
-        }
-
-        div:first-of-type {
-            font-weight: bolder;
-            font-size: 2em;
-            line-height: 85px;
-            padding-bottom: 0.5em;
-        }
-    }
-
-    .featured-project {
-        height: 100vh;
-        display: flex;
-        align-items: center;
+        height: 100%;
 
         .card {
-            height: 80%
-        }
-    }
-
-
-    .see-more {
-        height: 30vh;
-
-        .card {
-            height: 5em;
-            font-size: 1.5em;
-            justify-content: center;
-
-            .see-more-text {
-                z-index: 1;
-
-                .colored-text {
-                    font-weight: bolder;
-                    padding-left: 0.25em;
-                    text-decoration: underline;
-                }
-            }
+            height: 80vh;
 
             .background {
                 width: 100%;
                 height: 100%;
                 position: absolute;
-        
+                overflow: hidden;
+
+                svg {
+                    height: 100%;
+                    position: absolute;
+                    padding-top: 2em;
+                    margin-top: -0.5em;
+                    z-index: 1;
+                }
+
                 div {
                     width: 100%;
                     height: 100%;
                     position: absolute;
                     background-color: color(accent1);
-                    clip-path: polygon(10% 0, 25% 100%, 75% 100%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+                    clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
                 }
-        
+
                 div:nth-of-type(1) {
                     background-color: color(base2);
-                    clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
+                    clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
+                }
+            }
+            
+            img {
+                height: 18em;
+                border-radius: 9em;
+                z-index: 1;
+            }
+            
+            .about-text {
+                width: 55vw;
+                font-weight: 500;
+                font-size: 1.5em;
+                line-height: 38px;
+                z-index: 1;
+
+                div {
+                    padding-bottom: 1em;
+                }
+
+                div:first-of-type {
+                    font-weight: bolder;
+                    font-size: 2em;
+                    line-height: 85px;
+                    padding-bottom: 0.5em;
+                }
+
+                div:last-of-type .colored-text {
+                    font-weight: bolder;
+                    text-decoration: underline;
                 }
             }
         }
     }
+    
 }
 
-section.contact {
+
+
+section#featured {
+    height: 100%;
+
+    .featured-container {
+        .featured-text {
+            height: 30vh;
+            font-weight: 500;
+            font-size: 1.5em;
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+            z-index: 1;
+
+            div {
+                padding-bottom: 1em;
+            }
+
+            div:first-of-type {
+                font-weight: bolder;
+                font-size: 2em;
+                line-height: 85px;
+                padding-bottom: 0.5em;
+            }
+        }
+
+        .featured-project {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+
+            .card {
+                height: 80%
+            }
+        }
+
+
+        .see-more {
+            height: 30vh;
+
+            .card {
+                height: 5em;
+                font-size: 1.5em;
+                justify-content: center;
+
+                .see-more-text {
+                    z-index: 1;
+
+                    .colored-text {
+                        font-weight: bolder;
+                        padding-left: 0.25em;
+                        text-decoration: underline;
+                    }
+                }
+
+                .background {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+            
+                    div {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-color: color(accent1);
+                        clip-path: polygon(10% 0, 25% 100%, 75% 100%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+                    }
+            
+                    div:nth-of-type(1) {
+                        background-color: color(base2);
+                        clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+section#contact {
     height: 90vh;
     background-color: color(secondary);
 
@@ -295,8 +311,10 @@ section.contact {
             }
 
             #contact-form {
+                z-index: 1;
+                width: 45vw;
                 display: grid;
-                grid-template-columns: 240px 50px 30px 50px 240px;
+                grid-template-columns: 35% 13% 4% 13% 35%;
                 grid-template-rows: auto auto auto;
 
                 .form-group {
@@ -332,13 +350,12 @@ section.contact {
     .background {
         overflow: hidden;
         position: absolute;
-        top: 0;
+        bottom: 1em;
         left: 0;
 
         svg {
             width: 100%;
             height: 100%;
-            // margin-top: -1.5em;
         }
     }
 }
