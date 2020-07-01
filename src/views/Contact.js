@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import ContactForm from './ContactForm.js';
+import { ReactComponent as Background } from '../images/contact-background.svg';
 
 export default class Contact extends Component {
   constructor(props) {
@@ -52,25 +53,21 @@ export default class Contact extends Component {
       message: ''
     });
   }
-
   render() {
     return (
-      <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
-        <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange} required/>
+      <div className="contact-container">
+        <div className="content">
+          <div className="contact-text">
+            <div>Contact Me</div>
+            <div>Feel free to reach out and connect!</div>
+          </div>
+          <ContactForm />
         </div>
-        <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" value={this.state.email} aria-describedby="emailHelp" onChange={this.onEmailChange} required/>
+        <div className="background">
+          <Background />
         </div>
-        <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange} required></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-    </form>
+      </div>
     );
   }
-
 }
+

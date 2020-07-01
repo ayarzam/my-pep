@@ -24,9 +24,11 @@ function Header() {
                             <Dropdown.Item eventKey="4">Github</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown> */}
+
                         <Nav.Link className="m-auto" href="/">Resume</Nav.Link>
                         <Nav.Link className="m-auto" href="/works">Works</Nav.Link>
                         <Nav.Link className="m-auto" href="/about">About</Nav.Link>
+
                         <div className="btn-background">
                             <Nav.Link className="m-auto" href="/contact">Contact</Nav.Link>
                         </div>
