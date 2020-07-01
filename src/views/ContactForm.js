@@ -65,7 +65,7 @@ export default class ContactForm extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="message">Message</label>
-                    <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange} required></textarea>
+                    <textarea className="form-control" rows="6" value={this.state.message} onChange={this.onMessageChange} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
