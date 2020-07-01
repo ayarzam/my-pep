@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const creds = require('./config');
 
-var transport = {
+const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
@@ -24,12 +24,12 @@ if (error) {
 });
 
 router.post('/send', (req, res, next) => {
-  var name = req.body.name
-  var email = req.body.email
-  var message = req.body.message
-  var content = `name: ${name} \n email: ${email} \n message: ${message} `
+  const name = req.body.name
+  const email = req.body.email
+  const message = req.body.message
+  const content = `name: ${name} \n email: ${email} \n message: ${message} `
 
-  var mail = {
+  const mail = {
     from: name,
     to: 'Ayarza.manwaring@gmail.com',  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
