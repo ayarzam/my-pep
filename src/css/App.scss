@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$font-main: 'Montserrat', sans-serif;
+
 $colors: (
-    primary: #492540,
-    secondary: #c03546,
-    accent1: #f26d5b,
-    accent2: #f6ea8c
+    primary: #FDE9C9,
+    secondary: #89C5CC,
+    accent1: #FFC331,
+    accent2: #E44D26,
+    accent3: #DB2721,
+    base1: #FFFFFF,
+    base2: #E5E5E5
 );
 
 @function color($color-name) {
@@ -17,90 +24,245 @@ body {
     margin: 0;
     height: 100vh;
     // font-size: 2em;
+    font-family: $font-main !important;
+    background: color(primary) !important;
 }
-
 .logo {
     width: 30px;
     height: 30px;
-    margin-right: 0.5em;
 }
-#dropdown-split-btn {
-    margin: 0;
-    padding-left: 0.2em;
-    padding-top: 0.5em;
-    color: rgba(255,255,255,.5);
 
-    .btn-transparent {
-        background-color: transparent;
+.logo-text {
+    font-weight: normal;
+}
+
+header .navbar {
+    .logo {
+        margin-right: 0.5em;
     }
-    &:hover {
-        color: rgba(255,255,255,.75);
-    }
-    &:focus {
-        color: #ffffff;
-        box-shadow: none;
+
+    .btn-background {
+        background: color(secondary);
+        border-radius: 20px;
     }
 }
 
-#dropdown-menu {
-    border: 0;
-    border-radius: 0;
-    text-align: center;
-    background-color: #d2d2d2;
+footer {
+    .logo {
+        padding: 0 !important;
+        margin-left: 0.5em !important;
+        margin-right: 0.5em !important;
 
-    .dropdown-item {
-        color: grey;
-        
-        &:hover {
-            background-color: #ff7c64;
-            color: white;
+        svg {
+            width: 100%;
+            height: 100%;
         }
     }
-    
-    .nav-divider {
-        border-color: #424a52;
-    }
 }
 
-/********** Small devices (landscape phones, 576px and up) **********/
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .navbar-collapse .nav-link:focus {
-        color: white;
-        background-color: tomato;
-    }
-    #dropdown-split-btn {
-        padding-right: 0;
-        padding-left: 0.5em;
-    }
-}
-
-/********** Extra small devices (portrait phones, less than 576px) **********/
-@media (max-width: 575.98px) {
-    .navbar-collapse .nav-link:focus {
-        color: white;
-        background-color: tomato;
-    }
-    #dropdown-split-btn {
-        padding-right: 0;
-        padding-left: 0.5em;
-    }
+.colored-text {
+    color: color(accent2);
 }
 
 section {
-    padding: 8em;
     height: 100vh;
 }
 
 section:nth-of-type(2) {
-    background-color: color(secondary);
-    color: white;
+    padding: 0;
 }
 
-.custom {
-    width: 500px;
-    height: 500;
-    overflow: auto;
+section .card {
+    width: 100vw;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
+
+section.hero {
+    svg {
+        width: 100vw;
+        height: 120vh;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 3.5em;
+        left: 3em;
+        width: 653px;
+        display: flex;
+        flex-flow: column;
+        font-size: 1.5em;
+        line-height: 37px;
+        padding-bottom: 6px;
+    
+        div:first-of-type {
+            font-weight: bold;
+            font-size: 2.75em;
+            line-height: 85px;
+        }
+    }
+}
+
+section.about .card {
+    height: 90vh;
+
+    .background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        svg {
+            height: 100%;
+            position: absolute;
+            padding-top: 2em;
+            padding-bottom: 0.25em;
+            z-index: 1;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: color(accent1);
+            clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
+        }
+
+        div:nth-of-type(1) {
+            background-color: color(base2);
+            clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
+        }
+    }
+    
+    img {
+        height: 18em;
+        border-radius: 9em;
+        z-index: 1;
+    }
+    
+    .about-text {
+        width: 55vw;
+        font-weight: 500;
+        font-size: 1.5em;
+        line-height: 38px;
+        z-index: 1;
+
+        div {
+            padding-bottom: 1em;
+        }
+
+        div:first-of-type {
+            font-weight: bolder;
+            font-size: 2em;
+            line-height: 73px;
+            padding-bottom: 0.5em;
+        }
+    }
+}
+
+section.contact {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+    background-color: color(secondary);
+
+    .contact-text {
+        font-weight: 600;
+        font-size: 1.5em;
+        line-height: 37px;
+
+        div {
+            padding-bottom: 1em;
+        }
+
+        div:first-of-type {
+            font-weight: bolder;
+            font-size: 2em;
+            line-height: 73px;
+            padding-bottom: 0.5em;
+        }
+
+    }
+}
+
+
+
+// #dropdown-split-btn {
+//     margin: 0;
+//     padding-left: 0.2em;
+//     padding-top: 0.5em;
+//     color: rgba(255,255,255,.5);
+
+//     .btn-transparent {
+//         background-color: transparent;
+//     }
+//     &:hover {
+//         color: rgba(255,255,255,.75);
+//     }
+//     &:focus {
+//         color: #ffffff;
+//         box-shadow: none;
+//     }
+// }
+
+// #dropdown-menu {
+//     border: 0;
+//     border-radius: 0;
+//     text-align: center;
+//     background-color: #d2d2d2;
+
+//     .dropdown-item {
+//         color: grey;
+        
+//         &:hover {
+//             background-color: #ff7c64;
+//             color: white;
+//         }
+//     }
+    
+//     .nav-divider {
+//         border-color: #424a52;
+//     }
+// }
+
+// /********** Small devices (landscape phones, 576px and up) **********/
+// @media (min-width: 576px) and (max-width: 767.98px) {
+//     .navbar-collapse .nav-link:focus {
+//         color: white;
+//         background-color: tomato;
+//     }
+//     #dropdown-split-btn {
+//         padding-right: 0;
+//         padding-left: 0.5em;
+//     }
+// }
+
+// /********** Extra small devices (portrait phones, less than 576px) **********/
+// @media (max-width: 575.98px) {
+//     .navbar-collapse .nav-link:focus {
+//         color: white;
+//         background-color: tomato;
+//     }
+//     #dropdown-split-btn {
+//         padding-right: 0;
+//         padding-left: 0.5em;
+//     }
+// }
+
+
+
+// section:nth-of-type(1) {
+//     background-color: color(primary);
+//     color: white;
+// }
+
 //   /*********** Home Page ***********/
 //   /* .home {
 //     display: flex;
