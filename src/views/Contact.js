@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContactForm from './ContactForm.js';
 import { ReactComponent as Background } from '../images/contact-background.svg';
+import axios from "axios"
 
 export default class Contact extends Component {
   constructor(props) {
