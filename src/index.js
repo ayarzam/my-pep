@@ -8,8 +8,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import smooth scrolling
-import Scrollbar from 'smooth-scrollbar';
-Scrollbar.init(document.querySelector('#custom-scrollbar'));
+// import Scrollbar from 'smooth-scrollbar';
+// Scrollbar.init(document.querySelector('#custom-scrollbar'));
 
 ReactDOM.render(
   <React.StrictMode>

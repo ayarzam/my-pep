@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import Hero from './Hero.js';
-import About from './About.js';
-import Featured from './Featured.js';
-import Contact from './Contact.js';
+import Hero from '../components/Hero.js';
+import About from '../components/About.js';
+import Featured from '../components/Featured.js';
+import Contact from '../components/Contact.js';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div id="home-container">
         <section id="hero">
           <Hero />
         </section>
