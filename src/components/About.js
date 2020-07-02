@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import portrait from '../images/portrait.png';
-import { ReactComponent as CodeLogos } from '../images/svgs/coding-logos.svg';
 import { HashLink as Link } from 'react-router-hash-link';
+
+import portrait from '../images/portrait.png';
+import { ReactComponent as CodeLogos } from '../images/svg/backgrounds/coding-logos.svg';
+import { ReactComponent as Flower1 } from '../images/svg/decorations/plant_7.svg';
 
 export default class About extends Component {
   render() {
     return (
       <div id="about-container">
         <div className="card">
+          <Flower1 className="flower"></Flower1>
           <img alt="Profile" src={portrait}></img>
           <div className="about-text">
             <div>Hi, I’m <span className="colored-text">Ayarza Manwaring!</span></div>

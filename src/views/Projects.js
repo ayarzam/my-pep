@@ -4,6 +4,9 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import GithubPortrait from '../images/github-portrait.png';
+import MusicMapper from '../images/projects/MusicMapper/renders/Laptop_1.png';
+import HikeWithMe from '../images/projects/HikeWithMe/renders/Mobile.png';
+import IslandShopper from '../images/projects/IslandShopper/renders/Desktop.png';
 
 export default class Projects extends Component {
   render() {
@@ -24,7 +27,7 @@ export default class Projects extends Component {
 
           <Card className="project">
             <div className="image-container">
-              <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox" />
+              <Card.Img variant="top" src={MusicMapper} />
             </div>
             <Link to="/">
               <Card.ImgOverlay>
@@ -37,7 +40,7 @@ export default class Projects extends Component {
           </Card>
           <Card className="project">
             <div className="image-container">
-              <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox" />
+              <Card.Img variant="top" src={HikeWithMe} />
             </div>
             <Link to="/">
               <Card.ImgOverlay>
@@ -50,7 +53,7 @@ export default class Projects extends Component {
           </Card>
           <Card className="project">
             <div className="image-container">
-              <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox" />
+              <Card.Img variant="top" src={IslandShopper} />
             </div>
             <Link to="/">
               <Card.ImgOverlay>

@@ -108,11 +108,18 @@ section#hero {
         height: 100%;
         position: relative;
 
+        svg.flower {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+        }
+
         .background {
             z-index: 1;
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
 
             svg {
                 width: 100%;
@@ -151,6 +158,13 @@ section#about {
 
         .card {
             height: 80vh;
+
+            svg.flower {
+                position: absolute;
+                top: -5em;
+                left: 0;
+                z-index: 2;
+            }
 
             .background {
                 width: 100%;
@@ -225,6 +239,7 @@ section#featured {
             font-weight: 500;
             font-size: 1.5em;
             line-height: 38px;
+            position: relative;
             display: flex;
             align-items: center;
             flex-flow: column;
@@ -242,13 +257,157 @@ section#featured {
             }
         }
 
-        .featured-project {
-            height: 100vh;
-            display: flex;
-            align-items: center;
+        .featured-text svg:first-child {
+            position: absolute;
+            top: -8em;
+            right: 0;
+        }
 
-            .card {
-                height: 80%
+        .featured-projects {
+
+            .project:nth-child(3) .card svg.flower {
+                position: absolute;
+                top: unset;
+                bottom: 0;
+            }
+            
+            .project:nth-child(4) .card svg.flower {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            .project:nth-child(2) .card {
+                svg.flower {
+                    bottom: 0;
+                    right: 0;
+                    left: unset;
+                    top: unset;
+                }
+
+                .project-image {
+                    margin-left: auto;
+                    margin-right: 2em;
+                }
+
+                .card-text {
+                    position: relative;
+                    right: unset;
+                    top: unset;
+
+                    div:nth-of-type(1) {
+                        justify-content: flex-end;
+                    }
+
+                    div:nth-of-type(2) {
+                        margin-left: 0;
+                        margin-right: auto;
+                        text-align: right;
+                    }
+                }
+
+                .background {
+                    height: 100%;
+                    bottom: 0;
+                    left: 0;
+            
+                    svg {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .project {
+                height: 100vh;
+                display: flex;
+                position: relative;
+                align-items: center;
+
+                svg.flower {
+                    position: absolute;
+                    top: -13em;
+                    left: 0;
+                    z-index: 1;
+                }
+
+                .card {
+                    height: 80%;
+                    align-items: center;
+                    justify-content: unset;
+
+                    svg.flower {
+                        position: absolute;
+                        top: unset;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                    }
+
+                    .project-image {
+                        height: 80%;
+                        width: 50%;
+                        margin-left: 2em;
+                        overflow: hidden;
+                        box-shadow: inset -2px 4px 4px rgba(0, 0, 0, 0.25);
+
+                        img {
+                            width: 100%;
+                            background: linear-gradient(132.35deg, #C4C4C4 31.67%, rgba(196, 196, 196, 0) 100%);
+                        }
+                    }
+
+                    .card-text {
+                        height: 100%;
+                        width: 40%;
+                        display: flex;
+                        flex-flow: column;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 2;
+
+                        div:nth-of-type(1) {
+                            height: 15%;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 1em;
+                            padding-right: 1em;
+                            margin: 1em 0;
+                            font-size: 2em;
+                            font-weight: bolder;
+                            background-color: color(secondary);
+                            box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
+                        }
+        
+                        div:nth-of-type(2) {
+                            width: 90%;
+                            height: 25%;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 1em;
+                            padding-right: 1em;
+                            margin-left: auto;
+                            font-size: 1.5em;
+                            background-color: color(base2);
+                            box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
+                            
+                        }
+                    }
+
+                    .background {
+                        overflow: hidden;
+                        position: absolute;
+                        height: 100%;
+                        width: 40%;
+                        bottom: 0;
+                        right: 0;
+        
+                        svg.dots {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
 
@@ -394,18 +553,18 @@ section#contact {
                 justify-content: center;
 
                 img {
-                    width: 30%;
+                    width: 100%;
                 }
             }
 
             .card-img-overlay {
                 opacity: 0;
-                color: color(base3);
+                color: color(base1);
                 transition: all 0.25s ease-in-out;
             }
 
             .card-img-overlay:hover {
-                background-color: #50505066;
+                background-color: #505050e0;
                 opacity: 1;
             }
 
