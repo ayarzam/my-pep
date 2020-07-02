@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ContactForm from './ContactForm.js';
-import { ReactComponent as Background } from '../images/svgs/contact-background.svg';
+import { ReactComponent as Background } from '../images/svg/backgrounds/contact-background.svg';
 
 export default class Contact extends Component {
   render() {
