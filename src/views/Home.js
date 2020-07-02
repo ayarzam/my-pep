@@ -8,7 +8,7 @@ import Contact from './Contact.js';
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div id="home-container">
         <section id="hero">
           <Hero />
         </section>
