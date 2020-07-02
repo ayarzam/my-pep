@@ -31,7 +31,7 @@ router.post('/send', (req, res, next) => {
 
   const mail = {
     from: name,
-    to: 'Ayarza.manwaring@gmail.com',  // Change to email address that you want to receive messages on
+    to: creds.USER,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
@@ -47,7 +47,7 @@ router.post('/send', (req, res, next) => {
       })
   
       transporter.sendMail({
-        from: "<***REMOVED***>",
+        from: creds.USER,
         to: email,
         subject: "Submission was successful",
         text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
