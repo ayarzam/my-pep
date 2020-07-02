@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as Background } from '../images/hero-background.svg';
+import { ReactComponent as Background } from '../images/svgs/hero-background.svg';
 
 export default class Hero extends Component {
     render() {

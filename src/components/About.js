@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import portrait from '../images/portrait.png';
-import { ReactComponent as CodeLogos } from '../images/coding-logos.svg';
+import { ReactComponent as CodeLogos } from '../images/svgs/coding-logos.svg';
 import { HashLink as Link } from 'react-router-hash-link';
 
 export default class About extends Component {
