@@ -440,96 +440,53 @@ section#contact {
 
 
 
-// #dropdown-split-btn {
-//     margin: 0;
-//     padding-left: 0.2em;
-//     padding-top: 0.5em;
-//     color: rgba(255,255,255,.5);
+// /********** Extra large devices (large desktops, 1200px and up) **********/
+// @media (min-width: 1200px) { 
 
-//     .btn-transparent {
-//         background-color: transparent;
-//     }
-//     &:hover {
-//         color: rgba(255,255,255,.75);
-//     }
-//     &:focus {
-//         color: #ffffff;
-//         box-shadow: none;
-//     }
 // }
 
-// #dropdown-menu {
-//     border: 0;
-//     border-radius: 0;
-//     text-align: center;
-//     background-color: #d2d2d2;
+// /********** Large devices (desktops, 992px and up) **********/
+// @media (min-width: 992px) and (max-width: 1199.98px) {
 
-//     .dropdown-item {
-//         color: grey;
-        
-//         &:hover {
-//             background-color: #ff7c64;
-//             color: white;
-//         }
-//     }
-    
-//     .nav-divider {
-//         border-color: #424a52;
-//     }
+// }
+
+// /********** Medium devices (tablets, 768px and up) **********/
+// @media (min-width: 768px) and (max-width: 991.98px) {
+
 // }
 
 // /********** Small devices (landscape phones, 576px and up) **********/
 // @media (min-width: 576px) and (max-width: 767.98px) {
-//     .navbar-collapse .nav-link:focus {
-//         color: white;
-//         background-color: tomato;
-//     }
-//     #dropdown-split-btn {
-//         padding-right: 0;
-//         padding-left: 0.5em;
-//     }
+//   #navbar .mr-auto {
+//     margin-top: 0.5rem;
+//     background-color: #424a52;
+//   }
+//   #navbar .mr-auto .nav-link:hover {
+//     color: white;
+//     background-color: tomato;
+//   }
+//   #navbar-contents {
+//     padding-right: 1.25rem;
+//   }
+//   #navbar .navbar-collapse {
+//     padding-right: 0;
+//   }
 // }
 
 // /********** Extra small devices (portrait phones, less than 576px) **********/
 // @media (max-width: 575.98px) {
-//     .navbar-collapse .nav-link:focus {
-//         color: white;
-//         background-color: tomato;
-//     }
-//     #dropdown-split-btn {
-//         padding-right: 0;
-//         padding-left: 0.5em;
-//     }
-// }
-
-
-
-// section:nth-of-type(1) {
-//     background-color: color(primary);
+//   #navbar .mr-auto {
+//     margin-top: 0.5rem;
+//     background-color: #424a52;
+//   }
+//   #navbar .mr-auto .nav-link:hover {
 //     color: white;
+//     background-color: tomato;
+//   }
+//   #navbar-contents {
+//     padding-right: 1.25rem;
+//   }
+//   #navbar .navbar-collapse {
+//     padding-right: 0;
+//   }
 // }
-
-//   /*********** Home Page ***********/
-//   /* .home {
-//     display: flex;
-//     flex-direction: column;
-//   } */
-  
-//   /*********** All Projects ***********/
-//   .projectsRow {
-//     margin-top: 50px;
-//   }
-//   .projectsCol {
-//     text-align: center;
-//     margin-bottom: 50px;
-//   }
-//   .projectsImg {
-//     width: 70%;
-//   }
-//   .description {
-    
-//   }
-//   .back-to-top {
-//     float: right;
-//   }
- 

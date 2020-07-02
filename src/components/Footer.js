@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { ReactComponent as Linkedin } from './images/linkedin-logo.svg';
-import { ReactComponent as Github } from './images/github-logo.svg';
+import { ReactComponent as Linkedin } from '../images/svgs/linkedin-logo.svg';
+import { ReactComponent as Github } from '../images/svgs/github-logo.svg';
 
 function Footer() {
     return (
