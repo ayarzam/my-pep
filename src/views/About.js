@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import portrait from '../images/portrait.png';
 import { ReactComponent as CodeLogos } from '../images/coding-logos.svg';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default class About extends Component {
   render() {
     return (
-      <div className="about-container">
+      <div id="about-container">
         <div className="card">
           <img alt="Profile" src={portrait}></img>
           <div className="about-text">
@@ -16,7 +17,7 @@ export default class About extends Component {
             interest in code development. I now foster interconnectedness between people
           by creating <span className="colored-text">immersive experiences</span>. I’m motivated to produce products that are
           accessible and <span className="colored-text">end-user focused</span>.</div>
-            <div>Please feel free to reach out to me if you'd like to <span className="colored-text">connect</span>!</div>
+            <div>Please feel free to reach out to me if you'd like to <Link className="colored-text" smooth to="/#contact">connect</Link>!</div>
           </div>
           <div className="background">
             <CodeLogos />

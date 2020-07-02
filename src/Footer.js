@@ -6,7 +6,7 @@ import { ReactComponent as Github } from './images/github-logo.svg';
 function Footer() {
     return (
         <footer>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar bg="light" variant="light">
                 <Navbar.Brand href="/">
                     <img className='logo align-top' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox' alt="" />{' '}
                     <span className='logo-text'>Ayarza<b>Manwaring</b></span>

@@ -5,7 +5,7 @@ import { ReactComponent as Background } from '../images/contact-background.svg';
 export default class Contact extends Component {
   render() {
     return (
-      <div className="contact-container">
+      <div id="contact-container">
         <div className="content">
           <div className="contact-text">
             <div>Contact Me</div>
