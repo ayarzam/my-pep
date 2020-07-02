@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { ReactComponent as Background } from '../images/hero-background.svg';
+import { ReactComponent as Background } from '../images/svgs/hero-background.svg';
 
 export default class Hero extends Component {
     render() {
         return (
-            <div className="hero-container">
+            <div id="hero-container">
                 <div className="background">
                     <Background />
                 </div>

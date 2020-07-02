@@ -10,6 +10,17 @@ body {
   background-color: #FDE9C9 !important;
 }
 
+#root {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
 .logo {
   width: 30px;
   height: 30px;
@@ -37,6 +48,16 @@ footer .logo {
 footer .logo svg {
   width: 100%;
   height: 100%;
+}
+
+#home-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 .colored-text {
@@ -73,24 +94,24 @@ section .card {
           box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
-section#hero .hero-container {
+section#hero #hero-container {
   height: 100%;
   position: relative;
 }
 
-section#hero .hero-container .background {
+section#hero #hero-container .background {
   z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-section#hero .hero-container .background svg {
+section#hero #hero-container .background svg {
   width: 100%;
   height: 100%;
 }
 
-section#hero .hero-container .hero-text {
+section#hero #hero-container .hero-text {
   position: absolute;
   top: 3.5em;
   left: 3em;
@@ -107,13 +128,13 @@ section#hero .hero-container .hero-text {
   padding-bottom: 6px;
 }
 
-section#hero .hero-container .hero-text div:first-of-type {
+section#hero #hero-container .hero-text div:first-of-type {
   font-weight: bold;
   font-size: 2.75em;
   line-height: 85px;
 }
 
-section#about .about-container {
+section#about #about-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,18 +151,18 @@ section#about .about-container {
   height: 100%;
 }
 
-section#about .about-container .card {
+section#about #about-container .card {
   height: 80vh;
 }
 
-section#about .about-container .card .background {
+section#about #about-container .card .background {
   width: 100%;
   height: 100%;
   position: absolute;
   overflow: hidden;
 }
 
-section#about .about-container .card .background svg {
+section#about #about-container .card .background svg {
   height: 100%;
   position: absolute;
   padding-top: 2em;
@@ -149,7 +170,7 @@ section#about .about-container .card .background svg {
   z-index: 1;
 }
 
-section#about .about-container .card .background div {
+section#about #about-container .card .background div {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -158,47 +179,47 @@ section#about .about-container .card .background div {
           clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
 }
 
-section#about .about-container .card .background div:nth-of-type(1) {
+section#about #about-container .card .background div:nth-of-type(1) {
   background-color: #E5E5E5;
   -webkit-clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
           clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
 }
 
-section#about .about-container .card img {
+section#about #about-container .card img {
   height: 18em;
   border-radius: 9em;
   z-index: 1;
 }
 
-section#about .about-container .card .about-text {
+section#about #about-container .card .about-text {
   width: 55vw;
   font-weight: 500;
   font-size: 1.5em;
   line-height: 38px;
-  z-index: 1;
+  z-index: 2;
 }
 
-section#about .about-container .card .about-text div {
+section#about #about-container .card .about-text div {
   padding-bottom: 1em;
 }
 
-section#about .about-container .card .about-text div:first-of-type {
+section#about #about-container .card .about-text div:first-of-type {
   font-weight: bolder;
   font-size: 2em;
   line-height: 85px;
   padding-bottom: 0.5em;
 }
 
-section#about .about-container .card .about-text div:last-of-type .colored-text {
+section#about #about-container .card .about-text div:last-of-type .colored-text {
   font-weight: bolder;
   text-decoration: underline;
 }
 
 section#featured {
-  height: 100%;
+  height: auto;
 }
 
-section#featured .featured-container .featured-text {
+section#featured #featured-container .featured-text {
   height: 30vh;
   font-weight: 500;
   font-size: 1.5em;
@@ -216,18 +237,18 @@ section#featured .featured-container .featured-text {
   z-index: 1;
 }
 
-section#featured .featured-container .featured-text div {
+section#featured #featured-container .featured-text div {
   padding-bottom: 1em;
 }
 
-section#featured .featured-container .featured-text div:first-of-type {
+section#featured #featured-container .featured-text div:first-of-type {
   font-weight: bolder;
   font-size: 2em;
   line-height: 85px;
   padding-bottom: 0.5em;
 }
 
-section#featured .featured-container .featured-project {
+section#featured #featured-container .featured-project {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,15 +258,15 @@ section#featured .featured-container .featured-project {
           align-items: center;
 }
 
-section#featured .featured-container .featured-project .card {
+section#featured #featured-container .featured-project .card {
   height: 80%;
 }
 
-section#featured .featured-container .see-more {
+section#featured #featured-container .see-more {
   height: 30vh;
 }
 
-section#featured .featured-container .see-more .card {
+section#featured #featured-container .see-more .card {
   height: 5em;
   font-size: 1.5em;
   -webkit-box-pack: center;
@@ -253,23 +274,23 @@ section#featured .featured-container .see-more .card {
           justify-content: center;
 }
 
-section#featured .featured-container .see-more .card .see-more-text {
+section#featured #featured-container .see-more .card .see-more-text {
   z-index: 1;
 }
 
-section#featured .featured-container .see-more .card .see-more-text .colored-text {
+section#featured #featured-container .see-more .card .see-more-text .colored-text {
   font-weight: bolder;
   padding-left: 0.25em;
   text-decoration: underline;
 }
 
-section#featured .featured-container .see-more .card .background {
+section#featured #featured-container .see-more .card .background {
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-section#featured .featured-container .see-more .card .background div {
+section#featured #featured-container .see-more .card .background div {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -278,7 +299,7 @@ section#featured .featured-container .see-more .card .background div {
           clip-path: polygon(10% 0, 25% 100%, 75% 100%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
-section#featured .featured-container .see-more .card .background div:nth-of-type(1) {
+section#featured #featured-container .see-more .card .background div:nth-of-type(1) {
   background-color: #E5E5E5;
   -webkit-clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
           clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
@@ -289,12 +310,12 @@ section#contact {
   background-color: #89C5CC;
 }
 
-section#contact .contact-container {
+section#contact #contact-container {
   height: 100%;
   position: relative;
 }
 
-section#contact .contact-container .content {
+section#contact #contact-container .content {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,39 +333,39 @@ section#contact .contact-container .content {
           flex-flow: column;
 }
 
-section#contact .contact-container .content .contact-text {
+section#contact #contact-container .content .contact-text {
   font-weight: 600;
   font-size: 1.5em;
   line-height: 37px;
 }
 
-section#contact .contact-container .content .contact-text div {
+section#contact #contact-container .content .contact-text div {
   padding-bottom: 1em;
 }
 
-section#contact .contact-container .content .contact-text div:first-of-type {
+section#contact #contact-container .content .contact-text div:first-of-type {
   font-weight: bolder;
   font-size: 2em;
   line-height: 73px;
   padding-bottom: 0;
 }
 
-section#contact .contact-container .content #contact-form {
+section#contact #contact-container .content #contact-form {
   z-index: 1;
   width: 45vw;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 35% 13% 4% 13% 35%;
-      grid-template-columns: 35% 13% 4% 13% 35%;
+  -ms-grid-columns: 38% 10% 4% 10% 38%;
+      grid-template-columns: 38% 10% 4% 10% 38%;
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
 }
 
-section#contact .contact-container .content #contact-form .form-group {
+section#contact #contact-container .content #contact-form .form-group {
   text-align: left;
 }
 
-section#contact .contact-container .content #contact-form .form-group:nth-child(1) {
+section#contact #contact-container .content #contact-form .form-group:nth-child(1) {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -352,7 +373,7 @@ section#contact .contact-container .content #contact-form .form-group:nth-child(
   grid-row: 1;
 }
 
-section#contact .contact-container .content #contact-form .form-group:nth-child(2) {
+section#contact #contact-container .content #contact-form .form-group:nth-child(2) {
   -ms-grid-column: 4;
   -ms-grid-column-span: 5;
   grid-column: 4 / span 5;
@@ -360,15 +381,16 @@ section#contact .contact-container .content #contact-form .form-group:nth-child(
   grid-row: 1;
 }
 
-section#contact .contact-container .content #contact-form .form-group:nth-child(3) {
+section#contact #contact-container .content #contact-form .form-group:nth-child(3) {
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-column: 1 / span 5;
   -ms-grid-row: 2;
   grid-row: 2;
+  margin-bottom: 1em;
 }
 
-section#contact .contact-container .content #contact-form button {
+section#contact #contact-container .content #contact-form button {
   margin-bottom: 1em;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
@@ -389,5 +411,63 @@ section#contact .background {
 section#contact .background svg {
   width: 100%;
   height: 100%;
+}
+
+#projects-container {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 4em 6em 0 6em;
+}
+
+#projects-container .card-columns .card .image-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#projects-container .card-columns .card .image-container img {
+  width: 30%;
+}
+
+#projects-container .card-columns .card .card-img-overlay {
+  opacity: 0;
+  color: #212529;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+#projects-container .card-columns .card .card-img-overlay:hover {
+  background-color: #50505066;
+  opacity: 1;
+}
+
+#projects-container .card-columns .card .card-body {
+  text-align: center;
+}
+
+#projects-container .card-columns .card .card-body .card-text .nav-link {
+  display: inline-block;
+  padding: 0;
+}
+
+#projects-container .card-columns .card:nth-child(1) .image-container {
+  padding: 1em 0 0 0;
+}
+
+#projects-container .card-columns .card:nth-child(1) .image-container img {
+  width: 60%;
+  border-radius: 8em;
+}
+
+#projects-container .card-columns .card:nth-child(1) .card-body .card-title {
+  font-weight: bold;
 }
 /*# sourceMappingURL=App.css.map */

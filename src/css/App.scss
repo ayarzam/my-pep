@@ -9,7 +9,8 @@ $colors: (
     accent2: #E44D26,
     accent3: #DB2721,
     base1: #FFFFFF,
-    base2: #E5E5E5
+    base2: #E5E5E5,
+    base3: #212529
 );
 
 @function color($color-name) {
@@ -26,6 +27,18 @@ body {
     // font-size: 2em;
     font-family: $font-main !important;
     background-color: color(primary) !important;
+}
+
+// #custom-scrollbar{
+//     width: 100%;
+//     height: 100%;
+//     overflow: auto;
+// }
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 .logo {
@@ -61,6 +74,11 @@ footer {
     }
 }
 
+#home-container {
+    display: flex;
+    flex-flow: column;
+}
+
 .colored-text {
     color: color(accent2);
 }
@@ -86,7 +104,7 @@ section .card {
 }
 
 section#hero {
-    .hero-container {
+    #hero-container {
         height: 100%;
         position: relative;
 
@@ -124,7 +142,7 @@ section#hero {
 }
 
 section#about {
-    .about-container {
+    #about-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -173,7 +191,7 @@ section#about {
                 font-weight: 500;
                 font-size: 1.5em;
                 line-height: 38px;
-                z-index: 1;
+                z-index: 2;
 
                 div {
                     padding-bottom: 1em;
@@ -199,9 +217,9 @@ section#about {
 
 
 section#featured {
-    height: 100%;
+    height: auto;
 
-    .featured-container {
+    #featured-container {
         .featured-text {
             height: 30vh;
             font-weight: 500;
@@ -281,7 +299,7 @@ section#contact {
     height: 90vh;
     background-color: color(secondary);
 
-    .contact-container {
+    #contact-container {
         height: 100%;
         position: relative;
         
@@ -314,7 +332,7 @@ section#contact {
                 z-index: 1;
                 width: 45vw;
                 display: grid;
-                grid-template-columns: 35% 13% 4% 13% 35%;
+                grid-template-columns: 38% 10% 4% 10% 38%;
                 grid-template-rows: auto auto auto;
 
                 .form-group {
@@ -334,6 +352,7 @@ section#contact {
                 .form-group:nth-child(3) {
                     grid-column: 1 / span 5;
                     grid-row: 2;
+                    margin-bottom: 1em;
                 }
 
                 button {
@@ -360,98 +379,114 @@ section#contact {
     }
 }
 
+#projects-container {
+    flex-grow: 1;
+    padding: 4em 6em 0 6em;
+
+    .card-columns  {       
+        // height: 100%;
+
+        .card {
+            .image-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 30%;
+                }
+            }
+
+            .card-img-overlay {
+                opacity: 0;
+                color: color(base3);
+                transition: all 0.25s ease-in-out;
+            }
+
+            .card-img-overlay:hover {
+                background-color: #50505066;
+                opacity: 1;
+            }
+
+            .card-body {
+                text-align: center;
+            
+                .card-text .nav-link {
+                    display: inline-block;
+                    padding: 0;
+                }
+            } 
+        }
+
+        .card:nth-child(1) {
+            .image-container {
+                padding: 1em 0 0 0;
+
+                img {
+                    width: 60%;
+                    border-radius: 8em;
+                }
+            }
+
+            .card-body {
+                .card-title {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
 
 
-// #dropdown-split-btn {
-//     margin: 0;
-//     padding-left: 0.2em;
-//     padding-top: 0.5em;
-//     color: rgba(255,255,255,.5);
 
-//     .btn-transparent {
-//         background-color: transparent;
-//     }
-//     &:hover {
-//         color: rgba(255,255,255,.75);
-//     }
-//     &:focus {
-//         color: #ffffff;
-//         box-shadow: none;
-//     }
+// /********** Extra large devices (large desktops, 1200px and up) **********/
+// @media (min-width: 1200px) { 
+
 // }
 
-// #dropdown-menu {
-//     border: 0;
-//     border-radius: 0;
-//     text-align: center;
-//     background-color: #d2d2d2;
+// /********** Large devices (desktops, 992px and up) **********/
+// @media (min-width: 992px) and (max-width: 1199.98px) {
 
-//     .dropdown-item {
-//         color: grey;
-        
-//         &:hover {
-//             background-color: #ff7c64;
-//             color: white;
-//         }
-//     }
-    
-//     .nav-divider {
-//         border-color: #424a52;
-//     }
+// }
+
+// /********** Medium devices (tablets, 768px and up) **********/
+// @media (min-width: 768px) and (max-width: 991.98px) {
+
 // }
 
 // /********** Small devices (landscape phones, 576px and up) **********/
 // @media (min-width: 576px) and (max-width: 767.98px) {
-//     .navbar-collapse .nav-link:focus {
-//         color: white;
-//         background-color: tomato;
-//     }
-//     #dropdown-split-btn {
-//         padding-right: 0;
-//         padding-left: 0.5em;
-//     }
+//   #navbar .mr-auto {
+//     margin-top: 0.5rem;
+//     background-color: #424a52;
+//   }
+//   #navbar .mr-auto .nav-link:hover {
+//     color: white;
+//     background-color: tomato;
+//   }
+//   #navbar-contents {
+//     padding-right: 1.25rem;
+//   }
+//   #navbar .navbar-collapse {
+//     padding-right: 0;
+//   }
 // }
 
 // /********** Extra small devices (portrait phones, less than 576px) **********/
 // @media (max-width: 575.98px) {
-//     .navbar-collapse .nav-link:focus {
-//         color: white;
-//         background-color: tomato;
-//     }
-//     #dropdown-split-btn {
-//         padding-right: 0;
-//         padding-left: 0.5em;
-//     }
-// }
-
-
-
-// section:nth-of-type(1) {
-//     background-color: color(primary);
+//   #navbar .mr-auto {
+//     margin-top: 0.5rem;
+//     background-color: #424a52;
+//   }
+//   #navbar .mr-auto .nav-link:hover {
 //     color: white;
+//     background-color: tomato;
+//   }
+//   #navbar-contents {
+//     padding-right: 1.25rem;
+//   }
+//   #navbar .navbar-collapse {
+//     padding-right: 0;
+//   }
 // }
-
-//   /*********** Home Page ***********/
-//   /* .home {
-//     display: flex;
-//     flex-direction: column;
-//   } */
-  
-//   /*********** All Projects ***********/
-//   .projectsRow {
-//     margin-top: 50px;
-//   }
-//   .projectsCol {
-//     text-align: center;
-//     margin-bottom: 50px;
-//   }
-//   .projectsImg {
-//     width: 70%;
-//   }
-//   .description {
-    
-//   }
-//   .back-to-top {
-//     float: right;
-//   }
- 

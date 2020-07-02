@@ -33,16 +33,16 @@ export default class ContactForm extends Component {
         try {
             const res = await axios.post("http://localhost:3002/send", this.state)
             console.log("state before reset", this.state)
-            if (res.data.status === 'success'){
-                  alert("Message Sent."); 
+            if (res.data.status === 'success') {
+                alert("Message Sent.");
                 this.resetForm()
-            }else if(res.data.status === 'fail'){
-                 alert("Message failed to send.")
-               }
+            } else if (res.data.status === 'fail') {
+                alert("Message failed to send.")
+            }
             console.log("state after reset", this.state)
-          }catch (error) {
+        } catch (error) {
             console.log(error)
-          }
+        }
     }
 
     resetForm() {
@@ -72,5 +72,4 @@ export default class ContactForm extends Component {
             </form>
         );
     }
-
 }
