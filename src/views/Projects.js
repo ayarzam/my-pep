@@ -7,6 +7,7 @@ import GithubPortrait from '../images/github-portrait.png';
 import MusicMapper from '../images/projects/MusicMapper/renders/Laptop_1.png';
 import HikeWithMe from '../images/projects/HikeWithMe/renders/Mobile.png';
 import IslandShopper from '../images/projects/IslandShopper/renders/Desktop.png';
+import PlayingCard from "../images/playing_card.png"
 
 export default class Projects extends Component {
   render() {
@@ -33,7 +34,11 @@ export default class Projects extends Component {
               <Card.ImgOverlay>
                 <Card.Title>Music Mapper</Card.Title>
                 <Card.Text>
-                  An application to let Spotify users visualize their musical tastes!
+                  Fullstack Engineer - Team Prokect {<br />}
+                  An application to let Spotify users visualize their musical tastes!{<br />}
+                  Frontend Technologies: React, Redux, D3js{<br />}
+                  Backend Technologies: Node, Express, OAUTH{<br />}
+                  Testing Suite: Mocha, Chai
                 </Card.Text>
               </Card.ImgOverlay>
             </Link>
@@ -46,7 +51,10 @@ export default class Projects extends Component {
               <Card.ImgOverlay>
                 <Card.Title>Hike With Me</Card.Title>
                 <Card.Text>
-                  A mobile app that allows users the ability to map the distance and area that they hike.
+                  Sole Fullstack Engineer {<br />}
+                  A mobile app that allows users the ability to map the distance and area that they hike.{<br />}
+                  Frontend Technologies: React Native, CSS{<br />}
+                  Backend Technologies: Firebase and Firestore
                 </Card.Text>
               </Card.ImgOverlay>
             </Link>
@@ -59,20 +67,27 @@ export default class Projects extends Component {
               <Card.ImgOverlay>
                 <Card.Title>Island Shopper</Card.Title>
                 <Card.Text>
-                  An e-commerce website that allows users to buy fictional islands.
+                  Fullstack Engineer - Team Project {<br />}
+                  An e-commerce website that allows users to buy fictional islands.{<br />}
+                  Frontend Technologies: React, Redux {<br />}
+                  Backend/Server side Technologies: Nodejs, Express and Sequelize {<br />}
+                  Testing Suite: Mocha and Chai
                 </Card.Text>
               </Card.ImgOverlay>
             </Link>
           </Card>
           <Card className="project">
             <div className="image-container">
-              <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox" />
+              <Card.Img variant="top" src={PlayingCard} />
             </div>
             <Link to="/">
               <Card.ImgOverlay>
                 <Card.Title>Nodejs Card Game</Card.Title>
                 <Card.Text>
-                  Add some description here
+                  Sole Developer {<br />}
+                  A backend mocking of a poker game{<br />}
+                  Technologies: Node, Express {<br />}
+                  Testing Suite: Mocha, Chai, Jest
                 </Card.Text>
               </Card.ImgOverlay>
             </Link>
