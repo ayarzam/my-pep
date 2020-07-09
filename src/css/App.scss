@@ -40,7 +40,35 @@ body {
   height: 100%;
   display: flex;
   flex-flow: column;
+
+    .scroll-btn {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        height: 35px;
+        width: 35px;
+        margin-bottom: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        outline: 0px;
+        background-color: #db2721;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1000;
+        transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out;
+    }
+  
+    .scroll-btn.active {
+        right: 22px;        
+        opacity: 1;
+    }
 }
+
+
 
 .navbar {
     .logo {
