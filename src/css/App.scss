@@ -42,9 +42,8 @@ body {
   flex-flow: column;
 }
 
-header .navbar {
+.navbar {
     .logo {
-        margin-right: 0.5em;
         width: 30px;
         height: 30px;
     }
@@ -53,15 +52,22 @@ header .navbar {
         font-weight: normal;
         text-decoration: none;
     }
-
-  .btn-background {
-    background: color(secondary);
-    border-radius: 20px;
-    text-align: center;
-  }
 }
 
-footer {
+
+header .navbar {
+    .logo {
+        margin-right: 0.5em;
+    }
+
+    .btn-background {
+        background: color(secondary);
+        border-radius: 20px;
+        text-align: center;
+    }
+}
+
+footer .navbar {
   .logo {
     padding: 0 !important;
     margin-left: 0.5em !important;
