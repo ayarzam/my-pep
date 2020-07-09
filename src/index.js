@@ -8,13 +8,19 @@ import { BrowserRouter as Router } from "react-router-dom";
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import scroll button
+import ScrollButton from './components/ScrollBtn.js';
+
 // Import smooth scrolling
 // import Scrollbar from 'smooth-scrollbar';
 // Scrollbar.init(document.querySelector('#custom-scrollbar'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={process.env.PUBLIC_URL}>< App /></Router>
+    <Router basename={process.env.PUBLIC_URL}>
+        < App />
+    </Router>
+    <ScrollButton targetId="root" behavior="smooth" iconType="arrow-up" />
   </React.StrictMode>,
   document.getElementById('root'),
 );
