@@ -12,12 +12,12 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={`${process.env.PUBLIC_URL}/`}>
         <Header />
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route path="/works" component={Works}></Route>
+          <Route exact path="/works" render={ (routerProps) => <Works {...routerProps} />} ></Route>
         </Switch>
 
         <Footer />

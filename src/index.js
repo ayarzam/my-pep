@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router basename={process.env.PUBLIC_URL}>< App /></Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );
