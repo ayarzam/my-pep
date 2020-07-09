@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -7,7 +8,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: "Montserrat", sans-serif !important;
-  background-color: #FDE9C9 !important;
+  background-color: #fde9c9 !important;
 }
 
 #root {
@@ -21,13 +22,29 @@ body {
           flex-flow: column;
 }
 
-.logo {
+.logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #212529;
+}
+
+.logo-container .logo {
   width: 30px;
   height: 30px;
 }
 
-.logo-text {
+.logo-container .logo-text {
   font-weight: normal;
+  text-decoration: none;
+}
+
+.logo-container:hover {
+  color: #212529;
+  text-decoration: none;
 }
 
 header .navbar .logo {
@@ -35,7 +52,7 @@ header .navbar .logo {
 }
 
 header .navbar .btn-background {
-  background: #89C5CC;
+  background: #89c5cc;
   border-radius: 20px;
 }
 
@@ -61,7 +78,7 @@ footer .logo svg {
 }
 
 .colored-text {
-  color: #E44D26;
+  color: #e44d26;
 }
 
 section {
@@ -188,13 +205,13 @@ section#about #about-container .card .background div {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #FFC331;
+  background-color: #ffc331;
   -webkit-clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
           clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
 }
 
 section#about #about-container .card .background div:nth-of-type(1) {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   -webkit-clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
           clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
 }
@@ -368,7 +385,7 @@ section#featured #featured-container .featured-projects .project .card .project-
 
 section#featured #featured-container .featured-projects .project .card .project-image img {
   width: 100%;
-  background: linear-gradient(132.35deg, #C4C4C4 31.67%, rgba(196, 196, 196, 0) 100%);
+  background: linear-gradient(132.35deg, #c4c4c4 31.67%, rgba(196, 196, 196, 0) 100%);
 }
 
 section#featured #featured-container .featured-projects .project .card .card-text {
@@ -400,7 +417,7 @@ section#featured #featured-container .featured-projects .project .card .card-tex
   margin: 1em 0;
   font-size: 2em;
   font-weight: bolder;
-  background-color: #89C5CC;
+  background-color: #89c5cc;
   -webkit-box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -418,7 +435,7 @@ section#featured #featured-container .featured-projects .project .card .card-tex
   padding-right: 1em;
   margin-left: auto;
   font-size: 1.5em;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   -webkit-box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -469,20 +486,20 @@ section#featured #featured-container .see-more .card .background div {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #FFC331;
+  background-color: #ffc331;
   -webkit-clip-path: polygon(10% 0, 25% 100%, 75% 100%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
           clip-path: polygon(10% 0, 25% 100%, 75% 100%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
 section#featured #featured-container .see-more .card .background div:nth-of-type(1) {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   -webkit-clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
           clip-path: polygon(10% 100%, 25% 0, 75% 0, 90% 100%, 100% 100%, 100% 0, 0 0, 0 100%);
 }
 
 section#contact {
   height: 90vh;
-  background-color: #89C5CC;
+  background-color: #89c5cc;
 }
 
 section#contact #contact-container {
@@ -572,8 +589,8 @@ section#contact #contact-container .content #contact-form button {
   grid-column: 2 / span 3;
   -ms-grid-row: 3;
   grid-row: 3;
-  background-color: #DB2721;
-  border-color: #DB2721;
+  background-color: #db2721;
+  border-color: #db2721;
 }
 
 section#contact .background {
@@ -614,7 +631,7 @@ section#contact .background svg {
 
 #projects-container .card-columns .card .card-img-overlay {
   opacity: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
