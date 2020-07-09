@@ -41,24 +41,17 @@ body {
   display: flex;
   flex-flow: column;
 }
-.logo-container {
-  display: flex;
-  align-items: center;
-  color: color((base3));
-  .logo {
+
+.logo {
     width: 30px;
     height: 30px;
-  }
+}
 
-  .logo-text {
+.logo-text {
     font-weight: normal;
     text-decoration: none;
-  }
 }
-.logo-container:hover{
-    color: color((base3));
-    text-decoration: none;
-}
+
 
 header .navbar {
   .logo {
