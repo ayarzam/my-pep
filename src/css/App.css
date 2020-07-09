@@ -22,23 +22,21 @@ body {
           flex-flow: column;
 }
 
-.logo {
+header .navbar .logo {
+  margin-right: 0.5em;
   width: 30px;
   height: 30px;
 }
 
-.logo-text {
+header .navbar .logo-text {
   font-weight: normal;
   text-decoration: none;
-}
-
-header .navbar .logo {
-  margin-right: 0.5em;
 }
 
 header .navbar .btn-background {
   background: #89c5cc;
   border-radius: 20px;
+  text-align: center;
 }
 
 footer .logo {
