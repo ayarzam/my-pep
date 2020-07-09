@@ -42,25 +42,22 @@ body {
   flex-flow: column;
 }
 
-.logo {
-    width: 30px;
-    height: 30px;
-}
-
-.logo-text {
-    font-weight: normal;
-    text-decoration: none;
-}
-
-
 header .navbar {
-  .logo {
-    margin-right: 0.5em;
-  }
+    .logo {
+        margin-right: 0.5em;
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-text {
+        font-weight: normal;
+        text-decoration: none;
+    }
 
   .btn-background {
     background: color(secondary);
     border-radius: 20px;
+    text-align: center;
   }
 }
 
