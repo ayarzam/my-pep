@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { ReactComponent as Linkedin } from '../images/svg/logos/linkedin-logo.svg';
-import { ReactComponent as Github } from '../images/svg/logos/github-logo.svg';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 function Footer() {
     return (
@@ -16,10 +16,10 @@ function Footer() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link className="logo m-auto" href="https://www.linkedin.com/in/ayarza-manwaring/">
-                            <Linkedin />
+                            <FaLinkedin />
                         </Nav.Link>
                         <Nav.Link className="logo m-auto" href="https://github.com/ayarzam">
-                            <Github />
+                            <FaGithub />
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
