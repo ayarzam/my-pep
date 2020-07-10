@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 
