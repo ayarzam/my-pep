@@ -22,7 +22,7 @@ body {
           flex-flow: column;
 }
 
-#root .scroll-btn {
+#root #scroll-btn {
   position: fixed;
   bottom: 0px;
   right: 0px;
@@ -46,12 +46,17 @@ body {
   cursor: pointer;
   opacity: 0;
   z-index: 1000;
-  -webkit-transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out, bottom 0.5s ease-in-out;
 }
 
-#root .scroll-btn.active {
+#root #scroll-btn.active {
   right: 22px;
+  opacity: 1;
+}
+
+#root #scroll-btn.active.shift {
+  bottom: 3.5em;
   opacity: 1;
 }
 

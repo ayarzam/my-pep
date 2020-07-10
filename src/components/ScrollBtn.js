@@ -10,7 +10,8 @@ export default class ScrollBtn extends Component {
       targetId: props.targetId,
       behavior: props.behavior,
       iconType: props.iconType,
-      showButton: false,
+      shiftUp: false,
+      showButton: false
     };
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -21,24 +22,40 @@ export default class ScrollBtn extends Component {
     window.addEventListener("scroll", this.handleScroll);
   }
 
-  componentWillMount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
   // Detect when the scroll up button should appear
   handleScroll() {
-    var showButton = this.state.showButton;
+    let showButton = this.state.showButton;
 
     if (!showButton) {
       if (window.scrollY > 90) {
         this.setState({
-          showButton: true,
+          showButton: true
         });
       }
     } else {
       if (window.scrollY < 90) {
         this.setState({
-          showButton: false,
+          showButton: false
+        });
+      }
+    }
+
+    let shiftUp = this.state.shiftUp;
+    let targetDiv = document.getElementsByTagName("FOOTER")[0];
+    let button = document.getElementById("scroll-btn");
+    let btnMarginBottom = window.getComputedStyle(button).marginBottom;
+    btnMarginBottom = parseFloat(btnMarginBottom);
+
+    if (!shiftUp) {
+      if ((window.innerHeight + window.scrollY) > (targetDiv.offsetTop + btnMarginBottom)) {
+        this.setState({
+          shiftUp: true
+        });
+      }
+    } else {
+      if ((window.innerHeight + window.scrollY) < (targetDiv.offsetTop + btnMarginBottom)) {
+        this.setState({
+          shiftUp: false
         });
       }
     }
@@ -59,8 +76,8 @@ export default class ScrollBtn extends Component {
 
   render() {
     const classes = classNames({
-        "scroll-btn": true, // we always want this class
         active: this.state.showButton, // only add this class if the state says so
+        shift: this.state.shiftUp 
     });
 
     const arrows = {
@@ -69,7 +86,7 @@ export default class ScrollBtn extends Component {
     };
 
     return (
-      <button className={classes} onClick={this.handleClick}>
+      <button id="scroll-btn" className={classes} onClick={this.handleClick}>
         {arrows[this.state.iconType]}
       </button>
     );
