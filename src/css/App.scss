@@ -73,8 +73,6 @@ body {
     }
 }
 
-
-
 .navbar {
     .logo {
         width: 30px;
@@ -564,7 +562,7 @@ section#contact {
         .form-group:nth-child(3) {
           grid-column: 1 / span 5;
           grid-row: 2;
-          margin-bottom: 1em;
+          margin-bottom: 2em;
         }
 
         button {
