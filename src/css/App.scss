@@ -59,7 +59,7 @@ body {
         cursor: pointer;
         opacity: 0;
         z-index: 1000;
-        transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out, bottom 0.2s ease-in-out;
     }
   
     #scroll-btn.active {
@@ -68,7 +68,7 @@ body {
     }
 
     #scroll-btn.active.shift {
-        bottom: 3.5em;        
+        bottom: 8%;        
         opacity: 1;
     }
 }
