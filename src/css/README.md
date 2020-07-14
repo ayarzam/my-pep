@@ -1,10 +1,10 @@
 # This file describes the stylesheet hierarchy for this project:
 
-Inspiration taken from [How to structure a Sass project](http://thesassway.com/beginner/how-to-structure-a-sass-project).
+Inspiration taken from "[How to structure a Sass project](http://thesassway.com/beginner/how-to-structure-a-sass-project)."
 
 ## Stylesheet Hierarchy
 
-- The css/sass stylesheet will be broken into sub-projects (i.e. landingPage and blog) and implement the following hierarchy:
+- The css/sass stylesheet will be broken into sub-projects (e.g. site and blog) and implement the following hierarchy:
 
 ```
 css (stylesheets)/  
