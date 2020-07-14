@@ -11,6 +11,11 @@ export default class About extends Component {
       <div id="about-container">
         <div className="card">
           <Flower1 className="flower"></Flower1>
+          <div className="background">
+            <div></div>
+            <div></div>
+            <CodeLogos />
+          </div>
           <img alt="Profile" src={portrait}></img>
           <div className="about-text">
             <h2>Hi, I’m <span className="colored-text">Ayarza Manwaring!</span></h2>
@@ -21,11 +26,6 @@ export default class About extends Component {
           by creating <span className="colored-text">immersive experiences</span>. I’m motivated to produce products that are
           accessible and <span className="colored-text">end-user focused</span>.</p>
             <p>Please feel free to reach out to me if you'd like to <Link className="colored-text" smooth to="/#contact">connect</Link>!</p>
-          </div>
-          <div className="background">
-            <CodeLogos />
-            <div></div>
-            <div></div>
           </div>
         </div>
       </div>
