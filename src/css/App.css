@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
 body, html {
   height: 100%;
 }
@@ -22,7 +21,7 @@ section:nth-of-type(2) {
   padding: 0;
 }
 
-section .card {
+section div .card {
   width: 100vw;
   border: none;
   border-radius: 0;
@@ -41,6 +40,11 @@ section .card {
           flex-flow: row;
   -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
 }
 
 .colored-text {
@@ -82,8 +86,6 @@ section .card {
 }
 
 header .navbar .logo {
-  width: 30px;
-  height: 30px;
   margin-right: 0.5rem;
 }
 
@@ -105,8 +107,6 @@ header .navbar .logo-text {
 }
 
 footer .navbar .logo {
-  width: 30px;
-  height: 30px;
   padding: 0 !important;
   margin-left: 0.5em !important;
   margin-right: 0.5em !important;
@@ -179,7 +179,7 @@ section#hero #hero-container svg.flower {
 section#hero #hero-container .background {
   position: absolute;
   height: 100%;
-  bottom: 0;
+  top: -0.5rem;
   right: 0;
 }
 
@@ -190,7 +190,7 @@ section#hero #hero-container .background svg {
 
 section#hero #hero-container .hero-text {
   position: relative;
-  width: 80%;
+  width: 675px;
   padding-top: 3.5rem;
   padding-left: 3rem;
   display: -webkit-box;
@@ -210,29 +210,25 @@ section#hero #hero-container h1 {
   word-break: break-word;
 }
 
-/********** Medium, Large and Extra large devices **********/
-@media only screen and (min-width: 767.98px) {
-  section#hero #hero-container .background {
-    bottom: unset;
-    top: -0.5rem;
-    right: 0;
-  }
-  section#hero #hero-container .hero-text {
-    width: 675px;
+/********** Large devices (desktops, 992px and up) **********/
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  section#hero #hero-container .hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 70px;
   }
 }
 
-/********** Medium devices **********/
-@media only screen and (max-width: 991.98px) {
+/********** Medium devices (tablets, 768px and up) **********/
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
   section#hero #hero-container svg.flower {
     display: none;
   }
   section#hero #hero-container .hero-text {
-    width: 525px;
+    width: 610px;
   }
   section#hero #hero-container .hero-text h1 {
-    font-size: 3rem;
-    line-height: 65px;
+    font-size: 3.5rem;
+    line-height: 70px;
   }
 }
 
@@ -241,29 +237,37 @@ section#hero #hero-container h1 {
   section#hero #hero-container svg.flower {
     display: none;
   }
+  section#hero #hero-container .background {
+    top: unset;
+    bottom: 0;
+    right: 0;
+  }
   section#hero #hero-container .hero-text {
+    width: 530px;
     font-size: 1.25rem;
   }
   section#hero #hero-container .hero-text h1 {
     font-size: 3rem;
-    line-height: 60px;
+    line-height: 65px;
   }
 }
 
 @media only screen and (max-width: 575.98px) {
-  section#hero {
-    height: 70vh;
-  }
   section#hero #hero-container svg.flower {
     display: none;
   }
+  section#hero #hero-container .background {
+    top: unset;
+    bottom: 0;
+    right: 0;
+  }
   section#hero #hero-container .hero-text {
-    width: 400px;
+    width: 450px;
     font-size: 1rem;
   }
   section#hero #hero-container .hero-text h1 {
-    font-size: 2rem;
-    line-height: 45px;
+    font-size: 2.5rem;
+    line-height: 60px;
   }
 }
 
@@ -285,15 +289,14 @@ section#about #about-container .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+      -ms-flex-flow: row;
+          flex-flow: row;
   height: 80vh;
-  padding: 1rem;
 }
 
 section#about #about-container .card svg.flower {
@@ -304,18 +307,9 @@ section#about #about-container .card svg.flower {
 }
 
 section#about #about-container .card .background {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  overflow: hidden;
-}
-
-section#about #about-container .card .background svg {
-  height: 90%;
-  position: absolute;
-  left: -9rem;
-  top: 2rem;
-  z-index: 1;
 }
 
 section#about #about-container .card .background div {
@@ -327,28 +321,39 @@ section#about #about-container .card .background div {
           clip-path: polygon(0 0, 17% 0, 63% 100%, 0% 100%);
 }
 
-section#about #about-container .card .background div:nth-of-type(1) {
+section#about #about-container .card .background div:nth-child(1) {
   background-color: #e5e5e5;
   -webkit-clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
           clip-path: polygon(0 100%, 17% 100%, 63% 0, 0 0);
 }
 
+section#about #about-container .card .background svg {
+  height: 100%;
+  padding-top: 2em;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  z-index: 1;
+}
+
 section#about #about-container .card img {
-  height: 12rem;
+  height: 18em;
   border-radius: 50%;
   z-index: 1;
 }
 
 section#about #about-container .card .about-text {
-  line-height: 30px;
-  text-align: center;
+  font-size: 1.25rem;
+  line-height: 38px;
+  text-align: left;
   z-index: 2;
+  width: 55vw;
 }
 
 section#about #about-container .card .about-text h2 {
   font-weight: 700;
   font-size: 2rem;
-  line-height: 70px;
+  line-height: 85px;
 }
 
 section#about #about-container .card .about-text p {
@@ -360,34 +365,55 @@ section#about #about-container .card .about-text p:last-of-type .colored-text {
   text-decoration: underline;
 }
 
-/********** Large and Extra large devices **********/
-@media only screen and (min-width: 992px) {
+/********** Medium devices (tablets, 768px and up) **********/
+@media only screen and (max-width: 991.98px) {
   section#about #about-container .card {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    padding: 1rem 2rem;
   }
   section#about #about-container .card .background svg {
-    height: 100%;
-    padding-top: 2em;
-    top: -0.5rem;
-    left: 0;
+    height: 90%;
+    top: 2rem;
+    left: -9rem;
+    padding-top: 0;
   }
   section#about #about-container .card img {
-    height: 18em;
+    height: 12rem;
   }
   section#about #about-container .card .about-text {
-    width: 55vw;
-    font-size: 1.25rem;
-    line-height: 38px;
-    text-align: left;
+    width: 100%;
+    font-size: 1.15rem;
+    line-height: 30px;
+    text-align: center;
   }
   section#about #about-container .card .about-text h2 {
-    line-height: 85px;
+    line-height: 70px;
+  }
+}
+
+/********** Small and Extra small devices (landscape phones, 576px and up + portrait phones, less than 576px) **********/
+@media only screen and (max-width: 767.98px) {
+  section#about #about-container .card img {
+    height: 10rem;
+  }
+  section#about #about-container .card .about-text {
+    font-size: 1rem;
+    line-height: 30px;
+  }
+  section#about #about-container .card .about-text h2 {
+    line-height: 60px;
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
+  section#about #about-container .card img {
+    height: 8rem;
   }
 }
 
@@ -645,6 +671,18 @@ section#contact #contact-container {
   position: relative;
 }
 
+section#contact #contact-container .background {
+  overflow: hidden;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+}
+
+section#contact #contact-container .background svg {
+  width: 100%;
+  height: 100%;
+}
+
 section#contact #contact-container .content {
   height: 100%;
   display: -webkit-box;
@@ -664,20 +702,17 @@ section#contact #contact-container .content {
 }
 
 section#contact #contact-container .content .contact-text {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.5rem;
-  line-height: 37px;
 }
 
-section#contact #contact-container .content .contact-text div {
-  padding-bottom: 1rem;
-}
-
-section#contact #contact-container .content .contact-text div:first-of-type {
-  font-weight: bolder;
+section#contact #contact-container .content .contact-text h2 {
+  font-weight: 700;
   font-size: 2rem;
-  line-height: 73px;
-  padding-bottom: 0;
+}
+
+section#contact #contact-container .content .contact-text p {
+  margin-bottom: 2rem;
 }
 
 section#contact #contact-container .content #contact-form {
@@ -687,8 +722,8 @@ section#contact #contact-container .content #contact-form {
   display: grid;
   -ms-grid-columns: 38% 10% 4% 10% 38%;
       grid-template-columns: 38% 10% 4% 10% 38%;
-  -ms-grid-rows: auto auto auto auto;
-      grid-template-rows: auto auto auto auto;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
 }
 
 section#contact #contact-container .content #contact-form .form-group {
@@ -697,150 +732,91 @@ section#contact #contact-container .content #contact-form .form-group {
 
 section#contact #contact-container .content #contact-form .form-group:nth-child(1) {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-  grid-column: 1 / span 5;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
   -ms-grid-row: 1;
   grid-row: 1;
 }
 
 section#contact #contact-container .content #contact-form .form-group:nth-child(2) {
-  -ms-grid-column: 1;
+  -ms-grid-column: 4;
   -ms-grid-column-span: 5;
-  grid-column: 1 / span 5;
-  -ms-grid-row: 2;
-  grid-row: 2;
+  grid-column: 4 / span 5;
+  -ms-grid-row: 1;
+  grid-row: 1;
 }
 
 section#contact #contact-container .content #contact-form .form-group:nth-child(3) {
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-column: 1 / span 5;
-  -ms-grid-row: 3;
-  grid-row: 3;
+  -ms-grid-row: 2;
+  grid-row: 2;
   margin-bottom: 2rem;
 }
 
 section#contact #contact-container .content #contact-form button {
   margin-bottom: 1rem;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-  grid-column: 1 / span 5;
-  -ms-grid-row: 4;
-  grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / span 3;
+  -ms-grid-row: 3;
+  grid-row: 3;
   border-radius: 20px;
   background-color: #db2721;
   border-color: #db2721;
 }
 
-section#contact .background {
-  overflow: hidden;
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
+/********** Medium devices (tablets, 768px and up) **********/
+@media only screen and (max-width: 991.98px) {
+  section#contact #contact-container .content #contact-form {
+    width: 65vw;
+  }
 }
 
-section#contact .background svg {
-  width: 100%;
-  height: 100%;
-}
-
-/********** Medium, Large and Extra large devices **********/
-@media only screen and (min-width: 767.98px) {
+/********** Small and Extra small devices (landscape phones, 576px and up + portrait phones, less than 576px) **********/
+@media only screen and (max-width: 767.98px) {
+  section#contact {
+    height: 92vh;
+  }
   section#contact #contact-container .content .contact-text {
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 37px;
-  }
-  section#contact #contact-container .content .contact-text div {
-    padding-bottom: 1rem;
-  }
-  section#contact #contact-container .content .contact-text div:first-of-type {
-    font-weight: bolder;
-    font-size: 2rem;
-    line-height: 73px;
-    padding-bottom: 0;
+    font-size: 1.25rem;
   }
   section#contact #contact-container .content #contact-form {
-    width: 45vw;
-    -ms-grid-rows: auto auto auto;
-        grid-template-rows: auto auto auto;
+    width: 60vw;
+    -ms-grid-columns: 30% 14% 12% 14% 30%;
+        grid-template-columns: 30% 14% 12% 14% 30%;
+    -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+  }
+  section#contact #contact-container .content #contact-form .form-group {
+    text-align: left;
   }
   section#contact #contact-container .content #contact-form .form-group:nth-child(1) {
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / span 2;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / span 5;
     -ms-grid-row: 1;
     grid-row: 1;
   }
   section#contact #contact-container .content #contact-form .form-group:nth-child(2) {
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 5;
-    grid-column: 4 / span 5;
-    -ms-grid-row: 1;
-    grid-row: 1;
-  }
-  section#contact #contact-container .content #contact-form .form-group:nth-child(3) {
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
     grid-column: 1 / span 5;
     -ms-grid-row: 2;
     grid-row: 2;
-    margin-bottom: 2rem;
   }
-  section#contact #contact-container .content #contact-form button {
-    margin-bottom: 1rem;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-    grid-column: 2 / span 3;
+  section#contact #contact-container .content #contact-form .form-group:nth-child(3) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / span 5;
     -ms-grid-row: 3;
     grid-row: 3;
   }
-}
-
-body, html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  font-size: 13px;
-  font-family: "Montserrat", sans-serif !important;
-  background-color: #fde9c9 !important;
-}
-
-section {
-  height: 100vh;
-  width: 100vw;
-}
-
-section:nth-of-type(2) {
-  padding: 0;
-}
-
-section .card {
-  width: 100vw;
-  border: none;
-  border-radius: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-}
-
-.colored-text {
-  color: #e44d26;
+  section#contact #contact-container .content #contact-form button {
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
 }
 
 #projects-gallery-container {
