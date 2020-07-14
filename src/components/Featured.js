@@ -73,9 +73,9 @@ export default class Featured extends Component {
                 </div>
                 <div className="see-more">
                     <div className="card">
-                        <div className="see-more-text">
+                        <h3 className="see-more-text">
                             Want to see more? <Link to="/works" className="colored-text">Click Here!</Link>
-                        </div>
+                        </h3>
                         <div className="background">
                             <div></div>
                             <div></div>
