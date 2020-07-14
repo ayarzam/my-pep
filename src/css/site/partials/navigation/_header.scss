@@ -1,0 +1,25 @@
+header .navbar {
+    .logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 0.5rem;
+    }
+
+    .btn-background {
+        background: none;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .logo-text {
+        text-decoration: none;
+    }
+}
+
+/********** Large and Extra large devices **********/
+@media only screen and (min-width: 991.98px) {
+
+    header .navbar .btn-background {
+        background: color(secondary);
+    }
+}

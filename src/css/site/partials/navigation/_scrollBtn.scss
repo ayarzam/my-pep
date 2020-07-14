@@ -1,0 +1,32 @@
+#root {
+    #scroll-btn {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        height: 35px;
+        width: 35px;
+        margin-bottom: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        outline: 0px;
+        background-color: color(accent3);
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1000;
+        transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out, bottom 0.2s ease-in-out;
+    }
+  
+    #scroll-btn.active {
+        right: 1.4rem;        
+        opacity: 1;
+    }
+
+    #scroll-btn.active.shift {
+        bottom: 3.5rem;        
+        opacity: 1;
+    }
+}

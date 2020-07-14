@@ -19,8 +19,8 @@ export default class Featured extends Component {
             <div id="featured-container">
                 <div className="featured-text">
                     <Flower1 className="flower"></Flower1>
-                    <div>Featured Works</div>
-                    <div>Web products that keep the user in mind</div>
+                    <h2>Featured Works</h2>
+                    <p>Web products that keep the user in mind</p>
                 </div>
                 <div className="featured-projects">
                     <div className="project">

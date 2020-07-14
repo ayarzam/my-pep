@@ -12,7 +12,7 @@ import PlayingCard from "../images/playing_card.png"
 export default class Projects extends Component {
   render() {
     return (
-      <div id="projects-container">
+      <div id="projects-gallery-container">
         <CardColumns>
           <Card>
             <div className="image-container">
