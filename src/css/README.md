@@ -6,24 +6,26 @@ Inspiration taken from [How to structure a Sass project](http://thesassway.com/b
 
 - The website stylesheet will be broken into sub-projects (i.e. landingPage and blog). Each sub-project will have the following example breakdown:
 
-sub-project-stylesheet/
-|
-|-- modules/              # Common modules
-|   |-- _all.scss         # Include to get all modules
-|   |-- _utility.scss     # Module name
-|   |-- _colors.scss      # Etc...
-|   ...
-|
-|-- partials/             # Partials
-|   |-- _base.sass        # imports for all mixins + global project variables
-|   |-- _buttons.scss     # buttons
-|   |-- _figures.scss     # figures
-|   |-- _grids.scss       # grids
-|   |-- _typography.scss  # typography
-|   |-- _reset.scss       # reset
-|   ...
-|
-`-- main.scss            # primary Sass file
+```
+sub-project-stylesheet/  
+|  
+|-- modules/               # Common modules  
+|   |-- _all.scss            # Include to get all modules  
+|   |-- _utility.scss        # Module name  
+|   |-- _colors.scss         # Etc...  
+|   ...  
+|  
+|-- partials/              # Partials  
+|   |-- _base.sass           # imports for all mixins + global project variables  
+|   |-- _buttons.scss        # buttons  
+|   |-- _figures.scss        # figures  
+|   |-- _grids.scss          # grids  
+|   |-- _typography.scss     # typography  
+|   |-- _reset.scss          # reset  
+|   ...  
+|  
+`-- main.scss              # Primary Sass file   
+```
 
 - The modules directory is reserved for Sass code that doesn't cause Sass to actually output CSS. Things like mixin declarations, functions, and variables.
 
@@ -34,40 +36,42 @@ sub-project-stylesheet/
 
 ## Overall Stylesheet Hierarchy
 
-css (stylesheets)/
-|
-`-- App.scss
-    |
-    |-- site/              # Site sub-project
-    |    |-- modules/
-    |    |-- partials/
-    |    |    | _base.scss
-    |    |    |-- home/
-    |    |    `-- navigation/
-    |    |
-    |    `-- _main.scss    # imports partials used for the site
-    |
-    |-- portfolio/         # Portfolio sub-project
-    |    |-- modules/
-    |    |-- partials/
-    |    |    |-- projects/
-    |    |    `-- _base.scss
-    |    |
-    |    `-- _main.scss    # imports partials used for the portfolio
-    |
-    |-- blog/              # Blog sub-project
-    |    |-- modules/
-    |    |-- partials/
-    |    |    |
-    |    |    `-- _base.scss
-    |    |
-    |    `-- _main.scss     # imports partials used for the blog
-    |
-    |-- vendor/             # CSS or Sass from other projects
-    |    |-- _colorpicker-1.1.scss
-    |    |-- _jquery.ui.core-1.9.1.scss
-    |    ...
-    |
-    |-- site.scss           # Primary stylesheets for each project
-    |-- portfolio.scss
-    `-- blog.scss
+```
+css (stylesheets)/  
+|  
+`-- App.scss  
+    |  
+    |-- site/              # Site sub-project  
+    |    |-- modules/  
+    |    |-- partials/  
+    |    |    | _base.scss  
+    |    |    |-- home/  
+    |    |    `-- navigation/  
+    |    |  
+    |    `-- _main.scss
+    |  
+    |-- portfolio/         # Portfolio sub-project  
+    |    |-- modules/  
+    |    |-- partials/  
+    |    |    |-- projects/  
+    |    |    `-- _base.scss  
+    |    |  
+    |    `-- _main.scss
+    |  
+    |-- blog/              # Blog sub-project  
+    |    |-- modules/  
+    |    |-- partials/    
+    |    |    |  
+    |    |    `-- _base.scss  
+    |    |  
+    |    `-- _main.scss 
+    |  
+    |-- vendor/             # CSS or Sass from other projects  
+    |    |-- _colorpicker-1.1.scss  
+    |    |-- _jquery.ui.core-1.9.1.scss  
+    |    ...  
+    |  
+    |-- site.scss           # Primary stylesheets for each project  
+    |-- portfolio.scss  
+    `-- blog.scss  
+```
