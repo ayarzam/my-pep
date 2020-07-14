@@ -8,8 +8,8 @@ export default class Contact extends Component {
       <div id="contact-container">
         <div className="content">
           <div className="contact-text">
-            <div>Contact Me</div>
-            <div>Feel free to reach out and connect!</div>
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out and connect!</p>
           </div>
           <ContactForm />
         </div>

@@ -1,0 +1,130 @@
+section#hero {
+    height: 92vh;
+
+    #hero-container {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        svg.flower {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .background {
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .hero-text {
+            position: relative;
+            width: 80%;
+            // width: 653px;
+            padding-top: 3.5rem;
+            padding-left: 3rem;
+            display: flex;
+            flex-flow: column;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 4rem;
+            line-height: 85px;
+            word-break: break-word;
+        }
+    }
+}
+
+/********** Medium, Large and Extra large devices **********/
+@media only screen and (min-width: 767.98px) {
+
+    section#hero {
+        #hero-container {  
+            .background {
+                bottom: unset;
+                top: -0.5rem;
+                right: 0;   
+            }
+
+            .hero-text {
+                width: 675px;
+            }
+        }
+
+    }
+}
+
+/********** Medium devices **********/
+@media only screen and (max-width: 991.98px) {
+    section#hero {
+        
+        #hero-container {  
+            svg.flower {
+                display: none;
+            }
+
+            .hero-text {
+                width: 525px;
+
+                h1 {
+                    font-size: 3rem;
+                    line-height: 65px;
+                }
+            }
+        }
+    }
+}
+
+/********** Small devices (landscape phones, 576px and up) **********/
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    section#hero {
+        #hero-container {  
+            svg.flower {
+                display: none;
+            }
+
+            .hero-text {
+                font-size: 1.25rem;
+
+                h1 {
+                    font-size: 3rem;
+                    line-height: 60px;
+                }
+            }
+        }
+    }
+}
+
+// /********** Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 575.98px) {
+    section#hero {
+        height: 70vh;
+
+        #hero-container {  
+            svg.flower {
+                display: none;
+            }
+
+            .hero-text {
+                width: 400px;
+                font-size: 1rem;
+
+                h1 {
+                    font-size: 2rem;
+                    line-height: 45px;
+                }
+            }
+        }
+    }
+}

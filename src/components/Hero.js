@@ -11,8 +11,8 @@ export default class Hero extends Component {
                     <Background />
                 </div>
                 <div className="hero-text">
-                    <div>Bridging the gap between users and web products</div>
-                    <div>UI/UX & Full-Stack Software Developer</div>
+                    <h1>Bridging the gap between users and web products</h1>
+                    <p>UI/UX & Full-Stack Software Developer</p>
                 </div>
             </div>
         );

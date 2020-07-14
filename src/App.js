@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './views/Home';
-import Works from './views/Projects';
+import Works from './views/ProjectsGallery';
 import Footer from './components/Footer';
 
 
