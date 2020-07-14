@@ -7,16 +7,23 @@ section#about {
         height: 100%;
 
         .card {
+            height: 80vh;
             display: flex;
             justify-content: space-evenly;
             flex-flow: row;
-            height: 80vh;
 
             svg.flower {
                 position: absolute;
                 top: -5em;
                 left: 0;
                 z-index: 2;
+            }
+
+            svg.flower:nth-child(2) {
+                top: unset;
+                left: unset;
+                bottom: -5rem;
+                right: 0;
             }
 
             .background {
@@ -39,6 +46,7 @@ section#about {
 
                 svg {
                     height: 100%;
+                    width: 100%;
                     padding-top: 2em;
                     position: absolute;
                     top: -0.5rem;
@@ -88,8 +96,9 @@ section#about {
 
         .background svg {
             height: 90%;
+            width: 90%;
             top: 2rem;
-            left: -9rem;
+            left: 2rem;
             padding-top: 0;
         }
 

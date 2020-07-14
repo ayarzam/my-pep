@@ -4,6 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import portrait from '../images/portrait.png';
 import { ReactComponent as CodeLogos } from '../images/svg/backgrounds/coding-logos.svg';
 import { ReactComponent as Flower1 } from '../images/svg/decorations/plant_7.svg';
+import { ReactComponent as Flower2 } from '../images/svg/decorations/plant_5.svg';
 
 export default class About extends Component {
   render() {
@@ -11,6 +12,7 @@ export default class About extends Component {
       <div id="about-container">
         <div className="card">
           <Flower1 className="flower"></Flower1>
+          <Flower2 className="flower"></Flower2>
           <div className="background">
             <div></div>
             <div></div>
