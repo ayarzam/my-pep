@@ -649,11 +649,12 @@ section#featured {
           justify-content: center;
 }
 
-#featured-container .see-more .card .see-more-text {
+#featured-container .see-more .card h3.see-more-text {
+  margin: 0;
   z-index: 1;
 }
 
-#featured-container .see-more .card .see-more-text .colored-text {
+#featured-container .see-more .card h3.see-more-text .colored-text {
   font-weight: bolder;
   padding-left: 0.25em;
   text-decoration: underline;
@@ -683,6 +684,9 @@ section#featured {
 /********** Large devices (desktops, 992px and up) **********/
 /********** Medium, Small, and Extra Small devices (tablets, landscape & portrait phones, 768px and below) **********/
 @media only screen and (max-width: 991.98px) {
+  #featured-container .featured-text {
+    font-size: 1.15rem;
+  }
   #featured-container .featured-projects .project:nth-of-type(2) .card .project-image {
     margin: 0;
     -webkit-box-ordinal-group: 2;
@@ -702,7 +706,9 @@ section#featured {
     padding: 0;
   }
   #featured-container .featured-projects .project:nth-of-type(2) .card .card-text p {
-    margin-left: unset;
+    margin: 0;
+    width: unset;
+    text-align: center;
   }
   #featured-container .featured-projects .project .card {
     -webkit-box-orient: vertical;
@@ -748,12 +754,43 @@ section#featured {
     padding: 0;
   }
   #featured-container .featured-projects .project .card .card-text p {
-    margin-left: unset;
+    font-size: 1.15rem;
+    margin: 0;
+    width: unset;
+    max-width: 75%;
+    text-align: center;
+  }
+  #featured-container .see-more .card h3.see-more-text {
+    font-size: 1.5rem;
   }
 }
 
 /********** Small devices (landscape phones, 576px and up) **********/
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  #featured-container .featured-text {
+    font-size: 1rem;
+  }
+  #featured-container .featured-projects .project .card .card-text p {
+    font-size: 1rem;
+  }
+  #featured-container .see-more .card h3.see-more-text {
+    font-size: 1.25rem;
+  }
+}
+
 /********** Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 575.98px) {
+  #featured-container .featured-text {
+    font-size: 1rem;
+  }
+  #featured-container .featured-projects .project .card .card-text p {
+    font-size: 1rem;
+  }
+  #featured-container .see-more .card h3.see-more-text {
+    font-size: 1.25rem;
+  }
+}
+
 section#contact {
   height: 90vh;
   background-color: #89c5cc;
