@@ -39,32 +39,37 @@ export default class FullPageNav extends Component {
             <div id="full-page-nav-container">
                 <ul>
                     <li>
-                        <div className="full-page-nav-title">Home
-                            <HLink className={ `nav-link ${this.checkPath('/') || this.checkPath('/#root') ? "active" : ""}` } smooth to="/#root" onClick={() => this.handleClick('/#root')}>
-                                <div className="nav-circle"></div>
-                            </HLink>
-                        </div>
+                        <HLink className={ `nav-link ${this.checkPath('/') || this.checkPath('/#root') ? "active" : ""}` } smooth to="/#root">
+                            <div onClick={() => this.handleClick('/#root')}>
+                                <span className="full-page-nav-title">Home</span>
+                                <span className="nav-circle"></span>
+                            </div>
+                        </HLink>
                     </li>
                     <li>
-                        <div className="full-page-nav-title">About
-                            <HLink className={ `nav-link ${this.checkPath('/#about') ? "active" : ""}` } smooth to="/#about" onClick={() => this.handleClick('/#about')}>
-                                <div className="nav-circle"></div>
-                            </HLink>
-                        </div>
+                        <HLink className={ `nav-link ${this.checkPath('/#about') ? "active" : ""}` } smooth to="/#about">
+                            <div onClick={() => this.handleClick('/#about')}>
+                                <span className="full-page-nav-title">About</span>
+                                <span className="nav-circle"></span>
+                            </div>
+                        </HLink>
                     </li>
                     <li>
-                        <div className="full-page-nav-title">Featured
-                            <HLink className={ `nav-link ${this.checkPath('/#featured') ? "active" : ""}` } smooth to="/#featured" onClick={() => this.handleClick('/#featured')}>
-                                <div className="nav-circle"></div>
-                            </HLink>
-                        </div>
+                        <HLink className={ `nav-link ${this.checkPath('/#featured') ? "active" : ""}` } smooth to="/#featured">
+                            <div onClick={() => this.handleClick('/#featured')}>
+                                <span className="full-page-nav-title">Featured</span>
+                                <span className="nav-circle"></span>
+                            </div>
+
+                        </HLink>
                     </li>
-                    <li>
-                        <div className="full-page-nav-title">Contact
-                            <HLink className={ `nav-link ${this.checkPath('/#contact') ? "active" : ""}` } smooth to="/#contact" onClick={() => this.handleClick('/#contact')}>
-                                <div className="nav-circle"></div>
-                            </HLink>
-                        </div>
+                    <li>                   
+                        <HLink className={ `nav-link ${this.checkPath('/#contact') ? "active" : ""}` } smooth to="/#contact">
+                            <div onClick={() => this.handleClick('/#contact')}>
+                                <span className="full-page-nav-title">Contact</span>
+                                <span className="nav-circle"></span>
+                            </div>
+                        </HLink>
                     </li>
                 </ul>
             </div>
