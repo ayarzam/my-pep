@@ -29,7 +29,7 @@
     "sequelize": "^6.3.3"
   },
   "scripts": {
-    "start": "node server/api/index.js & react-scripts start",
+    "start": "node server/api/mail.js & node server/index.js  & react-scripts start",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
