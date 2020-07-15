@@ -3,22 +3,6 @@
 // Import font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap');
 
-// Font weights
-$thin: 100;
-$light: 300;
-$regular: 400;
-$bold: 700;
-$black: 900;
-
-// Base Font
-$base-font-family: "Montserrat", sans-serif;
-$base-font-weight: $regular;
-$base-font-size: 16px;
-$base-line-height: 1.4;
-
-// Headings
-$header-font-weight: $bold;
-
 // Color Palette
 $colors: (
   primary: #fde9c9,
@@ -36,6 +20,30 @@ $colors: (
   @return map-get($colors, $color-name);
 }
 
+// Font weights
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
+
+// Base Font
+$base-font-family: "Montserrat", sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// body
+$body-color: color(base3);
+$body-bg-color: color(primary);
+
+// Headings
+$header-font-weight: $bold;
+
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   height: 100%;
 }
@@ -44,10 +52,22 @@ body {
   margin: 0;
   height: 100vh;
   font-size: $base-font-size;
+  line-height: $base-line-height;
   font-weight: $base-font-weight;
   font-family: $base-font-family !important;
-  background-color: color(primary) !important;
+  color: $body-color;
+  background-color: $body-bg-color !important;
 }
+
+// h1, h2, h3, h4, h5, h6 {
+//   margin-top: 0;
+//   margin-bottom: $headings-margin-bottom;
+// }
+
+// p {
+//   margin-top: 0;
+//   margin-bottom: $paragraph-margin-bottom;
+// }
 
 section {
   height: 100vh;
@@ -81,6 +101,18 @@ section div .card {
 #home-container {
   display: flex;
   flex-flow: column;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 /********** Large and Extra large devices **********/

@@ -15,12 +15,12 @@ section#featured {
     h2 {
         font-weight: $bold;
         font-size: 2rem;
-        padding-bottom: 0.5em;
+        padding-bottom: 0.5rem;
     }
 
     svg:first-child {
         position: absolute;
-        top: -8em;
+        top: -8rem;
         right: 0;
     }
 }
@@ -54,7 +54,7 @@ section#featured {
             .project-image {
                 height: 80%;
                 // width: 50%;
-                margin-left: 2em;
+                margin-left: 2rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -82,14 +82,14 @@ section#featured {
                 h3, p {
                     display: flex;
                     align-items: center;
-                    padding: 1em 1em;
+                    padding: 1rem 1rem;
                     box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25)
                 }
 
                 h3 {
                     height: 15%;
-                    margin: 1em 0;
-                    font-size: 2em;
+                    margin: 1rem 0;
+                    font-size: 2rem;
                     font-weight: bolder;
                     background-color: color(secondary);
                 }
@@ -97,7 +97,7 @@ section#featured {
                 p {
                     width: 90%;
                     margin-left: auto;
-                    font-size: 1.5em;
+                    font-size: 1.5rem;
                     background-color: color(base2);
                 }
             }
@@ -141,7 +141,7 @@ section#featured {
 
         .project-image {
             margin-left: auto;
-            margin-right: 2em;
+            margin-right: 2rem;
             box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
 
             img {
@@ -181,8 +181,8 @@ section#featured {
     height: 30vh;
 
     .card {
-        height: 5em;
-        font-size: 1.5em;
+        height: 5rem;
+        font-size: 1.5rem;
         justify-content: center;
 
         h3.see-more-text {
@@ -191,7 +191,7 @@ section#featured {
 
             .colored-text {
                 font-weight: bolder;
-                padding-left: 0.25em;
+                padding-left: 0.25rem;
                 text-decoration: underline;
             }
         }

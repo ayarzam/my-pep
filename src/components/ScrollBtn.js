@@ -76,18 +76,21 @@ export default class ScrollBtn extends Component {
 
   render() {
     const classes = classNames({
+        circle: true, // always add this class
         active: this.state.showButton, // only add this class if the state says so
         shift: this.state.shiftUp 
     });
 
     const arrows = {
-        "arrow-up" : <FaArrowUp />,
-        "arrow-down" : <FaArrowDown />
+        "arrow-up" : <FaArrowUp className="circle-arrow"/>,
+        "arrow-down" : <FaArrowDown className="circle-arrow"/>
     };
 
     return (
       <button id="scroll-btn" className={classes} onClick={this.handleClick}>
+        <div className="circle circle-top"></div>
         {arrows[this.state.iconType]}
+        <div className="circle circle-bottom"></div>
       </button>
     );
   }
