@@ -1105,6 +1105,46 @@ section#contact #contact-container .content #contact-form button {
   border-color: #db2721;
 }
 
+section#contact #contact-container .content .arrow-doodle {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 4rem;
+  margin-left: 10rem;
+  height: 6rem;
+  width: 14rem;
+}
+
+section#contact #contact-container .content .arrow-doodle path {
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  -webkit-animation: dash-anim 4s linear infinite;
+          animation: dash-anim 4s linear infinite;
+}
+
+@-webkit-keyframes dash-anim {
+  0% {
+    stroke-dashoffset: 251;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash-anim {
+  0% {
+    stroke-dashoffset: 251;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 /********** Medium devices (tablets, 768px and up) **********/
 @media only screen and (max-width: 991.98px) {
   section#contact #contact-container .content #contact-form {
@@ -1122,8 +1162,8 @@ section#contact #contact-container .content #contact-form button {
   }
   section#contact #contact-container .content #contact-form {
     width: 60vw;
-    -ms-grid-columns: 30% 14% 12% 14% 30%;
-        grid-template-columns: 30% 14% 12% 14% 30%;
+    -ms-grid-columns: 34% 12% 8% 12% 34%;
+        grid-template-columns: 34% 12% 8% 12% 34%;
     -ms-grid-rows: auto auto auto auto;
         grid-template-rows: auto auto auto auto;
   }
@@ -1154,6 +1194,12 @@ section#contact #contact-container .content #contact-form button {
   section#contact #contact-container .content #contact-form button {
     -ms-grid-row: 4;
     grid-row: 4;
+  }
+  section#contact #contact-container .content .arrow-doodle {
+    margin-bottom: 2rem;
+    margin-left: 8.75rem;
+    height: 6rem;
+    width: 14rem;
   }
 }
 

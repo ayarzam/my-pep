@@ -76,7 +76,34 @@ section#contact {
                     border-color: color(accent3);
                 }
             }
+
+            .arrow-doodle {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 4rem;
+                margin-left: 10rem;
+                height: 6rem;
+                width: 14rem;
+
+                path {
+                    stroke-dasharray: 251;
+                    stroke-dashoffset: 251;
+                    animation: dash-anim 4s linear infinite;
+                }
+            }
         }
+    }
+}
+  
+@keyframes dash-anim {
+    0% {
+        stroke-dashoffset: 251;
+    }
+    30% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
     }
 }
 
@@ -102,7 +129,7 @@ section#contact {
 
             #contact-form {
                 width: 60vw;
-                grid-template-columns: 30% 14% 12% 14% 30%;
+                grid-template-columns: 34% 12% 8% 12% 34%;
                 grid-template-rows: auto auto auto auto;
 
                 .form-group {
@@ -127,6 +154,13 @@ section#contact {
                 button {
                     grid-row: 4;
                 }
+            }
+
+            .arrow-doodle {
+                margin-bottom: 2rem;
+                margin-left: 8.75rem;
+                height: 6rem;
+                width: 14rem;
             }
         }
     }
