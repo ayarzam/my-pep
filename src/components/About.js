@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as HLink } from 'react-router-hash-link';
 
 import portrait from '../images/portrait.png';
 import { ReactComponent as CodeLogos } from '../images/svg/backgrounds/coding-logos.svg';
@@ -27,7 +27,7 @@ export default class About extends Component {
             interest in code development. I now foster interconnectedness between people
           by creating <span className="colored-text">immersive experiences</span>. I’m motivated to produce products that are
           accessible and <span className="colored-text">end-user focused</span>.</p>
-            <p>Please feel free to reach out to me if you'd like to <Link className="colored-text" smooth to="/#contact">connect</Link>!</p>
+            <p>Please feel free to reach out to me if you'd like to <HLink className="colored-text" smooth to="/#contact">connect</HLink>!</p>
           </div>
         </div>
       </div>

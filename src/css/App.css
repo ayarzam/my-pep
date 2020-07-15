@@ -365,6 +365,70 @@ footer .navbar .logo-text {
   }
 }
 
+#full-page-nav-container {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(-15%, -50%);
+          transform: translate(-15%, -50%);
+  z-index: 1000;
+}
+
+#full-page-nav-container ul {
+  margin: 0;
+  padding: 0;
+  width: 9rem;
+  text-align: right;
+  list-style: none;
+}
+
+#full-page-nav-container ul li {
+  height: 2.5rem;
+}
+
+#full-page-nav-container ul li .full-page-nav-title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#full-page-nav-container ul li .full-page-nav-title a {
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+#full-page-nav-container ul li .full-page-nav-title a .nav-circle {
+  width: 4px;
+  height: 4px;
+  background: #db2721;
+  border-radius: 50%;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  pointer-events: none;
+}
+
+#full-page-nav-container ul li .full-page-nav-title a:hover .nav-circle {
+  width: 10px;
+  height: 10px;
+}
+
+#full-page-nav-container ul li .full-page-nav-title a.active .nav-circle {
+  width: 12px;
+  height: 12px;
+}
+
 section#hero {
   height: 92vh;
 }
