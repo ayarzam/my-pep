@@ -386,45 +386,66 @@ footer .navbar .logo-text {
   height: 2.5rem;
 }
 
-#full-page-nav-container ul li .full-page-nav-title {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-#full-page-nav-container ul li .full-page-nav-title a {
-  width: 20px;
+#full-page-nav-container ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0;
   margin: 0;
-  margin-left: 0.5rem;
-  cursor: pointer;
+  cursor: unset;
 }
 
-#full-page-nav-container ul li .full-page-nav-title a .nav-circle {
+#full-page-nav-container ul li a div {
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#full-page-nav-container ul li a div .nav-circle {
   width: 4px;
   height: 4px;
   background: #db2721;
   border-radius: 50%;
   -webkit-transition: all 0.15s linear;
   transition: all 0.15s linear;
-  pointer-events: none;
+  cursor: pointer;
 }
 
-#full-page-nav-container ul li .full-page-nav-title a:hover .nav-circle {
+#full-page-nav-container ul li a div .full-page-nav-title {
+  position: absolute;
+  right: 1.5rem;
+  font-weight: 700;
+  color: #db2721;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.15s ease-in;
+  transition: opacity 0.15s ease-in;
+}
+
+#full-page-nav-container ul li a div:hover .full-page-nav-title {
+  opacity: 1;
+}
+
+#full-page-nav-container ul li div:hover .nav-circle {
   width: 10px;
   height: 10px;
 }
 
-#full-page-nav-container ul li .full-page-nav-title a.active .nav-circle {
+#full-page-nav-container ul li a.active .nav-circle {
   width: 12px;
   height: 12px;
 }
