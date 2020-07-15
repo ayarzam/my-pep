@@ -1,6 +1,6 @@
-const{ db }= require('./server/db/models/index')
+const{ db }= require('./server/db/models/works')
 const {green, red} = require('chalk')
-const { Works } = require('./server/db/models/index')
+const { Works } = require('./server/db/models/works')
 const Sequelize = require('sequelize')
 
 const seed = async () => {
@@ -15,7 +15,7 @@ const seed = async () => {
       "frontend_technologies": "React, Redux, D3js",
       "backend_technologies": "Node, Express, OAUTH",
       "testing_suite": "Mocha, Chai", 
-      "img": "/Users/ayarzamanwaring/projects/my-pep/public/images/projects/MusicMapper/renders/Laptop_1.png"
+      "img": "/images/projects/MusicMapper/renders/Laptop_1.png"
   })
   const project2 = await Works.create({
       "id": 2,
@@ -25,7 +25,7 @@ const seed = async () => {
         "description": "A mobile app that allows users the ability to map the distance and area that they hike.",
         "frontend_technologies": "React Native, CSS",
         "backend_technologies": "Firebase and Firestore",
-        "img": "/Users/ayarzamanwaring/projects/my-pep/public/images/projects/HikeWithMe/renders/Mobile.png"
+        "img": "/images/projects/HikeWithMe/renders/Mobile.png"
   })
   const project3 = await Works.create({
       "id": 3,
@@ -36,8 +36,18 @@ const seed = async () => {
         "frontend_technologies": "React, Redux",
         "backend_technologies": "Technologies: Nodejs, Express and Sequelize",
         "testing_suite": "Mocha and Chai", 
-        "img": "/Users/ayarzamanwaring/projects/my-pep/public/images/projects/IslandShopper/renders/Desktop_1.png"
+        "img": "/projects/IslandShopper/renders/Desktop_1.png"
   })
+  const project4 = await Works.create({
+    "id": 4,
+      "project_title": "Node Card Game",
+      "my_title": "Backend Engineer",
+      "Team": "Sole Developer",
+      "description": "A simple backend mocking of a poker game.",
+      "backend_technologies": "Node, Express",
+      "testing_suite": "Mocha, Chai, Jest",
+      "img": "/projects/NodeCardGame/playing_card.png"
+})
   
     db.close()
   console.log(`
