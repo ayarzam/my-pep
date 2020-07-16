@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Home from './views/Home';
 import Works from './views/ProjectsGallery';
 import Footer from './components/Footer';
+import Main from './views/Main'
 
 
 class App extends Component {
@@ -18,7 +19,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/works" render={ (routerProps) => <Works {...routerProps} />} ></Route>
+          <Route exact path="/works" render={ (routerProps) => <Main {...routerProps} />} ></Route>
         </Switch>
 
         <ScrollButton targetId="root" behavior="smooth" iconType="arrow-up" />
