@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { HashLink as HLink } from 'react-router-hash-link';
-import { Link } from "react-router-dom"
+
+import { Link } from 'react-router-dom';
+import HashLink from './HashLink';
 
 function Header() {
     return (
@@ -16,12 +17,9 @@ function Header() {
                     <Nav className="ml-auto">
                         <Link className="m-auto nav-link" to="/">Resume</Link>
                         <Link className="m-auto nav-link" to="/works">Works</Link>
-                        {/* <Nav.Link className="m-auto" href="/about">About</Nav.Link> */}
-                        <HLink className="m-auto nav-link" smooth to="/#about">About</HLink>
-
+                        <HashLink className="m-auto nav-link" to="/" hashId="#about" behavior="smooth" label="About"></HashLink>
                         <div className="btn-background">
-                            {/* <Nav.Link className="m-auto" href="/contact">Contact</Nav.Link> */}
-                            <HLink className="m-auto nav-link" smooth to="/#contact">Contact</HLink>
+                            <HashLink className="m-auto nav-link" to="/" hashId="#contact" behavior="smooth" label="Contact"></HashLink>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

@@ -1,7 +1,8 @@
+$fp-nav-box-w: 20px;
 $fp-nav-w: 4px;
 $fp-hover-nav-w: 10px;
 $fp-active-nav-w: 12px;
-$fp-nav-bg: color(accent3);
+$fp-nav-bg: color(accent4);
 
 #full-page-nav-container {
     position: fixed;
@@ -29,8 +30,8 @@ $fp-nav-bg: color(accent3);
                 cursor: unset;
 
                 div {
-                    width: 20px;
-                    height: 20px;
+                    width: $fp-nav-box-w;
+                    height: $fp-nav-box-w;
                     display: flex;
                     align-items: center;
                     justify-content: center;
