@@ -36,7 +36,6 @@ export default class FullPageNav extends Component {
 
         console.log('active path: ', this.state.activeNav , 'link: ', link, this.state.activeNav === link);
 
-
         return classes;
     }
 
