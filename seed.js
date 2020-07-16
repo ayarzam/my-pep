@@ -15,7 +15,7 @@ const seed = async () => {
       "frontend_technologies": "React, Redux, D3js",
       "backend_technologies": "Node, Express, OAUTH",
       "testing_suite": "Mocha, Chai", 
-      "img": "/images/projects/MusicMapper/renders/Laptop_1.png"
+      "img": "https://i.imgur.com/EZY37oa.png"
   })
   const project2 = await Works.create({
       "id": 2,
@@ -25,7 +25,7 @@ const seed = async () => {
         "description": "A mobile app that allows users the ability to map the distance and area that they hike.",
         "frontend_technologies": "React Native, CSS",
         "backend_technologies": "Firebase and Firestore",
-        "img": "/images/projects/HikeWithMe/renders/Mobile.png"
+        "img": "https://i.imgur.com/ajSRCU2.png"
   })
   const project3 = await Works.create({
       "id": 3,
@@ -36,7 +36,7 @@ const seed = async () => {
         "frontend_technologies": "React, Redux",
         "backend_technologies": "Technologies: Nodejs, Express and Sequelize",
         "testing_suite": "Mocha and Chai", 
-        "img": "/projects/IslandShopper/renders/Desktop_1.png"
+        "img": "https://i.imgur.com/CPNMonu.png"
   })
   const project4 = await Works.create({
     "id": 4,
@@ -46,7 +46,7 @@ const seed = async () => {
       "description": "A simple backend mocking of a poker game.",
       "backend_technologies": "Node, Express",
       "testing_suite": "Mocha, Chai, Jest",
-      "img": "/projects/NodeCardGame/playing_card.png"
+      "img": "https://i.imgur.com/T1LTQDd.png"
 })
   
     db.close()
