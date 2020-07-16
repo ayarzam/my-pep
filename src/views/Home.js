@@ -4,11 +4,13 @@ import Hero from '../components/Hero.js';
 import About from '../components/About.js';
 import Featured from '../components/Featured.js';
 import Contact from '../components/Contact.js';
+import FullPageNav from '../components/FullPageNav'
 
 class Home extends Component {
   render() {
     return (
       <div id="home-container">
+        <FullPageNav />
         <section id="hero">
           <Hero />
         </section>

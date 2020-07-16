@@ -72,7 +72,7 @@ $anim-timing: 3s;
     }
 
     .circle-arrow {
-        color: white;
+        color: $arrow-bg;
         position: absolute;
         z-index: 1;
     }

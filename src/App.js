@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.scss';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ScrollButton from './components/ScrollBtn.js';
 
 import Header from './components/Header';
 import Home from './views/Home';
@@ -19,6 +20,8 @@ class App extends Component {
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/works" render={ (routerProps) => <Works {...routerProps} />} ></Route>
         </Switch>
+
+        <ScrollButton targetId="root" behavior="smooth" iconType="arrow-up" />
 
         <Footer />
       </div>
