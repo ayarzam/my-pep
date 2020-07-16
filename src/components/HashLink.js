@@ -52,7 +52,8 @@ export default class HashLink extends Component {
     
     if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {
       console.log('redirected');
-      window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink + this.state.hashId;
+      let hashId = this.state.hashId ? this.state.hashId : '';
+      window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink + hashId;
     }
     else {
       this.scrollToHash();
@@ -60,7 +61,8 @@ export default class HashLink extends Component {
   }
 
   render() {
-    const link = this.state.targetLink + this.state.hashId;
+    let hashId = this.state.hashId ? this.state.hashId : '';
+    const link = this.state.targetLink + hashId;
     console.log('Link to: ', link);
     console.log('className: ', this.state.className);
 
