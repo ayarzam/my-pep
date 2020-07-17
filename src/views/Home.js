@@ -10,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div id="home-container">
-        <FullPageNav />
+        <FullPageNav key={window.location.hash}/>
         <section id="hero">
           <Hero />
         </section>
