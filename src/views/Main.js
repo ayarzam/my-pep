@@ -4,6 +4,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import GithubPortrait from '../images/github-portrait.png';
 import axios from 'axios';
+import SinglePageView from './SinglePageView'
 
 export default class Main extends Component{
   constructor(){
@@ -44,9 +45,9 @@ export default class Main extends Component{
             <div className="image-container">
               <Card.Img variant="top" src={project.img} />
             </div>
-            <Link to="/">
+            <Link to={`/works/${project.id}`}>
               <Card.ImgOverlay>
-                <Card.Title>{project.my_title}</Card.Title>
+                <Card.Title>{project.project_title}</Card.Title>
                 <Card.Text>
                  {project.description}
                 </Card.Text>

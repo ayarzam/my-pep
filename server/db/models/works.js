@@ -15,8 +15,8 @@ const Works = db.define("works", {
       notEmpty: true,
     },
   },
-  my_title: {
-    type: Sequelize.STRING,
+  role: {
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: false,
   },
   team: {
@@ -27,21 +27,35 @@ const Works = db.define("works", {
     allowNull: false,
   },
   frontend_technologies: {
-    type: Sequelize.STRING,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: true,
   },
   backend_technologies: {
-    type: Sequelize.STRING,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: true,
   },
   testing_suite: {
-    type: Sequelize.STRING,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: true,
   },
   img: {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  github: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }, 
+  deployed: {
+    type: Sequelize.STRING
+  },
+  duration: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }, long_description: {
+    type: Sequelize.STRING(1234),
+    allowNull: false
+  }
 });
 
 module.exports = {
