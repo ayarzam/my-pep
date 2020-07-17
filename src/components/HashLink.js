@@ -10,6 +10,7 @@ export default class HashLink extends Component {
       hashId: props.hashId,
       behavior: props.behavior,
       label: props.label || '',
+      handler: props.handler,
       asyncTimer: null,
       checkActive: true
     };
@@ -61,6 +62,11 @@ export default class HashLink extends Component {
     // if target path is not the same as the current path, redirect user
     if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {  
       console.log('redirected: ', process.env.PUBLIC_URL + this.state.targetLink + (this.state.hashId ? this.state.hashId : ''));
+    }
+    
+    // check if the parent component passed in a function to be executed
+    if (this.state.handler) {
+      this.state.handler();
     }
 
     setTimeout(() => {
