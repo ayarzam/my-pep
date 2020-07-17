@@ -94,22 +94,6 @@ export default class Projects extends Component {
           </Card>
         </CardColumns>
       </div>
-
-      //             Deployed Site
-      //           <a href="https://yachtshopper.herokuapp.com/">
-      //             Github Repository
-      //           <a href="https://github.com/yachtworld/yachtshopper">
-
-      //             Github Repository
-      //           <a href="https://github.com/ayarzam/HikeWithMe">
-
-      //             Deployed Site
-      //           <a href="https://spotify-music-mapper.herokuapp.com/">
-      //             Github Repository
-      //           <a href="https://github.com/music-mapper/music-mapper">
-
-      //             Github Repository
-      //           <a href="https://github.com/ayarzam/card_game">
     );
   }
 }
