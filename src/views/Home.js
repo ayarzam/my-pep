@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Hero from '../components/Hero.js';
-import About from '../components/About.js';
-import Featured from '../components/Featured.js';
-import Contact from '../components/Contact.js';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Featured from '../components/Featured';
+import Contact from '../components/Contact';
 import FullPageNav from '../components/FullPageNav'
 
 class Home extends Component {

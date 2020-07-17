@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import GithubPortrait from '../images/github-portrait.png';
 import axios from 'axios';
-import SinglePageView from './SinglePageView'
+// import SinglePageView from './SinglePageView'
 
 export default class Main extends Component{
   constructor(){
