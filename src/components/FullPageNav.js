@@ -7,11 +7,34 @@ export default class FullPageNav extends Component {
         super(props);
 
         this.state = {
-          activeNav: '/' + window.location.hash
+          activeNav: this.activeNav()
         };
 
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
+    }
+
+    // componentDidMount() {
+    //     window.addEventListener('load', () => {
+    //         var newPath = this.activeNav();
+    //         console.log('active path: ', this.state.activeNav,"new path", newPath)
+
+    //         if (this.state.activeNav !== newPath) {
+    //             console.log('hashchange')
+    //             this.setState({ activeNav: newPath})
+    //         }
+    //     });
+    // }
+
+    activeNav() {
+        let origin = window.location.origin;
+        let basename = process.env.PUBLIC_URL;
+        let href = window.location.href;
+
+        let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
+        console.log('active nav path: ',activePath);
+
+        return activePath === '' ? '/' : activePath;
     }
 
     handleClick(link) {
