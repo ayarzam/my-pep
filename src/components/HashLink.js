@@ -10,16 +10,21 @@ export default class HashLink extends Component {
       hashId: props.hashId,
       behavior: props.behavior,
       label: props.label || '',
-      asyncTimer: null
+      asyncTimer: null,
+      checkActive: true
     };
 
-    this.checkActive = this.checkActive.bind(this);
+    // this.checkActive = this.checkActive.bind(this);
     this.scrollToHash = this.scrollToHash.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('load', this.checkActive);
+    window.addEventListener('load', () => {
+      if (this.state.checkActive) {
+        this.checkActive()
+      }
+    });
   }
 
   checkActive() {
@@ -28,6 +33,7 @@ export default class HashLink extends Component {
       setTimeout(() => {
         this.scrollToHash();
       }, 300);
+      this.setState({ checkActive: false})
     }
   }
 
@@ -38,13 +44,10 @@ export default class HashLink extends Component {
     console.log('scrolling...hashId: ',this.state.hashId,'behavior: ',this.state.behavior);
 
     if (hashId !== null && hashId !== undefined && hashId.trim().length > 0) {
-      window.location.hash = hashId;
-
       let targetDiv = document.getElementById(hashId.replace(/#/, ''));
       console.log(targetDiv);
       targetDiv.scrollIntoView({ behavior: behavior });
     } else {
-      window.location.hash = '';
       window.scrollTo({ top: 0, behavior: behavior })
     }
   }
@@ -54,23 +57,32 @@ export default class HashLink extends Component {
     // if target path is not the same as the current path, redirect user
     console.log('click...current path: ', window.location.pathname, "target path: ", process.env.PUBLIC_URL + this.state.targetLink)
     
-    if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {
-      console.log('redirected');
-      let hashId = this.state.hashId ? this.state.hashId : '';
-      if (hashId) {
-        // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
-        window.location.hash = hashId;
+    // if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {
+    //   let hashId = this.state.hashId ? this.state.hashId : '';
+    //   console.log('redirected: ', hashId);
+    //   if (hashId) {
+    //     // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
+    //     window.location.hash = hashId;
 
-      }
-      else {
-        // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
-        window.location.hash = '';
-      }
+    //   }
+    //   else {
+    //     // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
+    //     window.location.hash = '';
+    //   }
+    // }
+
+
+    if (window.location.pathname === process.env.PUBLIC_URL + this.state.targetLink) {    
+      setTimeout(() => {
+        this.scrollToHash();
+      }, 300);
     }
-
-    setTimeout(() => {
-      this.scrollToHash();
-    }, 300);
+    else {
+      console.log('redirected: ', process.env.PUBLIC_URL + this.state.targetLink + (this.state.hashId ? this.state.hashId : ''));
+      setTimeout(() => {
+        this.scrollToHash();
+      }, 300);
+    }
   }
 
   render() {

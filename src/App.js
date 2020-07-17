@@ -19,7 +19,7 @@ class App extends Component {
         <Header />
 
         <Switch>
-          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" render={ (routerProps) => <Home {...routerProps} />}></Route>
           <Route exact path="/works" render={ (routerProps) => <Main {...routerProps} />} ></Route>
           <Route exact path="/works/:id" render={ (routerProps) => <SinglePageView {...routerProps} />} ></Route>
 
