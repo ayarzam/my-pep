@@ -14,15 +14,16 @@ export default class HashLink extends Component {
       checkActive: true
     };
 
-    // this.checkActive = this.checkActive.bind(this);
+    this.checkActive = this.checkActive.bind(this);
     this.scrollToHash = this.scrollToHash.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // On page load, scroll to component who's class is active
   componentDidMount() {
     window.addEventListener('load', () => {
       if (this.state.checkActive) {
-        this.checkActive()
+      this.checkActive();
       }
     });
   }
@@ -37,6 +38,7 @@ export default class HashLink extends Component {
     }
   }
 
+  // Scroll to specified targetId using provided hashId and behavior; else scroll to top of page
   scrollToHash() {
     let hashId = this.state.hashId;
     let behavior = this.state.behavior || "auto";
@@ -52,37 +54,18 @@ export default class HashLink extends Component {
     }
   }
 
-  // If a targetId was supplied, scroll to target; else scroll to top of page
+  // Handle click on link
   handleClick() {
-    // if target path is not the same as the current path, redirect user
     console.log('click...current path: ', window.location.pathname, "target path: ", process.env.PUBLIC_URL + this.state.targetLink)
     
-    // if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {
-    //   let hashId = this.state.hashId ? this.state.hashId : '';
-    //   console.log('redirected: ', hashId);
-    //   if (hashId) {
-    //     // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
-    //     window.location.hash = hashId;
-
-    //   }
-    //   else {
-    //     // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
-    //     window.location.hash = '';
-    //   }
-    // }
-
-
-    if (window.location.pathname === process.env.PUBLIC_URL + this.state.targetLink) {    
-      setTimeout(() => {
-        this.scrollToHash();
-      }, 300);
-    }
-    else {
+    // if target path is not the same as the current path, redirect user
+    if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {  
       console.log('redirected: ', process.env.PUBLIC_URL + this.state.targetLink + (this.state.hashId ? this.state.hashId : ''));
-      setTimeout(() => {
-        this.scrollToHash();
-      }, 300);
     }
+
+    setTimeout(() => {
+      this.scrollToHash();
+    }, 300);
   }
 
   render() {

@@ -5,27 +5,15 @@ import HashLink from './HashLink';
 export default class FullPageNav extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-          activeNav: this.activeNav()
+            activeNav: this.activeNav()
         };
 
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('load', () => {
-    //         var newPath = this.activeNav();
-    //         console.log('active path: ', this.state.activeNav,"new path", newPath)
-
-    //         if (this.state.activeNav !== newPath) {
-    //             console.log('hashchange')
-    //             this.setState({ activeNav: newPath})
-    //         }
-    //     });
-    // }
-
+    // Return the active path; used to set the nav links as active or inactive
     activeNav() {
         let origin = window.location.origin;
         let basename = process.env.PUBLIC_URL;
@@ -36,11 +24,13 @@ export default class FullPageNav extends Component {
 
         return activePath === '' ? '/' : activePath;
     }
-
+    
+    // Set activeNav to the selected path
     handleClick(link) {
         this.setState({ activeNav: link });
     }
 
+    // Return whether the className should be set to active
     checkPath(link) {
         const classes = classNames({
             'nav-link': true, // always add this class
