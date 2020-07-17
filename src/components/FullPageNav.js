@@ -21,7 +21,8 @@ export default class FullPageNav extends Component {
 
         let href = window.location.href;
 
-        return href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
+        let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
+        return activePath === '' ? '/' : activePath;
     }
 
     handleClick(link) {
