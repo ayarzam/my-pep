@@ -25,7 +25,9 @@ export default class HashLink extends Component {
   checkActive() {
     console.log('has active class?: ', this.state.className, 'hash: ', this.state.hashId);
     if (this.state.className.match(/active/)) {
-      this.scrollToHash();
+      setTimeout(() => {
+        this.scrollToHash();
+      }, 300);
     }
   }
 
@@ -33,14 +35,16 @@ export default class HashLink extends Component {
     let hashId = this.state.hashId;
     let behavior = this.state.behavior || "auto";
 
-    console.log('hashId: ',this.state.hashId);
-    console.log('behavior: ',this.state.behavior);
+    console.log('scrolling...hashId: ',this.state.hashId,'behavior: ',this.state.behavior);
 
     if (hashId !== null && hashId !== undefined && hashId.trim().length > 0) {
+      window.location.hash = hashId;
+
       let targetDiv = document.getElementById(hashId.replace(/#/, ''));
       console.log(targetDiv);
       targetDiv.scrollIntoView({ behavior: behavior });
     } else {
+      window.location.hash = '';
       window.scrollTo({ top: 0, behavior: behavior })
     }
   }
@@ -48,23 +52,31 @@ export default class HashLink extends Component {
   // If a targetId was supplied, scroll to target; else scroll to top of page
   handleClick() {
     // if target path is not the same as the current path, redirect user
-    console.log('current path: ', window.location.pathname, "target path: ", process.env.PUBLIC_URL + this.state.targetLink)
+    console.log('click...current path: ', window.location.pathname, "target path: ", process.env.PUBLIC_URL + this.state.targetLink)
     
     if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {
       console.log('redirected');
       let hashId = this.state.hashId ? this.state.hashId : '';
-      window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink + hashId;
+      if (hashId) {
+        // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
+        window.location.hash = hashId;
+
+      }
+      else {
+        // window.location.href = window.location.origin + process.env.PUBLIC_URL + this.state.targetLink;
+        window.location.hash = '';
+      }
     }
-    else {
+
+    setTimeout(() => {
       this.scrollToHash();
-    }
+    }, 300);
   }
 
   render() {
     let hashId = this.state.hashId ? this.state.hashId : '';
     const link = this.state.targetLink + hashId;
-    console.log('Link to: ', link);
-    console.log('className: ', this.state.className);
+    console.log('render...Link to: ', link, 'className: ', this.state.className);
 
     return (
       <Link className={this.state.className} to={link} onClick={this.handleClick}>{this.state.label}

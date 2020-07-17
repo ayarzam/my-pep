@@ -7,22 +7,11 @@ export default class FullPageNav extends Component {
         super(props);
 
         this.state = {
-          activeNav: this.setActiveNav()
+          activeNav: '/' + window.location.hash
         };
 
-        this.setActiveNav = this.setActiveNav.bind(this)
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
-    }
-    
-    setActiveNav() {
-        let origin = window.location.origin;
-        let basename = process.env.PUBLIC_URL;
-
-        let href = window.location.href;
-
-        let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
-        return activePath === '' ? '/' : activePath;
     }
 
     handleClick(link) {
@@ -35,7 +24,7 @@ export default class FullPageNav extends Component {
             active: this.state.activeNav === link // active link is the same as the param passed in
         });
 
-        console.log('active path: ', this.state.activeNav , 'link: ', link, this.state.activeNav === link);
+        console.log('check...active path: ', this.state.activeNav , 'link: ', link, this.state.activeNav === link);
 
         return classes;
     }
