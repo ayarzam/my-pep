@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { ReactComponent as Arrow } from '../images/svg/decorations/arrow-doodle.svg';
 
 export default class ContactForm extends Component {
     constructor(props) {
@@ -69,6 +70,7 @@ export default class ContactForm extends Component {
                     <textarea className="form-control" rows="6" value={this.state.message} onChange={this.onMessageChange} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
+                <Arrow className="arrow-doodle"/>
             </form>
         );
     }
