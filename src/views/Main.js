@@ -4,6 +4,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import GithubPortrait from '../images/github-portrait.png';
 import axios from 'axios';
+import works from '../works.json'
 // import SinglePageView from './SinglePageView'
 
 export default class Main extends Component{
@@ -13,15 +14,15 @@ export default class Main extends Component{
       projects: []
     }
   }
-  async componentDidMount(){
-    const response = await axios.get('http://localhost:8080/api/works')
-    console.log(response)
-    const projectData = response.data;
-    console.log(projectData)
-    this.setState({
-      projects: projectData
-    })
-  }
+  // async componentDidMount(){
+  //   const response = await axios.get(works)
+  //   console.log(response)
+  //   const projectData = response.data;
+  //   console.log(projectData)
+  //   this.setState({
+  //     projects: projectData
+  //   })
+  // }
   
   render(){
     return(
@@ -39,7 +40,7 @@ export default class Main extends Component{
             </Card.Body>
           </Card>
             {
-              this.state.projects.map(project =>{
+              works.map(project =>{
                 return(
                   <Card key={project.id}className="project">
             <div className="image-container">
