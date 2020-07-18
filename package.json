@@ -22,6 +22,7 @@
     "react-dom": "^16.13.1",
     "react-html-email": "^3.0.0",
     "react-icons": "^3.10.0",
+    "react-pdf": "^4.1.0",
     "react-protected-mailto": "^1.0.3",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^1.2.2",
