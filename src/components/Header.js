@@ -30,7 +30,7 @@ export default class Header extends Component {
                     </div>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto">
-                            <Link className="m-auto nav-link" to="/" onClick={() => this.setExpanded(false)}>Resume</Link>
+                            <Nav.Link className="m-auto nav-link" href="https://drive.google.com/file/d/1T8CfhEW-WbSvh4YppH8e-2KLSQH_MZBr/view" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
                             <Link className="m-auto nav-link" to="/works" onClick={() => this.setExpanded(false)}>Works</Link>
                             <HashLink className="m-auto nav-link" to="/" hashId="#about" behavior="smooth" label="About" handler={() => this.setExpanded(false)}></HashLink>
                             <div className="btn-background">
