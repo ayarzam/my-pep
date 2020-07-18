@@ -28,7 +28,7 @@ export default class Header extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => this.setExpanded(this.state.expanded ? false : true)}/>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto">
-                            <Nav.Link className="m-auto nav-link" href="https://www.dropbox.com/s/rxa3ea3xrdbfb1x/AyarzaManwaringResume.pdf?dl=0" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
+                            <Nav.Link className="m-auto nav-link" href="https://drive.google.com/file/d/1qf_-rOHmcmqOtdieNUikM01qWg18-bzG/view" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
                             <Link className="m-auto nav-link" to="/works" onClick={() => this.setExpanded(false)}>Works</Link>
                             <HashLink className="m-auto nav-link" to="/" hashId="#about" behavior="smooth" label="About" handler={() => this.setExpanded(false)}></HashLink>
                             <div className="btn-background">
