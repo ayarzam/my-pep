@@ -17,25 +17,29 @@
     "node-sass": "^4.14.1",
     "nodemailer": "^6.4.10",
     "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-html-email": "^3.0.0",
     "react-icons": "^3.10.0",
+    "react-pdf": "^4.1.0",
     "react-protected-mailto": "^1.0.3",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.4.1",
-    "sequelize": "^6.3.3"
+    "sequelize": "^6.3.3",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba"
   },
   "scripts": {
-    "start": "node server/api/mail.js & node server/index.js  & react-scripts start",
+    "start": " node server/api/mail.js & node server/index.js  & react-scripts start",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,5 +58,9 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
+  },
+  "engines": {
+    "node": "14.4.0",
+    "npm": "6.14.6"
   }
 }

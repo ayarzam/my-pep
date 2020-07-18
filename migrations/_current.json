@@ -1,0 +1,85 @@
+{
+    "tables": {
+        "works": {
+            "tableName": "works",
+            "schema": {
+                "id": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "project_title": {
+                    "allowNull": false,
+                    "field": "project_title",
+                    "seqType": "Sequelize.STRING"
+                },
+                "role": {
+                    "allowNull": false,
+                    "field": "role",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "team": {
+                    "field": "team",
+                    "seqType": "Sequelize.STRING"
+                },
+                "description": {
+                    "allowNull": false,
+                    "field": "description",
+                    "seqType": "Sequelize.STRING"
+                },
+                "frontend_technologies": {
+                    "allowNull": true,
+                    "field": "frontend_technologies",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "backend_technologies": {
+                    "allowNull": true,
+                    "field": "backend_technologies",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "testing_suite": {
+                    "allowNull": true,
+                    "field": "testing_suite",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "img": {
+                    "allowNull": false,
+                    "field": "img",
+                    "seqType": "Sequelize.STRING"
+                },
+                "github": {
+                    "allowNull": false,
+                    "field": "github",
+                    "seqType": "Sequelize.STRING"
+                },
+                "deployed": {
+                    "field": "deployed",
+                    "seqType": "Sequelize.STRING"
+                },
+                "duration": {
+                    "allowNull": false,
+                    "field": "duration",
+                    "seqType": "Sequelize.STRING"
+                },
+                "long_description": {
+                    "allowNull": false,
+                    "field": "long_description",
+                    "seqType": "Sequelize.STRING(1234)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
