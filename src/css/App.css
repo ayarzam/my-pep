@@ -132,10 +132,37 @@ header .navbar .logo-text {
   text-decoration: none;
 }
 
+header .navbar .navbar-toggler:focus {
+  outline: none;
+}
+
 /********** Large and Extra large devices **********/
 @media only screen and (min-width: 991.98px) {
   header .navbar .btn-background {
     background: #89c5cc;
+  }
+}
+
+/********** Medium devices (tablets, 768px and below) **********/
+@media only screen and (max-width: 991.98px) {
+  header .navbar {
+    padding: 0;
+  }
+  header .navbar .header-bar {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: .5rem 1rem;
+  }
+  header .navbar .navbar-collapse.show, header .navbar .navbar-collapse.collapsing {
+    background-color: #e5e5e5;
   }
 }
 
@@ -418,7 +445,7 @@ footer .navbar .logo-text {
 #full-page-nav-container ul li a div .nav-circle {
   width: 4px;
   height: 4px;
-  background: #f31f5d;
+  background: #db2721;
   border-radius: 50%;
   -webkit-transition: all 0.15s linear;
   transition: all 0.15s linear;
@@ -429,7 +456,7 @@ footer .navbar .logo-text {
   position: absolute;
   right: 1.5rem;
   font-weight: 700;
-  color: #f31f5d;
+  color: #db2721;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.15s ease-in;
@@ -1191,16 +1218,16 @@ section#contact #contact-container .content #contact-form button {
   border-color: #db2721;
 }
 
-section#contact #contact-container .content .arrow-doodle {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 4rem;
-  margin-left: 10rem;
-  height: 6rem;
-  width: 14rem;
+section#contact #contact-container .content #contact-form .arrow-doodle {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: 5 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3/ span 2;
 }
 
-section#contact #contact-container .content .arrow-doodle path {
+section#contact #contact-container .content #contact-form .arrow-doodle path {
   stroke-dasharray: 251;
   stroke-dashoffset: 251;
   -webkit-animation: dash-anim 4s linear infinite;
@@ -1231,7 +1258,7 @@ section#contact #contact-container .content .arrow-doodle path {
   }
 }
 
-/********** Medium devices (tablets, 768px and up) **********/
+/********** Medium devices (tablets, 768px and below) **********/
 @media only screen and (max-width: 991.98px) {
   section#contact #contact-container .content #contact-form {
     width: 65vw;
@@ -1281,11 +1308,11 @@ section#contact #contact-container .content .arrow-doodle path {
     -ms-grid-row: 4;
     grid-row: 4;
   }
-  section#contact #contact-container .content .arrow-doodle {
-    margin-bottom: 2rem;
-    margin-left: 8.75rem;
-    height: 6rem;
-    width: 14rem;
+  section#contact #contact-container .content #contact-form .arrow-doodle {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/ span 2;
+    width: 170px;
   }
 }
 
