@@ -3,7 +3,6 @@ import axios from "axios";
 import { Nav } from "react-bootstrap";
 import { FaLink } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
-import works from '../works.json'
 
 export default class SinglePageView extends Component {
   constructor() {
@@ -13,23 +12,22 @@ export default class SinglePageView extends Component {
     };
   }
 
-  // async componentDidMount() {
-  //   const projectId = this.props.match.params.id;
-  //   const response = await axios.get(
-  //     `http://localhost:8080/api/works/${projectId}`
-  //   );
-  //   console.log("response", response);
-  //   this.setState({ project: response.data });
-  // }
+  async componentDidMount() {
+    const projectId = this.props.match.params.id;
+    const response = await axios.get(
+      `http://localhost:8080/api/works/${projectId}`
+    );
+    console.log("response", response);
+    this.setState({ project: response.data });
+  }
 
   renderSidebarContent(element, title) {
-    if (works[element]) {
-      console.log(works[element])
+    if (this.state.project[element]) {
       return (
           <div className="sidebar-content-container">
             <div className="sidebar-content-title">{title}</div>
             <ul className="sidebar-content">
-            {works[element].map( (elem, index) => {
+            {this.state.project[element].map( (elem, index) => {
               return(
                 <li key={index}>{elem}</li>
               )
@@ -41,28 +39,23 @@ export default class SinglePageView extends Component {
   }
 
   render() {
-    console.log(works)
-    console.log(works.map(project =>{
-      return project.id
-    }))
-    // console.log(Object.keys(works.id))
     return (
-      <div id="single-project-container" key={works.id}>
+      <div id="single-project-container" key={this.state.project.id}>
         <div className="single-project-header">
           <img
-            src={works.img}
-            alt={works.project_title}/>
+            src={this.state.project.img}
+            alt={this.state.project.project_title}/>
           <div></div>
-          <h1>{works.project_title}</h1>
+          <h1>{this.state.project.project_title}</h1>
         </div>
 
         <div className="single-project-content-container">
           <div className="single-project-content">
             <div className="main-content-container">
-                <div className="main-content-title"><b>Group Members: </b>{works.team}</div>
+                <div className="main-content-title"><b>Group Members: </b>{this.state.project.team}</div>
             </div>
             <div className="main-content-container">
-                <div className="main-content">{works.long_description}</div>
+                <div className="main-content">{this.state.project.long_description}</div>
             </div>
             
           </div>
@@ -70,18 +63,18 @@ export default class SinglePageView extends Component {
             <div className="sidebar-content-container">
               <div className="single-project-blurb">
                 <div className="sidebar-content-title">TL;DR</div>
-                <div>{works.description}</div>
+                <div>{this.state.project.description}</div>
               </div>
               <div className="single-project-homepage-link">
                 <div className="sidebar-content-title">Homepage:</div>
-                <Nav.Link href={works.deployed}>
+                <Nav.Link href={this.state.project.deployed}>
                   <FaLink />
                   <span>yachtshopper.herokuapp.com/</span>
                 </Nav.Link>
               </div>
               <div className="single-project-repository-link">
                 <div className="sidebar-content-title">Repository:</div>
-                <Nav.Link href={works.github}>
+                <Nav.Link href={this.state.project.github}>
                   <FaGitAlt />
                   <span>github.com/yachtworld/yachtshopper</span>
                 </Nav.Link>
@@ -90,7 +83,7 @@ export default class SinglePageView extends Component {
             </div>
             <div className="sidebar-content-container">
               <div className="sidebar-content-title">Duration:</div>
-              <div>{works.duration}</div>
+              <div>{this.state.project.duration}</div>
             </div>
             {this.renderSidebarContent('role', 'Role:')}
             {this.renderSidebarContent('frontend_technologies', 'Frontend Stack:')}

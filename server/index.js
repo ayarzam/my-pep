@@ -52,10 +52,10 @@ const startListening = () => {
   );
 }
 
-const syncDb = () => db.sync();
+// const syncDb = () => db.sync();
 
 async function bootApp() {
-  await syncDb();
+  // await syncDb();
   await createApp();
   await startListening();
 }
