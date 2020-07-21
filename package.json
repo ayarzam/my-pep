@@ -32,14 +32,13 @@
     "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba"
   },
   "scripts": {
-    "dev": " node server/api/mail.js & node server/index.js  & react-scripts start",
-    "start": "serve -s build",
+    "start": " node server/api/mail.js & node server/index.js  & react-scripts start",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "script/deploy",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
