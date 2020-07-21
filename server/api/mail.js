@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const creds = require('./config');
+// const creds = require('./config');
 
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
-  user: creds.USER,
-  pass: creds.PASS
+  user: '***REMOVED***', 
+  pass: '***REMOVED***'
 }
 }
 
