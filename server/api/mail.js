@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-// const creds = require('./config');
+const creds = require('./config');
 
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
-  user: '***REMOVED***', 
-  pass: '***REMOVED***'
+  user: creds.USER, 
+  pass: creds.PASS
 }
 }
 
@@ -31,7 +31,7 @@ router.post('/send', (req, res, next) => {
 
   const mail = {
     from: name,
-    to: transport.user,  // Change to email address that you want to receive messages on
+    to: creds.USER,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
@@ -47,7 +47,7 @@ router.post('/send', (req, res, next) => {
       })
   
       transporter.sendMail({
-        from: transport.user,
+        from: creds.USER,
         to: email,
         subject: "Submission was successful",
         text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
@@ -67,4 +67,4 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen(3002)
+app.listen(process.env.PORT || 3002)
