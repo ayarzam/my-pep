@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
+const socketio = require('socket.io')
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -49,8 +50,11 @@ const createApp = () => {
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
   const server = app.listen(PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`)
-  );
+    console.log(`Mixing it up on port ${PORT}`))
+
+  // set up our socket control center
+  const io = socketio(server)
+  require('./socket')(io)
 }
 
 const syncDb = () => db.sync();
