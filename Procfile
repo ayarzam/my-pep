@@ -1,1 +1,0 @@
-web: node server/api/mail.js & node server/index.js  & react-scripts start
