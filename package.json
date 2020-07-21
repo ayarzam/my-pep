@@ -3,6 +3,7 @@
   "name": "my-pep",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -32,13 +33,13 @@
     "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba"
   },
   "scripts": {
-    "start": " node server/api/mail.js & node server/index.js  & react-scripts start",
+    "start": "react-scripts start",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "script/deploy",
+    "deploy": "gh-pages -d build",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
