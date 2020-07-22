@@ -1,2 +1,4 @@
-process.env.USER= 'ayarza.manwaring@gmail.com';
-process.env.PASS= 'zlfrqkfayjymihuy';
+
+  process.env.USERNAME='ayarza.manwaring@gmail.com';
+  process.env.PASSWORD='dbgcjmgzqvbmyqlf'
+
