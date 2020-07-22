@@ -1,2 +1,4 @@
-process.env.USER= '***REMOVED***';
-process.env.PASS= 'zlfrqkfayjymihuy';
+
+  process.env.USERNAME='***REMOVED***';
+  process.env.PASSWORD='dbgcjmgzqvbmyqlf'
+
