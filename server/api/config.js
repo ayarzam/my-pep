@@ -1,3 +1,4 @@
-
-  process.env.USER= '***REMOVED***';
-  process.env.PASS= '***REMOVED***'
+module.exports = {
+  USER: '***REMOVED***', 
+  PASS: '***REMOVED***'
+}
