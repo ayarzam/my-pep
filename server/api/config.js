@@ -1,4 +1,3 @@
-module.exports = {
-  USER: 'ayarza.manwaring@gmail.com', 
-  PASS: 'tctaozpuxdrdgtzo'
-}
+
+  process.env.USER= 'ayarza.manwaring@gmail.com';
+  process.env.PASS= 'tctaozpuxdrdgtzo'
