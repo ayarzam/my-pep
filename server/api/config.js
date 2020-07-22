@@ -1,3 +1,2 @@
-
-  process.env.USER= '***REMOVED***';
-  process.env.PASS= '***REMOVED***';
+process.env.USER= '***REMOVED***';
+process.env.PASS= 'zlfrqkfayjymihuy';
