@@ -31,16 +31,19 @@
     "react-scripts": "3.4.1",
     "sequelize": "^6.3.3",
     "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
+    "serve": "^11.3.2",
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "node server/index.js & react-scripts start ",
+    "dev": "node server/index.js & react-scripts start ",
+    "start": "serve -s build",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "heroku-postbuild": "npm run build",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
