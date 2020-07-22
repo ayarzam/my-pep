@@ -5,12 +5,12 @@ const db = require('./db/_db');
 const socketio = require('socket.io')
 const PORT = process.env.PORT || 8080;
 const app = express();
-require('dotenv').config()
+// require('dotenv').config()
 
 
 module.exports = app;
 
-if (process.env.NODE_ENV !== 'production') require('./api/config')
+// if (process.env.NODE_ENV !== 'production') require('./api/config')
 
 const createApp = () => {
   // logging middleware
