@@ -1,4 +1,4 @@
-
-  process.env.USERNAME='***REMOVED***';
-  process.env.PASSWORD='dbgcjmgzqvbmyqlf'
-
+module.exports = {
+  USER: '***REMOVED***', 
+  PASS: 'dbgcjmgzqvbmyqlf'
+}
