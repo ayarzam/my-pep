@@ -1,4 +1,4 @@
-
-  process.env.USERNAME='ayarza.manwaring@gmail.com';
-  process.env.PASSWORD='dbgcjmgzqvbmyqlf'
-
+module.exports = {
+  USER: 'ayarza.manwaring@gmail.com', 
+  PASS: 'dbgcjmgzqvbmyqlf'
+}
