@@ -37,8 +37,8 @@ const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
-  user: USER, 
-  pass: PASS
+  user: process.env.USER, 
+  pass: process.env.PASS
 }
 }
 
@@ -60,7 +60,7 @@ router.post('/send', (req, res, next) => {
 
   const mail = {
     from: name,
-    to: USER,  // Change to email address that you want to receive messages on
+    to: process.env.USER,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
@@ -76,7 +76,7 @@ router.post('/send', (req, res, next) => {
       })
   
       transporter.sendMail({
-        from: USER,
+        from: process.env.USER,
         to: email,
         subject: "Submission was successful",
         text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
