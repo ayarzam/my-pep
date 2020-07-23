@@ -3,7 +3,7 @@ const router = express.Router();
 const cors = require('cors');
 const { Works } = require('../db/models/works')
 const morgan = require('morgan');
-const creds = require('./config');
+// const creds = require('./config');
 const nodemailer = require('nodemailer');
 
 module.exports = router;
