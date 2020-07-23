@@ -14,9 +14,9 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "qewokqmafwhpsi",
-    "password":"83c56c603c58423afc7363a72c0fadc3dec1a0b2c83557bb3ef00ae8e77b64b5",
-    "database": "d6rq70ovn76n2c",
+    "username": "ayarzam",
+    "password":"password",
+    "database": "my-pep",
     "host": "localhost",
     "dialect": "postgres",
     "operatorsAliases": false,
