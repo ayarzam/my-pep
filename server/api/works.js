@@ -8,14 +8,6 @@ const nodemailer = require('nodemailer');
 
 module.exports = router;
 
-if (process.env.NODE_ENV !== 'production') {
-  const dotenv = require('dotenv');
-  const result = dotenv.config();
-  if (result.error) {
-    throw(result.error);
-  }
-};
-
 router.use(morgan('dev'));
 
 router.use(cors());
@@ -41,6 +33,14 @@ router.get('/works/:id', async (req, res, next) => {
     next(error)
   }
 })
+
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  const result = dotenv.config();
+  if (result.error) {
+    throw(result.error);
+  }
+};
 
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
