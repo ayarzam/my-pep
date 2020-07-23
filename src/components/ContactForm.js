@@ -31,8 +31,9 @@ export default class ContactForm extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+        const url = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080';
         try {
-            const res = await axios.post("/api/send", this.state)
+            const res = await axios.post(`${url}/api/send`, this.state)
             console.log("state before reset", this.state)
             if (res.data.status === 'success') {
                 alert("Message Sent.");
