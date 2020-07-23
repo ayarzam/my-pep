@@ -5,7 +5,16 @@ const { Works } = require('../db/models/works')
 const morgan = require('morgan');
 const creds = require('./config');
 const nodemailer = require('nodemailer');
+
 module.exports = router;
+
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  const result = dotenv.config();
+  if (result.error) {
+    throw(result.error);
+  }
+};
 
 router.use(morgan('dev'));
 
@@ -37,8 +46,8 @@ const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
-    user: creds.USER, 
-    pass: creds.PASS
+    user: process.env.NM_USERNAME, 
+    pass: process.env.NM_PASSWORD
   }
 }
 
@@ -53,7 +62,7 @@ if (error) {
 });
 
 router.post('/send', (req, res, next) => {
-  console.log(creds.USER)
+  console.log(process.env.NM_USERNAME)
   const name = req.body.name
   const email = req.body.email
   const message = req.body.message
@@ -61,7 +70,7 @@ router.post('/send', (req, res, next) => {
 
   const mail = {
     from: name,
-    to: creds.USER,  // Change to email address that you want to receive messages on
+    to: process.env.NM_USERNAME,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
@@ -77,7 +86,7 @@ router.post('/send', (req, res, next) => {
       })
   
       transporter.sendMail({
-        from: creds.USER,
+        from: process.env.NM_USERNAME,
         to: email,
         subject: "Submission was successful",
         text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`

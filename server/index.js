@@ -7,10 +7,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 // require('dotenv').config()
 
-
 module.exports = app;
-
-if (process.env.NODE_ENV === 'production') require('dotenv').config();
 
 const createApp = () => {
   // logging middleware
