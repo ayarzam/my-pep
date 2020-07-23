@@ -32,7 +32,7 @@ export default class ContactForm extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         try {
-            const res = await axios.post("http://localhost:8080/api/send", this.state)
+            const res = await axios.post("/api/send", this.state)
             console.log("state before reset", this.state)
             if (res.data.status === 'success') {
                 alert("Message Sent.");
