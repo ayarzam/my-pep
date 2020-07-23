@@ -53,6 +53,7 @@ if (error) {
 });
 
 router.post('/send', (req, res, next) => {
+  console.log(creds.USER)
   const name = req.body.name
   const email = req.body.email
   const message = req.body.message
