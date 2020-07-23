@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": null,
-    "database": "mypep_development",
+    "database": "mypep-development",
     "host": "localhost",
     "operatorsAliases": false,
     "dialect": "postgres"
