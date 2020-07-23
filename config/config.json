@@ -14,11 +14,12 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": null,
-    "database": "database_production",
+    "username": "qewokqmafwhpsi",
+    "password":"83c56c603c58423afc7363a72c0fadc3dec1a0b2c83557bb3ef00ae8e77b64b5",
+    "database": "d6rq70ovn76n2c",
     "host": "localhost",
     "dialect": "postgres",
+    "operatorsAliases": false,
     "use_env_variable": "DATABASE_URL"
   }
 }
