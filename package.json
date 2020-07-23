@@ -37,7 +37,7 @@
   },
   "scripts": {
     "dev": "node server/index.js & react-scripts start ",
-    "start": "node server/index.js & serve -s build",
+    "start": "serve -s build",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
