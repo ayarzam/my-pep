@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": null,
-    "database": "my-pep_development",
+    "database": "mypep_development",
     "host": "localhost",
     "operatorsAliases": false,
     "dialect": "postgres"
@@ -16,9 +16,9 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "ayarzam",
-    "password":"password",
-    "database": "my-pep_production",
+    "username": "postgres",
+    "password": null,
+    "database": "mypep-production",
     "host": "localhost",
     "dialect": "postgres",
     "operatorsAliases": false,
