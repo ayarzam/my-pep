@@ -14,7 +14,7 @@ router.use(cors());
 
 router.get('/works', async(req, res, next) => {
   try {
-    const allWorks = await db.Works.findAll(req.params)
+    const allWorks = await Works.findAll(req.params)
     res.json(allWorks)
   } catch (error) {
     console.log(error)
@@ -26,7 +26,7 @@ router.get('/works/:id', async (req, res, next) => {
   try {
     console.log('in the try')
     console.log('params', req.params.id)
-    const singleWork = await db.Works.findByPk(req.params.id)
+    const singleWork = await Works.findByPk(req.params.id)
     res.json(singleWork)
   } catch (error) {
     console.log(error)
