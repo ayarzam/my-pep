@@ -2,10 +2,9 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
-const socketio = require('socket.io')
+const socketio = require('socket.io');
 const PORT = process.env.PORT || 8080;
 const app = express();
-// require('dotenv').config()
 
 module.exports = app;
 
