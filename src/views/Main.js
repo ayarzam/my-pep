@@ -15,7 +15,7 @@ export default class Main extends Component{
   }
   async componentDidMount(){
     const url = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080';
-    const response = await axios.get(`/api/works`)
+    const response = await axios.get(`${url}/api/works`)
     console.log(response)
     const projectData = response.data;
     console.log(projectData)
