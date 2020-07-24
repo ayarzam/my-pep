@@ -14,8 +14,8 @@ export default class Main extends Component{
     }
   }
   async componentDidMount(){
-    const url = process.env.NODE_ENV === 'production' ? 'postgres://qewokqmafwhpsi:83c56c603c58423afc7363a72c0fadc3dec1a0b2c83557bb3ef00ae8e77b64b5@ec2-54-165-36-134.compute-1.amazonaws.com:5432/d6rq70ovn76n2c' : process.env.REACT_APP_API_URL;
-    const response = await axios.get(`${url}/api/works`)
+    // const url = process.env.NODE_ENV === 'production' ? 'postgres://qewokqmafwhpsi:83c56c603c58423afc7363a72c0fadc3dec1a0b2c83557bb3ef00ae8e77b64b5@ec2-54-165-36-134.compute-1.amazonaws.com:5432/d6rq70ovn76n2c' : process.env.REACT_APP_API_URL;
+    const response = await axios.get(`/api/works`)
     console.log(response)
     const projectData = response.data;
     console.log(projectData)
