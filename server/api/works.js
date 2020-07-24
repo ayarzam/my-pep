@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
-const Works  = require('../db/models/works')
+const{ Works } = require('../db/models/works')
 const morgan = require('morgan');
 const db = require('../db/_db')
 // const creds = require('./config');
