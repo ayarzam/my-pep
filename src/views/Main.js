@@ -14,7 +14,7 @@ export default class Main extends Component{
     }
   }
   async componentDidMount(){
-    const url = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080';
+    const url = process.env.NODE_ENV === 'production' ? process.env.DATABASE_URL : process.env.REACT_APP_API_URL;
     const response = await axios.get(`${url}/api/works`)
     console.log(response)
     const projectData = response.data;

@@ -35,13 +35,13 @@ router.get('/works/:id', async (req, res, next) => {
   }
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  const dotenv = require('dotenv');
-  const result = dotenv.config();
-  if (result.error) {
-    throw(result.error);
-  }
-};
+// if (process.env.NODE_ENV !== 'production') {
+//   const dotenv = require('dotenv');
+//   const result = dotenv.config();
+//   if (result.error) {
+//     throw(result.error);
+//   }
+// };
 
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
