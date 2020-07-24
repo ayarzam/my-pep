@@ -9,6 +9,14 @@ const app = express();
 module.exports = app;
 
 const createApp = () => {
+  // if (process.env.NODE_ENV !== 'production') {
+  //   const dotenv = require('dotenv');
+  //   const result = dotenv.config();
+  //   if (result.error) {
+  //     throw(result.error);
+  //   }
+  // };
+
   // logging middleware
   app.use(morgan('dev'));
 
