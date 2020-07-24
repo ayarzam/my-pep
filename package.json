@@ -38,14 +38,13 @@
   },
   "scripts": {
     "dev": "node server/index.js & react-scripts start ",
-    "start": "serve -s build",
+    "start": "node server/index.js & serve -s build",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "heroku-postbuild": "npm run build",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
