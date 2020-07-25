@@ -17,7 +17,7 @@ export default class ProjectsGallery extends Component{
     const projectData = response.data;
     this.setState({
       projects: projectData
-    })
+    });
   }
   
   render(){
