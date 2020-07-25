@@ -37,7 +37,8 @@ router.get('/works/:id', async (req, res, next) => {
 
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
-  port: 587,
+  port: 465,
+  secure: true,
   auth: {
     type: 'OAuth2',
     user: process.env.NM_USERNAME, 
