@@ -48,6 +48,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "heroku-postbuild": "npm install",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
