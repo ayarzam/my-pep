@@ -3,22 +3,28 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 8080;
+const PORT = 8080;
+const cors = require('cors');
 const app = express();
 
 module.exports = app;
 
 const createApp = () => {
-  // if (process.env.NODE_ENV !== 'production') {
-  //   const dotenv = require('dotenv');
-  //   const result = dotenv.config();
-  //   if (result.error) {
-  //     throw(result.error);
-  //   }
-  // };
+  // use .env file if in development mode
+  if (process.env.NODE_ENV !== 'production') {
+    const dotenv = require('dotenv');
+    const result = dotenv.config();
+    if (result.error) {
+      throw(result.error);
+    }
+  };
 
   // logging middleware
   app.use(morgan('dev'));
+
+  // Cross-Origin requests allowed
+  app.use(cors());
 
   // body parsing middleware
   app.use(express.json());
@@ -29,7 +35,9 @@ const createApp = () => {
 
   // static file-serving middleware
   // app.use(express.static(path.join(__dirname, '..', 'public')));
-  app.use(express.static(__dirname + '/client/build'));
+  if (process.env.NODE_ENV === "production") {
+    app.use(express.static(__dirname + '/build'));
+  }
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
@@ -43,7 +51,7 @@ const createApp = () => {
   });
 
   // sends index.html
-  app.use('*', (req, res) => {
+  app.use('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public/index.html'))
   });
 
@@ -58,7 +66,7 @@ const createApp = () => {
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
   const server = app.listen(PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`))
+    console.log(`Mixing it up on port ${PORT}`, process.env.NODE_ENV, process.env.NODE_ENV === 'development', process.env.PORT))
 
   // set up our socket control center
   const io = socketio(server)
