@@ -39,7 +39,7 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "npm run server",
+    "start": "concurrently \"npm run server\" \"react-scripts start\"",
     "dev": "npm run server",
     "server": "node server/index.js",
     "seed": "node seed.js",
@@ -48,7 +48,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "heroku-postbuild": "concurrently \"npm install\" \"npm run build\"",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {

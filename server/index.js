@@ -19,9 +19,9 @@ const createApp = () => {
       throw(result.error);
     }
   }
-  else {
-    PORT = process.env.PORT;
-  }
+  // else {
+  //   PORT = process.env.PORT;
+  // }
 
   // logging middleware
   app.use(morgan('dev'));
