@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
 // const PORT = process.env.PORT || 8080;
-let PORT = 8080;
+const PORT = 8080;
 const cors = require('cors');
 const app = express();
 
@@ -19,9 +19,6 @@ const createApp = () => {
       throw(result.error);
     }
   }
-  // else {
-  //   PORT = process.env.PORT;
-  // }
 
   // logging middleware
   app.use(morgan('dev'));

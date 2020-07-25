@@ -60,10 +60,18 @@ const transport = {
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN,
     accessToken: myAccessToken,
+    expires: 3599
   }
 }
 
-var transporter = nodemailer.createTransport(transport)
+var transporter = nodemailer.createTransport(transport);
+
+transporter.on('token', token => {
+  console.log('A new access token was generated');
+  console.log('User: %s', token.user);
+  console.log('Access Token: %s', token.accessToken);
+  console.log('Expires: %s', new Date(token.expires));
+});
 
 transporter.verify((error, success) => {
 if (error) {
