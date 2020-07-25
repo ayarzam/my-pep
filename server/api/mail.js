@@ -1,70 +1,90 @@
-// const express = require('express');
-// const router = express.Router();
-// const nodemailer = require('nodemailer');
-// const cors = require('cors');
-// const creds = require('./config');
+const express = require('express');
+const router = express.Router();
+const morgan = require('morgan');
+const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
 
-// const transport = {
-//   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
-//   port: 587,
-//   auth: {
-//   user: creds.USER, 
-//   pass: creds.PASS
-// }
-// }
+module.exports = router;
 
-// var transporter = nodemailer.createTransport(transport)
+router.use(morgan('dev'));
 
-// transporter.verify((error, success) => {
-// if (error) {
-//   console.log(error);
-// } else {
-//   console.log('Server is ready to take messages');
-// }
-// });
+const myOAuth2Client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.YOUR_REDIRECT_URL
+  )
 
-// router.post('/send', (req, res, next) => {
-//   const name = req.body.name
-//   const email = req.body.email
-//   const message = req.body.message
-//   const content = `name: ${name} \n email: ${email} \n message: ${message} `
+myOAuth2Client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+    });
 
-//   const mail = {
-//     from: name,
-//     to: creds.USER,  // Change to email address that you want to receive messages on
-//     subject: 'New Message from Contact Form',
-//     text: content
-//   }
+const myAccessToken =  myOAuth2Client.getAccessToken();
 
-//   transporter.sendMail(mail, (err, data) => {
-//     if (err) {
-//       res.json({
-//         status: 'fail'
-//       })
-//     } else {
-//       res.json({
-//        status: 'success'
-//       })
+const transport = {
+  host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
+  port: 465,
+  secure: true,
+  auth: {
+    type: 'OAuth2',
+    user: process.env.NM_USERNAME, 
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN,
+    accessToken: myAccessToken
+  },
+  tls: {
+    // do not fail on invalid certs/self-signed certs
+    rejectUnauthorized: false
+  }
+}
+
+var transporter = nodemailer.createTransport(transport);
+
+transporter.verify((error, success) => {
+if (error) {
+  console.log('node mailer transporter error: ',error);
+} else {
+  console.log('Server is ready to take messages');
+}
+});
+
+router.post('/send', (req, res, next) => {
+  console.log(process.env.NM_USERNAME);
+  const name = req.body.name
+  const email = req.body.email
+  const message = req.body.message
+  const content = `name: ${name} \n email: ${email} \n message: ${message} `
+
+  const mail = {
+    from: name,
+    to: process.env.NM_USERNAME,  // Change to email address that you want to receive messages on
+    subject: 'New Message from Contact Form',
+    text: content
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        status: 'fail'
+      })
+    } else {
+      res.json({
+       status: 'success'
+      })
   
-//       transporter.sendMail({
-//         from: creds.USER,
-//         to: email,
-//         subject: "Submission was successful",
-//         text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
-//       }, function(error, info){
-//         if(error) {
-//           console.log(error);
-//         } else{
-//           console.log('Message sent: ' + info.response);
-//         }
-//       });
-//     }
-//     })
-// })
+      transporter.sendMail({
+        from: process.env.NM_USERNAME,
+        to: email,
+        subject: "Submission was successful",
+        text: `Thank you for contacting me! I will get back to you as soon as possible.\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
+      }, function(error, info){
+        if(error) {
+          console.log(error);
+        } else{
+          console.log('Message sent: ' + info.response);
+        }
+      });
+    }
+    })
+})
 
-
-// const app = express()
-// app.use(cors())
-// app.use(express.json())
-// app.use('/', router)
-// app.listen(process.env.PORT || 8000)

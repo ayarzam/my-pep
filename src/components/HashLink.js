@@ -30,7 +30,6 @@ export default class HashLink extends Component {
   }
 
   checkActive() {
-    console.log('has active class?: ', this.state.className, 'hash: ', this.state.hashId);
     if (this.state.className.match(/active/)) {
       setTimeout(() => {
         this.scrollToHash();
@@ -44,11 +43,8 @@ export default class HashLink extends Component {
     let hashId = this.state.hashId;
     let behavior = this.state.behavior || "auto";
 
-    console.log('scrolling...hashId: ',this.state.hashId,'behavior: ',this.state.behavior);
-
     if (hashId !== null && hashId !== undefined && hashId.trim().length > 0) {
       let targetDiv = document.getElementById(hashId.replace(/#/, ''));
-      console.log(targetDiv);
       targetDiv.scrollIntoView({ behavior: behavior });
     } else {
       window.scrollTo({ top: 0, behavior: behavior })
@@ -57,13 +53,6 @@ export default class HashLink extends Component {
 
   // Handle click on link
   handleClick() {
-    console.log('click...current path: ', window.location.pathname, "target path: ", process.env.PUBLIC_URL + this.state.targetLink)
-    
-    // if target path is not the same as the current path, redirect user
-    if (window.location.pathname !== process.env.PUBLIC_URL + this.state.targetLink) {  
-      console.log('redirected: ', process.env.PUBLIC_URL + this.state.targetLink + (this.state.hashId ? this.state.hashId : ''));
-    }
-    
     // check if the parent component passed in a function to be executed
     if (this.state.handler) {
       this.state.handler();
@@ -77,7 +66,6 @@ export default class HashLink extends Component {
   render() {
     let hashId = this.state.hashId ? this.state.hashId : '';
     const link = this.state.targetLink + hashId;
-    console.log('render...Link to: ', link, 'className: ', this.state.className);
 
     return (
       <Link className={this.state.className} to={link} onClick={this.handleClick}>{this.state.label}

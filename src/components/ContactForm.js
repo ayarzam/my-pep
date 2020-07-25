@@ -33,16 +33,14 @@ export default class ContactForm extends Component {
         event.preventDefault();
         try {
             const res = await axios.post('/api/send', this.state)
-            console.log("state before reset", this.state)
             if (res.data.status === 'success') {
                 alert("Message Sent.");
                 this.resetForm()
             } else if (res.data.status === 'fail') {
                 alert("Message failed to send.")
             }
-            console.log("state after reset", this.state)
         } catch (error) {
-            console.log(error)
+            console.error("Contact form handleSubmit: ", error)
         }
     }
 

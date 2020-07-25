@@ -17,7 +17,6 @@ export default class SinglePageView extends Component {
     const response = await axios.get(
       `/api/works/${projectId}`
     );
-    console.log("response", response);
     this.setState({ project: response.data });
   }
 
