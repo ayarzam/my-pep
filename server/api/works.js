@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const db = require('../db/_db')
 // const creds = require('./config');
 const nodemailer = require('nodemailer');
+const {google} = require('googleapis')
 
 module.exports = router;
 
@@ -35,6 +36,18 @@ router.get('/works/:id', async (req, res, next) => {
   }
 })
 
+const myOAuth2Client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  "https://developers.google.com/oauthplayground"
+  )
+
+myOAuth2Client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+    });
+
+ const myAccessToken =  myOAuth2Client.getAccessToken()
+
 const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 465,
@@ -45,7 +58,7 @@ const transport = {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN,
-    accessToken: process.env.ACCESS_TOKEN,
+    accessToken: myAccessToken,
   }
 }
 
