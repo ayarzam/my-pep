@@ -20,7 +20,6 @@ export default class FullPageNav extends Component {
         let href = window.location.href;
 
         let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
-        console.log('active nav path: ',activePath);
 
         return activePath === '' ? '/' : activePath;
     }
@@ -36,8 +35,6 @@ export default class FullPageNav extends Component {
             'nav-link': true, // always add this class
             active: this.state.activeNav === link // active link is the same as the param passed in
         });
-
-        console.log('check...active path: ', this.state.activeNav , 'link: ', link, this.state.activeNav === link);
 
         return classes;
     }

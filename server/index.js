@@ -32,6 +32,7 @@ const createApp = () => {
 
   // auth and api routes
   app.use('/api', require('./api/works'));
+  app.use('/api', require('./api/mail'));
 
   // static file-serving middleware
   // app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -65,8 +66,7 @@ const createApp = () => {
 
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
-  const server = app.listen(PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`, process.env.NODE_ENV, 'development: ' + process.env.NODE_ENV === 'development', 'env port :' + process.env.PORT, 'username: ' + process.env.NM_USERNAME, 'ID: ' + process.env.CLIENT_ID))
+  const server = app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`))
 
   // set up our socket control center
   const io = socketio(server)

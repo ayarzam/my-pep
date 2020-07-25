@@ -13,7 +13,6 @@ export default class Header extends Component {
     }
 
     setExpanded(val) {
-        console.log('expanded',this.state.expanded,'new val: ',val)
         this.setState({ expanded: val})
     }
 
