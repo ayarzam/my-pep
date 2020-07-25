@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const db = require('../db/_db')
 // const creds = require('./config');
 const nodemailer = require('nodemailer');
-const { google } = require('googleapis')
+const {google} = require('googleapis')
 
 module.exports = router;
 
