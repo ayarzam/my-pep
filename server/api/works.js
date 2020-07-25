@@ -39,7 +39,7 @@ router.get('/works/:id', async (req, res, next) => {
 const myOAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
-  "https://developers.google.com/oauthplayground"
+  process.env.YOUR_REDIRECT_URL
   )
 
 myOAuth2Client.setCredentials({
