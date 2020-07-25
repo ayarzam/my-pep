@@ -39,8 +39,12 @@ const transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
+    type: 'OAuth2',
     user: process.env.NM_USERNAME, 
-    pass: process.env.NM_PASSWORD
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN,
+    accessToken: process.env.ACCESS_TOKEN,
   }
 }
 
