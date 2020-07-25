@@ -39,7 +39,7 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "start": "npm run server",
     "dev": "npm run server",
     "server": "node server/index.js",
     "seed": "node seed.js",
