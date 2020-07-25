@@ -40,7 +40,6 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"react-scripts start\"",
-    "dev": "npm run server",
     "server": "node server/index.js",
     "seed": "node seed.js",
     "build": "react-scripts build",
