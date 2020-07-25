@@ -7,6 +7,7 @@ const db = require('../db/_db')
 // const creds = require('./config');
 const nodemailer = require('nodemailer');
 const {google} = require('googleapis')
+const OAuth2 = google.auth.OAuth2;
 
 module.exports = router;
 
@@ -19,7 +20,7 @@ router.get('/works', async(req, res, next) => {
     const allWorks = await Works.findAll(req.params)
     res.json(allWorks)
   } catch (error) {
-    console.log(error)
+    console.log('all works backend error: ', error)
     next(error)
   }
 })
@@ -31,12 +32,12 @@ router.get('/works/:id', async (req, res, next) => {
     const singleWork = await Works.findByPk(req.params.id)
     res.json(singleWork)
   } catch (error) {
-    console.log(error)
+    console.log('single works backend error: ', error)
     next(error)
   }
 })
 
-const myOAuth2Client = new google.auth.OAuth2(
+const myOAuth2Client = new OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
   process.env.YOUR_REDIRECT_URL
@@ -66,7 +67,7 @@ var transporter = nodemailer.createTransport(transport)
 
 transporter.verify((error, success) => {
 if (error) {
-  console.log(error);
+  console.log('node mailer transporter error: ',error);
 } else {
   console.log('Server is ready to take messages');
 }
