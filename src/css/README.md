@@ -16,15 +16,8 @@ css (stylesheets)/
     |    |-- partials/  
     |    |    | _base.scss  
     |    |    |-- home/  
-    |    |    `-- navigation/  
-    |    |  
-    |    `-- _main.scss
-    |  
-    |-- portfolio/         # Portfolio sub-project  
-    |    |-- modules/  
-    |    |-- partials/  
-    |    |    |-- projects/  
-    |    |    `-- _base.scss  
+    |    |    |-- navigation/  
+    |    |    `-- projects/  
     |    |  
     |    `-- _main.scss
     |  
@@ -42,7 +35,6 @@ css (stylesheets)/
     |    ...  
     |  
     |-- site.scss           # Primary stylesheets for each project  
-    |-- portfolio.scss  
     `-- blog.scss  
 ```
 
