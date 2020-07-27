@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-// const PORT = process.env.PORT || 8080;
+const sslRedirect = require('heroku-ssl-redirect');
 const PORT = 8080;
 const cors = require('cors');
 const app = express();
@@ -19,6 +19,9 @@ const createApp = () => {
       throw(result.error);
     }
   }
+
+  // enable ssl redirect
+  app.use(sslRedirect());
 
   // logging middleware
   app.use(morgan('dev'));

@@ -118,27 +118,39 @@ section div .card {
   }
 }
 
-header .navbar .logo {
+header .navbar .header-bar .navbar-toggler:focus {
+  outline: none;
+}
+
+header .navbar .header-bar .navbar-brand .logo {
   margin-right: 0.5rem;
 }
 
-header .navbar .btn-background {
+header .navbar .header-bar .navbar-brand .logo-text {
+  text-decoration: none;
+}
+
+header .navbar #responsive-navbar-nav .navbar-nav .nav-link:focus {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+header .navbar #responsive-navbar-nav .navbar-nav .non-active.nav-link.active {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+header .navbar #responsive-navbar-nav .navbar-nav .nav-link.active {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+header .navbar #responsive-navbar-nav .navbar-nav .btn-background {
   background: none;
   border-radius: 20px;
   text-align: center;
 }
 
-header .navbar .logo-text {
-  text-decoration: none;
-}
-
-header .navbar .navbar-toggler:focus {
-  outline: none;
-}
-
 /********** Large and Extra large devices **********/
 @media only screen and (min-width: 991.98px) {
-  header .navbar .btn-background {
+  header .navbar #responsive-navbar-nav .navbar-nav .btn-background {
     background: #89c5cc;
   }
 }
@@ -1377,7 +1389,7 @@ section#contact #contact-container .content #contact-form .arrow-doodle path {
 #single-project-container .single-project-header {
   background: linear-gradient(132.35deg, #db2721 31.67%, rgba(196, 196, 196, 0) 100%);
   width: 100vw;
-  height: 55vh;
+  height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1475,11 +1487,7 @@ section#contact #contact-container .content #contact-form .arrow-doodle path {
   padding-bottom: 1rem;
 }
 
-#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-homepage-link {
-  padding-bottom: 1rem;
-}
-
-#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-homepage-link a, #single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-repository-link a {
+#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-link a {
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1491,15 +1499,19 @@ section#contact #contact-container .content #contact-form .arrow-doodle path {
   color: #212529;
 }
 
-#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-homepage-link a svg, #single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-repository-link a svg {
+#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-link a svg {
   height: 20px;
   width: 20px;
   margin-right: 0.5rem;
   fill: #212529;
 }
 
-#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-homepage-link a:hover span, #single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-repository-link a:hover span {
+#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-link a:hover span {
   text-decoration: underline;
+}
+
+#single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container .single-project-link:nth-child(2) {
+  padding-bottom: 1rem;
 }
 
 #single-project-container .single-project-content-container .single-project-sidebar .sidebar-content-container ul.sidebar-content {

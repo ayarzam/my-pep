@@ -20,6 +20,20 @@ export default class SinglePageView extends Component {
     this.setState({ project: response.data });
   }
 
+  renderSidebarLinks(element, title) {
+    if (this.state.project[element]) {
+      return (
+        <div className="single-project-link">
+          <div className="sidebar-content-title">{title}</div>
+          <Nav.Link href={this.state.project[element]} target="_blank">
+            <FaLink />
+            <span>{this.state.project[element]}</span>
+          </Nav.Link>
+        </div>
+      )
+    }
+  }
+
   renderSidebarContent(element, title) {
     if (this.state.project[element]) {
       return (
@@ -64,20 +78,8 @@ export default class SinglePageView extends Component {
                 <div className="sidebar-content-title">TL;DR</div>
                 <div>{this.state.project.description}</div>
               </div>
-              <div className="single-project-homepage-link">
-                <div className="sidebar-content-title">Homepage:</div>
-                <Nav.Link href={this.state.project.deployed}>
-                  <FaLink />
-                  <span>yachtshopper.herokuapp.com/</span>
-                </Nav.Link>
-              </div>
-              <div className="single-project-repository-link">
-                <div className="sidebar-content-title">Repository:</div>
-                <Nav.Link href={this.state.project.github}>
-                  <FaGitAlt />
-                  <span>github.com/yachtworld/yachtshopper</span>
-                </Nav.Link>
-              </div>
+              {this.renderSidebarLinks('deployed', 'Homepage:')}
+              {this.renderSidebarLinks('github', 'Repository:')}
               <hr></hr>
             </div>
             <div className="sidebar-content-container">
