@@ -27,6 +27,12 @@
     <title>Ayarza Manwaring Portfolio</title>
   </head>
   <body>
+    <script>
+      var host = "www.ayarzamanwaring.com";
+      if ((host === window.location.host) && (window.location.protocol !== "https:")){
+        window.location.protocol = "https";
+      }
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
