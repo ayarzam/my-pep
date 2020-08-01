@@ -24,9 +24,15 @@ const createApp = () => {
   if (process.env.NODE_ENV === 'production') {
     console.log('possible http to https redirect');
     app.use((req, res, next) => {
-      console.log('req',req,'res',res);
-      if (req.headers['x-forwarded-proto'] !== 'https') {
-        res.redirect('https://' + req.headers.host + req.url)
+      console.log('request',req.url,req.header);
+
+      const rootDomain = req.url;
+      const protocol = (req.headers['x-forwarded-proto'] || '').toLowerCase();
+      const host = req.headers.host;
+      const fullUrl = `https://${host}${rootDomain}`;
+
+      if (protocol !== 'https') {
+        res.redirect(fullUrl);
       }
       else {
          next()
