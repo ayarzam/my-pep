@@ -6,6 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.scss';
 
+if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
+  window.location.protocol = "https:";
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

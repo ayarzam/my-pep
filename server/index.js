@@ -3,7 +3,6 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-const sslRedirect = require('heroku-ssl-redirect');
 const PORT = 8080;
 const cors = require('cors');
 const app = express();
@@ -20,15 +19,26 @@ const createApp = () => {
     }
   }
 
-  //Redirect http to https
-  if (process.env.NODE_ENV === 'production') {
-      app.use((req, res, next) => {
-        if (req.headers['x-forwarded-proto'] !== 'https')
-          res.redirect('https://' + req.headers.host + req.url)
-        else
-          next()
-      })
-    }
+  // // Redirect http to https (server requests)
+  // if (process.env.NODE_ENV === 'production') {
+  //   console.log('possible http to https redirect');
+  //   app.use((req, res, next) => {
+
+  //     const rootDomain = req.url;
+  //     const protocol = (req.headers['x-forwarded-proto'] || '').toLowerCase();
+  //     const host = req.headers.host;
+  //     const fullUrl = `https://${host}${rootDomain}`;
+
+  //     console.log('request',req.url,'headers',req.headers,'fullUrl',fullUrl);
+
+  //     if (protocol !== 'https') {
+  //       res.redirect(fullUrl);
+  //     }
+  //     else {
+  //        next()
+  //     }  
+  //   })
+  // }
 
   // logging middleware
   app.use(morgan('dev'));
