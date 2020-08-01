@@ -9,7 +9,7 @@ console.log('env: ', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
   console.log('host-heroku: ', process.env.HOST_URL)
   console.log('host: ', process.env.REACT_APP_HOST_URL)
-  if ((process.env.HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
+  if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
     window.location.protocol = "https:";
   }
 }
