@@ -21,25 +21,25 @@ const createApp = () => {
   }
 
   //Redirect http to https
-  if (process.env.NODE_ENV === 'production') {
-    console.log('possible http to https redirect');
-    app.use((req, res, next) => {
+  // if (process.env.NODE_ENV === 'production') {
+  //   console.log('possible http to https redirect');
+  //   app.use((req, res, next) => {
 
-      const rootDomain = req.url;
-      const protocol = (req.headers['x-forwarded-proto'] || '').toLowerCase();
-      const host = req.headers.host;
-      const fullUrl = `https://${host}${rootDomain}`;
+  //     const rootDomain = req.url;
+  //     const protocol = (req.headers['x-forwarded-proto'] || '').toLowerCase();
+  //     const host = req.headers.host;
+  //     const fullUrl = `https://${host}${rootDomain}`;
 
-      console.log('request',req.url,'headers',req.headers,'fullUrl',fullUrl);
+  //     console.log('request',req.url,'headers',req.headers,'fullUrl',fullUrl);
 
-      if (protocol !== 'https') {
-        res.redirect(fullUrl);
-      }
-      else {
-         next()
-      }  
-    })
-  }
+  //     if (protocol !== 'https') {
+  //       res.redirect(fullUrl);
+  //     }
+  //     else {
+  //        next()
+  //     }  
+  //   })
+  // }
 
   // // enable ssl redirect
   // app.use(sslRedirect());
