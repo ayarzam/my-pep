@@ -21,6 +21,10 @@ export default class ProjectsGallery extends Component{
   }
   
   render(){
+    if(!this.state.projects){
+      this.state.projects =[]
+    }
+    console.log(this.state)
     return(
       <div id="projects-gallery-container">
         <CardColumns>
