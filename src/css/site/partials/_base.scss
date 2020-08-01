@@ -1,44 +1,4 @@
-// @import "modules/all";
-
-// Import font
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap');
-
-// Color Palette
-$colors: (
-  primary: #fde9c9,
-  secondary: #89c5cc,
-  accent1: #ffc331,
-  accent2: #e44d26,
-  accent3: #db2721,
-  base1: #ffffff,
-  base2: #e5e5e5,
-  base3: #212529,
-);
-
-// Color function
-@function color($color-name) {
-  @return map-get($colors, $color-name);
-}
-
-// Font weights
-$thin: 100;
-$light: 300;
-$regular: 400;
-$bold: 700;
-$black: 900;
-
-// Base Font
-$base-font-family: "Montserrat", sans-serif;
-$base-font-weight: $regular;
-$base-font-size: 16px;
-$base-line-height: 1.5;
-
-// body
-$body-color: color(base3);
-$body-bg-color: color(primary);
-
-// Headings
-$header-font-weight: $bold;
+@import "../modules/all";
 
 * {
   box-sizing: border-box;
@@ -73,15 +33,82 @@ body {
   background-color: $body-bg-color !important;
 }
 
-// h1, h2, h3, h4, h5, h6 {
-//   margin-top: 0;
-//   margin-bottom: $headings-margin-bottom;
-// }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: $bold;
+  margin-bottom: $header-margin-bottom;
+}
 
-// p {
-//   margin-top: 0;
-//   margin-bottom: $paragraph-margin-bottom;
-// }
+h1 {
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  line-height: $h4-line-height;
+}
+
+/***** Tablet Settings *****/
+@media (max-width: 56.25em) {
+  h1 {
+    font-size: $h1-tablet-font-size;
+    line-height: $h1-tablet-line-height;
+  }
+  
+  h2 {
+    font-size: $h2-tablet-font-size;
+    line-height: $h2-tablet-line-height;
+  }
+  
+  h3 {
+    font-size: $h3-tablet-font-size;
+    line-height: $h3-tablet-line-height;
+  }
+  
+  h4 {
+    font-size: $h4-tablet-font-size;
+    line-height: $h4-tablet-line-height;
+  }
+}
+
+/***** Mobile settings *****/
+@media (max-width: 43.75em) {
+  h1 {
+    font-size: $h1-mobile-font-size;
+    line-height: $h1-mobile-line-height;
+  }
+  
+  h2 {
+    font-size: $h2-mobile-font-size;
+    line-height: $h2-mobile-line-height;
+  }
+  
+  h3 {
+    font-size: $h3-mobile-font-size;
+    line-height: $h3-mobile-line-height;
+  }
+  
+  h4 {
+    font-size: $h4-mobile-font-size;
+    line-height: $h4-mobile-line-height;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
 
 section {
   height: 100vh;
