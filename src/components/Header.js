@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-
 import { Link } from 'react-router-dom';
 import HashLink from './HashLink';
 import classNames from "classnames";
+import logo from '../images/logo.png';
 
 export default class Header extends Component {
     constructor(props) {
@@ -61,7 +61,7 @@ export default class Header extends Component {
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light" expanded={this.state.expanded}>
                     <div className="header-bar">
                         <Link className="navbar-brand" to="/">
-                            <img className='logo align-top' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjYdir4W4R7Wy0pwAMxNTfRfxdsCoLViVeueRqeEuwk0zYo1Ox' alt="" />{' '}
+                            <img className='logo align-top' src={logo} alt="" />{' '}
                             <span className='logo-text'>Ayarza<b>Manwaring</b></span>
                         </Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => this.setExpanded(this.state.expanded ? false : true)}/>
