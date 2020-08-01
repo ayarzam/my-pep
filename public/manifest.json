@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AM Portfolio",
+  "name": "Ayarza Manwaring - Personal Portfolio",
+  "description": "Ayarza Manwaring is a burgeoning Fullstack Software Engineer based in New York City who specializes in JavaScript, React, Redux, Nodejs, Express, Postgresql and Sequelize.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://my-pep.herokuapp.com/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
