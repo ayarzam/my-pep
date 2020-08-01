@@ -30,7 +30,7 @@ const createApp = () => {
       const host = req.headers.host;
       const fullUrl = `https://${host}${rootDomain}`;
 
-      console.log('request',req.url,req.headers,fullUrl);
+      console.log('request',req.url,'headers',req.headers,'fullUrl',fullUrl);
 
       if (protocol !== 'https') {
         res.redirect(fullUrl);
