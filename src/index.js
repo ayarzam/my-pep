@@ -5,13 +5,8 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-console.log('node env: ', process.env.NODE_ENV);
-console.log('host url: ', process.env.REACT_APP_HOST_URL);
-
-if (process.env.NODE_ENV === 'production') {
-  if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
-    window.location.protocol = "https:";
-  }
+if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
+  window.location.protocol = "https:";
 }
 
 ReactDOM.render(
