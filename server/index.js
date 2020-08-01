@@ -24,12 +24,13 @@ const createApp = () => {
   if (process.env.NODE_ENV === 'production') {
     console.log('possible http to https redirect');
     app.use((req, res, next) => {
-      console.log('request',req.url,req.header);
 
       const rootDomain = req.url;
       const protocol = (req.headers['x-forwarded-proto'] || '').toLowerCase();
       const host = req.headers.host;
       const fullUrl = `https://${host}${rootDomain}`;
+
+      console.log('request',req.url,req.headers,fullUrl);
 
       if (protocol !== 'https') {
         res.redirect(fullUrl);
@@ -40,8 +41,8 @@ const createApp = () => {
     })
   }
 
-  // enable ssl redirect
-  app.use(sslRedirect());
+  // // enable ssl redirect
+  // app.use(sslRedirect());
 
   // logging middleware
   app.use(morgan('dev'));
