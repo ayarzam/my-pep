@@ -25,7 +25,7 @@ export default class SinglePageView extends Component {
       return (
         <div className="single-project-link">
           <div className="sidebar-content-title">{title}</div>
-          <Nav.Link href={this.state.project[element]} target="_blank">
+          <Nav.Link href={this.state.project[element]} target="_blank" rel="noreferrer">
             <FaLink />
             <span>{this.state.project[element]}</span>
           </Nav.Link>

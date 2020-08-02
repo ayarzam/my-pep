@@ -16,10 +16,10 @@ function Footer() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link className="logo m-auto" href="https://www.linkedin.com/in/ayarza-manwaring/">
+                        <Nav.Link className="logo m-auto" href="https://www.linkedin.com/in/ayarza-manwaring/" target="_blank" rel="noreferrer">
                             <FaLinkedin />
                         </Nav.Link>
-                        <Nav.Link className="logo m-auto" href="https://github.com/ayarzam">
+                        <Nav.Link className="logo m-auto" href="https://github.com/ayarzam" target="_blank" rel="noreferrer">
                             <FaGithub />
                         </Nav.Link>
                     </Nav>
