@@ -87,10 +87,10 @@ export default class ScrollBtn extends Component {
     };
 
     return (
-      <button id="scroll-btn" className={classes} onClick={this.handleClick}>
-        <div className="circle circle-top"></div>
+      <button name="scroll-btn" id="scroll-btn" className={classes} onClick={this.handleClick}>
+        <span className="circle circle-top"></span>
         {arrows[this.state.iconType]}
-        <div className="circle circle-bottom"></div>
+        <span className="circle circle-bottom"></span>
       </button>
     );
   }

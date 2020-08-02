@@ -10,11 +10,11 @@ function Footer() {
         <footer>
             <Navbar bg="light" variant="light">
                 <Link className="navbar-brand" to="/">
-                    <img className='logo align-top' src={logo} alt="" />{' '}
-                    <span className='logo-text'>Ayarza<b>Manwaring</b></span>
+                    <img className='logo' src={logo} alt="" />{' '}
+                    <span className='logo-text align-middle'>Ayarza<b>Manwaring</b></span>
                 </Link>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Toggle aria-controls="footer-navbar-nav" />
+                <Navbar.Collapse id="footer-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link className="logo m-auto" href="https://www.linkedin.com/in/ayarza-manwaring/" target="_blank" rel="noreferrer">
                             <FaLinkedin />
