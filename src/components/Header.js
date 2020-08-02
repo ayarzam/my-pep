@@ -68,7 +68,7 @@ export default class Header extends Component {
                     </div>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto">
-                            <Nav.Link className="m-auto non-active" href="https://drive.google.com/file/d/1T8CfhEW-WbSvh4YppH8e-2KLSQH_MZBr/view" target="_blank" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
+                            <Nav.Link className="m-auto non-active" href="https://drive.google.com/file/d/1T8CfhEW-WbSvh4YppH8e-2KLSQH_MZBr/view"  target="_blank" rel="noreferrer" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
                             <Link className={this.checkPath('/works')} to="/works" onClick={() => this.handleClick('/works')}>Works</Link>
                             <HashLink key={this.checkPath('/#about')} className={this.checkPath('/#about')} to="/" hashId="#about" behavior="smooth" label="About" handler={() => this.handleClick('/#about')}></HashLink>
                             <div className="btn-background">
