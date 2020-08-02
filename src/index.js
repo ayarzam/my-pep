@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.scss';
 
@@ -12,9 +11,7 @@ if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.locatio
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-        < App />
-    </Router>
+    < App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
