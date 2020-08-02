@@ -61,12 +61,12 @@ export default class Header extends Component {
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light" expanded={this.state.expanded}>
                     <div className="header-bar">
                         <Link className="navbar-brand" to="/">
-                            <img className='logo align-top' src={logo} alt="" />{' '}
-                            <span className='logo-text'>Ayarza<b>Manwaring</b></span>
+                            <img className='logo' src={logo} alt="" />{' '}
+                            <span className='logo-text align-middle'>Ayarza<b>Manwaring</b></span>
                         </Link>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => this.setExpanded(this.state.expanded ? false : true)}/>
+                        <Navbar.Toggle aria-controls="header-navbar-nav" onClick={() => this.setExpanded(this.state.expanded ? false : true)}/>
                     </div>
-                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navbar.Collapse id="header-navbar-nav">
                         <Nav className="ml-auto">
                             <Nav.Link className="m-auto non-active" href="https://drive.google.com/file/d/1-fjnGDKAAxtTdJd8uWpgDyncSZE4_S73/view"  target="_blank" rel="noreferrer" onClick={() => this.setExpanded(false)}>Resume</Nav.Link>
                             <Link className={this.checkPath('/works')} to="/works" onClick={() => this.handleClick('/works')}>Works</Link>

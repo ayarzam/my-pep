@@ -56,16 +56,16 @@ export default class ContactForm extends Component {
         return (
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
                 <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange} required />
+                    <label for="contact-form-name">Name</label>
+                    <input id="contact-form-name" type="text" className="form-control" value={this.state.name} onChange={this.onNameChange} required />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input type="email" className="form-control" value={this.state.email} aria-describedby="emailHelp" onChange={this.onEmailChange} required />
+                    <label for="contact-form-email">Email address</label>
+                    <input id="contact-form-email" type="email" className="form-control" value={this.state.email} onChange={this.onEmailChange} required />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea className="form-control" rows="6" value={this.state.message} onChange={this.onMessageChange} required></textarea>
+                    <label for="contact-form-message">Message</label>
+                    <textarea id="contact-form-message" className="form-control" rows="6" value={this.state.message} onChange={this.onMessageChange} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <Arrow className="arrow-doodle"/>
