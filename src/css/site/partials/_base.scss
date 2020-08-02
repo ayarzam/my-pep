@@ -131,9 +131,17 @@ section div .card {
 }
 
 .logo {
+  border-radius: 15%;
+}
+
+.logo, .social-logo {
   width: 30px;
   height: 30px;
-  border-radius: 15%;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .colored-text {

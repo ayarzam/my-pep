@@ -123,9 +123,17 @@ section div .card {
 }
 
 .logo {
+  border-radius: 15%;
+}
+
+.logo, .social-logo {
   width: 30px;
   height: 30px;
-  border-radius: 15%;
+}
+
+.logo svg, .social-logo svg {
+  height: 100%;
+  width: 100%;
 }
 
 .colored-text {
@@ -254,7 +262,6 @@ header .navbar #header-navbar-nav .navbar-nav .btn-background {
 
 footer .navbar .logo {
   padding: 0 !important;
-  margin-left: 0.5em !important;
   margin-right: 0.5em !important;
 }
 
@@ -265,6 +272,11 @@ footer .navbar .logo svg {
 
 footer .navbar .logo-text {
   text-decoration: none;
+}
+
+footer .navbar .social-logo {
+  padding: 0 !important;
+  margin-left: 0.5em !important;
 }
 
 #root #scroll-btn {

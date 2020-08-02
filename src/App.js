@@ -10,7 +10,7 @@ import SinglePageView from './views/SinglePageView';
 class App extends Component {
   render() {
     return (
-      <div>
+      <Router>
         <Header key={window.location.href}/>
 
         <Switch>
@@ -22,7 +22,7 @@ class App extends Component {
         <ScrollButton targetId="root" behavior="smooth" iconType="arrow-up" />
 
         <Footer />
-      </div>
+      </Router>
     );
   }
 }

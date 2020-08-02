@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Nav } from "react-bootstrap";
 import { FaLink } from "react-icons/fa";
-import { FaGitAlt } from "react-icons/fa";
+// import { FaGitAlt } from "react-icons/fa";
 
 export default class SinglePageView extends Component {
   constructor() {
