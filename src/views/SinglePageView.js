@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Nav } from "react-bootstrap";
 import { FaLink } from "react-icons/fa";
-// import { FaGitAlt } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa";
 
 export default class SinglePageView extends Component {
   constructor() {
@@ -26,7 +26,7 @@ export default class SinglePageView extends Component {
         <div className="single-project-link">
           <div className="sidebar-content-title">{title}</div>
           <Nav.Link href={this.state.project[element]} target="_blank" rel="noreferrer">
-            <FaLink />
+            {title === 'deployed' ? <FaLink /> : <FaGitAlt />}
             <span>{this.state.project[element]}</span>
           </Nav.Link>
         </div>
