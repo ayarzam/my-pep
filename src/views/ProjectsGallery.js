@@ -31,7 +31,7 @@ export default class ProjectsGallery extends Component{
             <Card.Body>
               <Card.Title>Ayarza Manwaring</Card.Title>
               <Card.Text>
-                Check out my <Nav.Link className="colored-text" href="https://github.com/ayarzam">Github</Nav.Link> for my other coding projects!
+                Check out my <Nav.Link className="colored-text" href="https://github.com/ayarzam" target="_blank" rel="noreferrer">Github</Nav.Link> for my other coding projects!
               </Card.Text>
             </Card.Body>
           </Card>
