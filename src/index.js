@@ -11,7 +11,7 @@ if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.locatio
 
 ReactDOM.render(
   <React.StrictMode>
-    < App />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
