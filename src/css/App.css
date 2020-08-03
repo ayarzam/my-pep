@@ -280,11 +280,27 @@ footer .navbar .logo-text {
   text-decoration: none;
 }
 
-footer .navbar .footer-ref .collab {
-  font-size: 0.75em;
+footer .navbar .navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-footer .navbar .footer-ref .collab .heart {
+footer .navbar .navbar-brand .copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  font-size: 0.6em;
+}
+
+footer .navbar .navbar-brand .copyright .collab .heart {
   color: #db2721;
 }
 

@@ -4,6 +4,8 @@ import HashLink from './HashLink';
 import classNames from "classnames";
 import logo from '../images/logo.png';
 
+import { useHistory } from 'react-router-dom'
+
 export default class Header extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +13,8 @@ export default class Header extends Component {
             activeNav: this.props.location,
             expanded: false
         };
+        console.log(this.props)
+        // this.historyTest()
 
         // this.activeNav = this.activeNav.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -18,6 +22,12 @@ export default class Header extends Component {
         this.checkPath = this.checkPath.bind(this);
         this.isActive = this.isActive.bind(this);
     }
+
+    // historyTest() {
+    //     const history = useHistory();
+
+    //     console.log('history: ', history)
+    // }
 
     // // Return the active path; used to set the nav links as active or inactive
     // activeNav() {
