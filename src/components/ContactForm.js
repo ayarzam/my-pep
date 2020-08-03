@@ -15,6 +15,7 @@ export default class ContactForm extends Component {
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onMessageChange = this.onMessageChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     onNameChange(event) {

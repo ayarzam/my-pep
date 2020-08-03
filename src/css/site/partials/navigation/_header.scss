@@ -19,27 +19,20 @@ header .navbar {
         .nav-link:focus {
             color: rgba(0,0,0,.5);
         }
-
-        .non-active.nav-link.active {
-            color: rgba(0,0,0,.5);
-        }   
-
-        .nav-link.active {
-            color: rgba(0,0,0,.9);
-        }   
         
-        .btn-background {
-            background: none;
-            border-radius: 20px;
-            text-align: center;
+        .nav-link:first-child {
+            &.active {
+                color: rgba(0,0,0,.5);
+            }   
         }
     }
 }
 
 /********** Large and Extra large devices **********/
 @media only screen and (min-width: 991.98px) {
-    header .navbar #header-navbar-nav .navbar-nav .btn-background {
+    header .navbar #header-navbar-nav .navbar-nav .nav-link:last-child {
         background: color(secondary);
+        border-radius: 20px;
     }
 }
 
@@ -58,6 +51,23 @@ header .navbar {
 
         .navbar-collapse.show, .navbar-collapse.collapsing {
             background-color: color(base2);
+
+            .navbar-nav {
+                align-items: center;
+
+                .nav-link{
+                    width: 100%;
+                    text-align: center;
+                    
+                    &:hover {
+                        background: color(navHover);
+                    }
+
+                    &.active:not(:first-child) {
+                        background: color(secondary);
+                    }
+                }
+            }
         }
     }
 }

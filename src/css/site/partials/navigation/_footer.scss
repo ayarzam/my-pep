@@ -13,8 +13,25 @@ footer .navbar {
         text-decoration: none;
     }
 
+    .footer-ref {
+        .collab {
+            font-size: 0.75em;
+            .heart {
+                color: color(accent3);
+            }
+        }
+    }
+
     .social-logo {
         padding: 0 !important;
         margin-left: 0.5em !important;
+
+        &.nav-link.active, &.nav-link:focus {
+            color: rgba(0,0,0,.5);
+        }
+
+        &.nav-link:hover {
+            color: rgba(0,0,0,.7);
+        }
     }
 }

@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header key={window.location.href}/>
+        <Header location={window.location.pathname + window.location.hash}/>
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
