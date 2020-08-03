@@ -40,16 +40,16 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"serve -s build\"",
-    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "start": "concurrently \"npm run server\" \"serve -s build\"",
+    "dev": "concurrently \"npm run server\" \"react-scripts start\"",
     "server": "node server/index.js",
     "seed": "node seed.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "heroku-postbuild": "npm install && npm run build",
+    "deploy": "npm run deploy",
+    "heroku-postbuild": "npm install && npm run build && npm run deploy",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
