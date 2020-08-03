@@ -49,7 +49,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "npm run deploy",
-    "heroku-postbuild": "npm install && npm run build && npm run deploy",
+    "heroku-postbuild": "npm install && npm run deploy",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
