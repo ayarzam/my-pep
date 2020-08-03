@@ -6,23 +6,24 @@ export default class FullPageNav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeNav: this.activeNav()
+            activeNav: this.props.location
         };
 
+        // this.activeNav = this.activeNav.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
     }
 
-    // Return the active path; used to set the nav links as active or inactive
-    activeNav() {
-        let origin = window.location.origin;
-        let basename = process.env.PUBLIC_URL;
-        let href = window.location.href;
+    // // Return the active path; used to set the nav links as active or inactive
+    // activeNav() {
+    //     let origin = window.location.origin;
+    //     let basename = process.env.PUBLIC_URL;
+    //     let href = window.location.href;
 
-        let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
+    //     let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
 
-        return activePath === '' ? '/' : activePath;
-    }
+    //     return activePath === '' ? '/' : activePath;
+    // }
     
     // Set activeNav to the selected path
     handleClick(link) {
@@ -44,7 +45,7 @@ export default class FullPageNav extends Component {
             <div id="full-page-nav-container">
                 <ul>
                     <li>
-                        <HashLink key={this.checkPath('/')} className={this.checkPath('/')} to="/" behavior="smooth">
+                        <HashLink key={`home-${this.checkPath('/')}`} className={this.checkPath('/')} to="/" behavior="smooth">
                             <div onClick={() => this.handleClick('/')}>
                                 <span className="full-page-nav-title">Home</span>
                                 <span className="nav-circle"></span>
@@ -52,7 +53,7 @@ export default class FullPageNav extends Component {
                         </HashLink>
                     </li>
                     <li>
-                        <HashLink key={this.checkPath('/#about')} className={this.checkPath('/#about')} to="/" hashId="#about" behavior="smooth">
+                        <HashLink key={`about-${this.checkPath('/#about')}`} className={this.checkPath('/#about')} to="/" hashId="#about" behavior="smooth">
                             <div onClick={() => this.handleClick('/#about')}>
                                 <span className="full-page-nav-title">About</span>
                                 <span className="nav-circle"></span>
@@ -60,7 +61,7 @@ export default class FullPageNav extends Component {
                         </HashLink>
                     </li>
                     <li>
-                        <HashLink key={this.checkPath('/#featured')} className={this.checkPath('/#featured')} to="/" hashId="#featured" behavior="smooth">
+                        <HashLink key={`featured-${this.checkPath('/#featured')}`} className={this.checkPath('/#featured')} to="/" hashId="#featured" behavior="smooth">
                             <div onClick={() => this.handleClick('/#featured')}>
                                 <span className="full-page-nav-title">Featured</span>
                                 <span className="nav-circle"></span>
@@ -68,7 +69,7 @@ export default class FullPageNav extends Component {
                         </HashLink>
                     </li>
                     <li>                   
-                        <HashLink key={this.checkPath('/#contact')} className={this.checkPath('/#contact')} to="/" hashId="#contact" behavior="smooth">
+                        <HashLink key={`contact-${this.checkPath('/#contact')}`} className={this.checkPath('/#contact')} to="/" hashId="#contact" behavior="smooth">
                             <div onClick={() => this.handleClick('/#contact')}>
                                 <span className="full-page-nav-title">Contact</span>
                                 <span className="nav-circle"></span>

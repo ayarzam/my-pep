@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 import { ReactComponent as BackgroundR } from '../images/svg/backgrounds/card-backgroundR.svg';
 import { ReactComponent as BackgroundL } from '../images/svg/backgrounds/card-backgroundL.svg';
@@ -74,7 +74,7 @@ export default class Featured extends Component {
                 <div className="see-more">
                     <div className="card">
                         <h3 className="see-more-text">
-                            Want to see more? <Link to="/works" className="colored-text">Click Here!</Link>
+                            Want to see more? <Nav.Link href="/works" className="colored-text">Click Here!</Nav.Link>
                         </h3>
                         <div className="background">
                             <div></div>

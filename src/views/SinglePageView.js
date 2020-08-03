@@ -10,6 +10,9 @@ export default class SinglePageView extends Component {
     this.state = {
       project: {}
     };
+
+    this.renderSidebarLinks = this.renderSidebarLinks.bind(this);
+    this.renderSidebarContent = this.renderSidebarContent.bind(this);
   }
 
   async componentDidMount() {
