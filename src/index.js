@@ -5,8 +5,11 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.scss';
 
-if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
-  window.location.protocol = "https:";
+console.log('env: ', process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+  if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
+    window.location.protocol = "https:";
+  }
 }
 
 ReactDOM.render(

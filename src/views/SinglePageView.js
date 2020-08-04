@@ -17,9 +17,8 @@ export default class SinglePageView extends Component {
 
   async componentDidMount() {
     const projectId = this.props.match.params.id;
-    const response = await axios.get(
-      `/api/works/${projectId}`
-    );
+    const url = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_URI + '/api/works' : '/api/works';
+    const response = await axios.get(`${url}/${projectId}`);
     this.setState({ project: response.data });
   }
 

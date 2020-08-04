@@ -54,10 +54,10 @@ const createApp = () => {
   app.use('/api', require('./api/works'));
   app.use('/api', require('./api/mail'));
 
-  // static file-serving middleware
+  // server production assests (static file-serving middleware)
   // app.use(express.static(path.join(__dirname, '..', 'public')));
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(__dirname + '/build'));
+    app.use(express.static(path.join(__dirname, 'build')));
   }
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
@@ -71,9 +71,9 @@ const createApp = () => {
     }
   });
 
-  // sends index.html
+  // sends index.html if express doesn't recognize the route
   app.use('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+    res.sendFile(path.join(__dirname, '../public', 'index.html'))
   });
 
   // error handling endware
