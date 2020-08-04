@@ -33,7 +33,6 @@ export default class ContactForm extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         try {
-            const url = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_URI + '/api/send' : '/api/send';
             const res = await axios.post('/api/send', this.state)
             if (res.data.status === 'success') {
                 alert("Message Sent.");
