@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 const cors = require('cors');
 const app = express();
 
