@@ -58,7 +58,7 @@ const createApp = () => {
   // app.use(express.static(path.join(__dirname, '..', 'public')));
   if (process.env.NODE_ENV === "production") {
     // set static folder
-    app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
 
     // sends index.html if express doesn't recognize the route
     app.use('/*', (req, res) => {

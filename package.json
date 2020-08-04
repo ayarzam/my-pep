@@ -21,13 +21,14 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
+    "server": "node server/index.js",
     "dev": "concurrently \"npm run server\" \"cd client && npm start\"",
     "start": "npm run server",
-    "server": "node server/index.js",
+    "build:app": "cd client && yarn build",
     "seed": "node seed.js",
     "predeploy": "cd client && npm run build",
     "deploy": "gh-pages -d build",
-    "heroku-postbuild": "npm install && cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
