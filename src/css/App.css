@@ -204,6 +204,10 @@ header .navbar .header-bar .navbar-toggler:focus {
   outline: none;
 }
 
+header .navbar .header-bar .navbar-brand {
+  padding-left: 0;
+}
+
 header .navbar .header-bar .navbar-brand .logo {
   margin-right: 0.5rem;
 }
