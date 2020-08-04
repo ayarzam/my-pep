@@ -15,7 +15,6 @@ function Footer() {
                         <span className="collab">In collaboration with<span className="heart"> ❤ </span>Shinell Manwaring</span>
                     </span>
                 </span>
-
                 <Nav className="ml-auto">
                     <Nav.Link className="social-logo" href="https://www.linkedin.com/in/ayarza-manwaring/" target="_blank" rel="noreferrer">
                         <FaLinkedin />
