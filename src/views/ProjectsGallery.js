@@ -12,7 +12,8 @@ export default class ProjectsGallery extends Component{
     }
   }
   async componentDidMount(){
-    const response = await axios.get('/api/works')
+    const url = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_URI + '/api/works' : '/api/works';
+    const response = await axios.get(url);
     const projectData = response.data;
     this.setState({
       projects: projectData
