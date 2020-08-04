@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 const cors = require('cors');
 const app = express();
 
@@ -63,7 +63,7 @@ const createApp = () => {
     // sends index.html if express doesn't recognize the route
     app.use('/*', (req, res) => {
       res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
-    });
+    })
   }
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
