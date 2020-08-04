@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const db = require('./db/_db');
 const socketio = require('socket.io');
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const cors = require('cors');
 const app = express();
 
@@ -57,7 +57,13 @@ const createApp = () => {
   // server production assests (static file-serving middleware)
   // app.use(express.static(path.join(__dirname, '..', 'public')));
   if (process.env.NODE_ENV === "production") {
+    // set static folder
     app.use(express.static(path.join(__dirname, 'build')));
+
+    // sends index.html if express doesn't recognize the route
+    app.use('/*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../public', 'index.html'))
+    });
   }
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
@@ -69,11 +75,6 @@ const createApp = () => {
     } else {
       next()
     }
-  });
-
-  // sends index.html if express doesn't recognize the route
-  app.use('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'index.html'))
   });
 
   // error handling endware
