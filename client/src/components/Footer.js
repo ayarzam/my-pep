@@ -16,10 +16,10 @@ function Footer() {
                     </span>
                 </span>
                 <Nav className="ml-auto">
-                    <Nav.Link className="social-logo" href="https://www.linkedin.com/in/ayarza-manwaring/" target="_blank" rel="noreferrer">
+                    <Nav.Link className="social-logo" href="https://www.linkedin.com/in/ayarza-manwaring/" aria-label="linkedin" target="_blank" rel="noreferrer">
                         <FaLinkedin />
                     </Nav.Link>
-                    <Nav.Link className="social-logo" href="https://github.com/ayarzam" target="_blank" rel="noreferrer">
+                    <Nav.Link className="social-logo" href="https://github.com/ayarzam" aria-label="github" target="_blank" rel="noreferrer">
                         <FaGithub />
                     </Nav.Link>
                 </Nav>

@@ -7,6 +7,29 @@ import { ReactComponent as Flower1 } from '../images/svg/decorations/plant_7.svg
 import { ReactComponent as Flower2 } from '../images/svg/decorations/plant_5.svg';
 
 export default class About extends Component {
+  constructor() {
+    super();
+
+    this.scrollAppear = this.scrollAppear.bind(this);
+  }
+
+  componentDidMount() {
+      window.addEventListener("scroll", this.scrollAppear);
+  }
+
+  scrollAppear() {
+      let content = document.querySelectorAll('.anim-rise');
+
+      content.forEach( (item) => {
+          let itemPosition = item.getBoundingClientRect().top;
+          let screenPosition = window.innerHeight / 1.3;
+
+          if (itemPosition < screenPosition) {
+              item.classList.add('appear');
+          }
+      });
+  }
+
   render() {
     return (
       <div id="about-container">
@@ -19,7 +42,7 @@ export default class About extends Component {
             <CodeLogos />
           </div>
           <img alt="Profile" src={portrait}></img>
-          <div className="about-text">
+          <div className="about-text anim-rise">
             <h2>Hi, I’m <span className="colored-text">Ayarza Manwaring!</span></h2>
             <p>A Smith College alumni with a Master Degree in Experimental Psychology.
             After graduating from the Grace Hopper Program at Fullstack Academy’s coding

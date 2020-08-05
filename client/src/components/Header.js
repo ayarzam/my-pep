@@ -4,53 +4,38 @@ import HashLink from './HashLink';
 import classNames from "classnames";
 import logo from '../images/logo.png';
 
-import { useHistory } from 'react-router-dom'
-
 export default class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeNav: this.props.location,
+            activeNav: this.props.history.location.pathname + this.props.history.location.hash,
             expanded: false
         };
-        console.log(this.props)
-        // this.historyTest()
-
-        // this.activeNav = this.activeNav.bind(this);
+        
+        this.monitorHistory();
+        
+        this.monitorHistory = this.monitorHistory.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.setExpanded = this.setExpanded.bind(this);
         this.checkPath = this.checkPath.bind(this);
         this.isActive = this.isActive.bind(this);
     }
+    
+    // Look for history changes
+    monitorHistory() {
+        const history = this.props.history;
 
-    // historyTest() {
-    //     const history = useHistory();
+        history.listen((location) => {
+            console.log(location);
+            this.setState({ activeNav: location.pathname + location.hash })
+        });
+    }
 
-    //     console.log('history: ', history)
-    // }
-
-    // // Return the active path; used to set the nav links as active or inactive
-    // activeNav() {
-    //     let origin = window.location.origin;
-    //     let basename = process.env.PUBLIC_URL;
-    //     let href = window.location.href;
-
-    //     let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
-    //     console.log('activePath: ' + activePath)
-
-    //     return activePath === '' ? '/' : activePath;
-    // }
-
-    // Set activeNav to the selected path
+    // setExpanded state to false
     handleClick(link) {
-        console.log('clicked: ',link)
         if (this.state.expanded) {
-            this.setState({ activeNav: link, expanded: false })
+            this.setExpanded(false);
         }
-        else {
-            this.setState({ activeNav: link })
-        }
-        console.log('updated activePath: ' + this.state.activeNav)
     }
 
     setExpanded(val) {
@@ -63,8 +48,6 @@ export default class Header extends Component {
             'nav-link': true, // always add this class
             active: this.isActive(link) // active link is the same as the param passed in
         });
-
-        console.log('activeNav', this.state.activeNav, ' , link: ', link , ' , class active: ', this.state.activeNav === link)
 
         return classes;
     }

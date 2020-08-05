@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
-import ScrollButton from './components/ScrollBtn';
+import { Route, Switch } from 'react-router-dom';
+
 import Header from './components/Header';
 import Home from './views/Home';
 import Works from './views/ProjectsGallery';
 import SinglePageView from './views/SinglePageView';
 import Footer from './components/Footer';
+import ScrollButton from './components/ScrollBtn';
 
 class App extends Component {
-
-  // usePageViews() {
-  //   let location = useLocation();
-  //   console.log(location);
-
-  //   // React.useEffect(() => {
-  //   //   ga.send(["pageview", location.pathname]);
-  //   // }, [location]);
-  // }
-
   render() {
     return (
-      <Router >
-        <Header location={window.location.pathname + window.location.hash}/>
+      <div>
+        <Header history={this.props.history}/>
 
         <Switch>
-          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" history={this.props.history} component={Home}></Route>
           <Route exact path="/works" render={ (routerProps) => <Works {...routerProps} />}></Route>
           <Route exact path="/works/:id" render={ (routerProps) => <SinglePageView {...routerProps} />} ></Route>
         </Switch>
@@ -32,7 +23,7 @@ class App extends Component {
         <ScrollButton targetId="root" behavior="smooth" iconType="arrow-up" />
 
         <Footer />
-      </Router>
+      </div>
     );
   }
 }

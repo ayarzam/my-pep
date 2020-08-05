@@ -101,24 +101,32 @@ section#hero {
 
 // /********** Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 575.98px) {
-    section#hero #hero-container {  
-        svg.flower {
-            display: none;
-        }
+    section#hero {
+        height: 93vh;
+        
+        #hero-container {  
+            height: 75vh;
 
-        .background {
-            top: unset;
-            bottom: 0;
-            right: 0;
-        }
+            svg.flower {
+                display: none;
+            }
 
-        .hero-text {
-            width: 450px;
-            font-size: 1rem;
+            .background {
+                height: unset;
+                top: unset;
+                bottom: 0;
+                right: 0;
+            }
 
-            h1 {
-                font-size: 2.5rem;
-                line-height: 60px;
+            .hero-text {
+                width: 100vw;
+                font-size: 1rem;
+                padding: 3em 2em 0 2em;
+
+                h1 {
+                    font-size: 2rem;
+                    line-height: 50px;
+                }
             }
         }
     }
