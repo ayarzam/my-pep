@@ -4,7 +4,7 @@
 // Font weights
 $thin: 100;
 $light: 300;
-$regular: 400;
+$regular: 500;
 $bold: 700;
 $black: 900;
 
@@ -35,7 +35,8 @@ $h4-font-size: 1.125em; //18px
 $h4-line-height: 1.22em;
 
 // Text
-$paragraph-margin-bottom: 0.5rem;
+$paragraph-margin-bottom: 1rem;
+$paragraph-line-height: 1.5em;
 
 
 /***** Tablet Settings (max-width: 56.25em) *****/

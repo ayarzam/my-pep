@@ -6,25 +6,26 @@ export default class FullPageNav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeNav: this.props.location
+            activeNav: this.props.history.location.pathname + this.props.history.location.hash
         };
+        
+        this.monitorHistory();
 
-        // this.activeNav = this.activeNav.bind(this);
+        this.monitorHistory = this.monitorHistory.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
     }
-
-    // // Return the active path; used to set the nav links as active or inactive
-    // activeNav() {
-    //     let origin = window.location.origin;
-    //     let basename = process.env.PUBLIC_URL;
-    //     let href = window.location.href;
-
-    //     let activePath = href.replace(new RegExp(origin + basename), ''); // replace href orgin with '' so we get the full path including hashes
-
-    //     return activePath === '' ? '/' : activePath;
-    // }
     
+    // Look for history changes
+    monitorHistory() {
+        const history = this.props.history;
+
+        history.listen((location) => {
+            console.log(location);
+            this.setState({ activeNav: location.pathname + location.hash })
+        });
+    }
+
     // Set activeNav to the selected path
     handleClick(link) {
         this.setState({ activeNav: link });

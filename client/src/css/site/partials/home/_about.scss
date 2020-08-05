@@ -139,9 +139,35 @@ section#about {
 
 // /********** Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 575.98px) {
-    section#about #about-container .card {
-        img {
-            height: 8rem;
+    section#about {
+        height: 100%;
+        
+        #about-container .card {
+            height: 100%;
+            padding: 2rem;
+
+            svg.flower:first-child {
+                top: -3em;
+            }
+
+            .background svg {
+                display: none;
+            }
+
+            img {
+                height: 8rem;
+            }
+
+            .about-text {
+                p {
+                    font-size: 1rem;
+                    line-height: 28px;
+                }
+
+                h2 {
+                    line-height: 50px;
+                }
+            }
         }
     }
 }

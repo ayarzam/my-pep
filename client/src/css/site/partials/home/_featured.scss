@@ -90,7 +90,7 @@ section#featured {
                     height: 15%;
                     margin: 1rem 0;
                     font-size: 2rem;
-                    font-weight: bolder;
+                    font-weight: $bold;
                     background-color: color(secondary);
                 }
 
@@ -178,20 +178,21 @@ section#featured {
 }
 
 #featured-container .see-more {
-    height: 30vh;
-
     .card {
-        height: 5rem;
+        height: 12vh;
         font-size: 1.5rem;
+        margin-bottom: 8rem;
         justify-content: center;
 
         h3.see-more-text {
             margin: 0;
             z-index: 1;
             font-size: 1.5rem;
+            display: flex;
 
             .colored-text {
-                font-weight: bolder;
+                font-weight: $bold;
+                padding: 0;
                 padding-left: 0.25rem;
                 text-decoration: underline;
             }
@@ -354,30 +355,101 @@ section#featured {
 @media only screen and (max-width: 575.98px) {
     #featured-container {
         .featured-text {
+            height: unset;
+            margin: 7rem 0;
+            padding: 0 2em;
             font-size: 1rem;
+            text-align: center;
         }
     
-        .featured-projects .project .card {
-            // .project-image {
-            //     width: 20rem;
-            //     height: 20rem;
-            // }
+        .featured-projects {
+            svg.flower {
+                top: -4rem;
+            }
 
-            .card-text {
+            .project {
+                height: unset;
 
-                // h3 {
+                .card {
+                    height: 100%;
+                    padding: 2em;
+                    margin-bottom: 8rem;
+    
+                    svg.flower {
+                        display: none;
+                    }
+    
+                    .card-text {
+    
+                        // h3 {
+    
+                        // }
+    
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .project-image {
+                        border: 4px solid color(secondary);
+                    }
+    
+                    .background {
+                        div {
+                            clip-path: polygon(0 0, 0% 100%, 100% 0%);
+                        }
+    
+                        svg {
+                            display: none;
+                        }
+                    }
+    
+                }
+            }
+        }
+        
+        .featured-projects .project:nth-of-type(1), .featured-projects .project:nth-of-type(3) {
+            .card .project-image {
+                background: linear-gradient(132.35deg, #c4c4c4 64.67%, rgba(196, 196, 196, 0) 100%);
 
-                // }
+                img {
+                    background: none;
+                }
 
-                p {
-                    font-size: 1rem;
+            }
+        }
+
+        .featured-projects .project:nth-of-type(1) .card .project-image img {
+            height: 90%;
+            padding-left: 0.5em;
+        }
+
+        .featured-projects .project:nth-of-type(3) .card .project-image img {
+            height: 85%;
+            padding-top: 1.5em;        
+        }
+
+        .featured-projects .project:nth-of-type(2) .card {
+            .project-image img {
+                background: linear-gradient(132.35deg, #c4c4c4 64.67%, rgba(196, 196, 196, 0) 100%);
+            }
+
+            .background {
+                div {
+                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
                 }
             }
         }
 
         .see-more .card {
+            height: unset;
+
             h3.see-more-text {
                 font-size: 1.25rem;
+                padding: 1em 2em;
+                line-height: 1.25em;
+                flex-flow: row wrap;
+                justify-content: center;
             }
         }
     }

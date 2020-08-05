@@ -13,10 +13,33 @@ import HikeWithMe from '../images/projects/HikeWithMe/renders/Mobile.png';
 import IslandShopper from '../images/projects/IslandShopper/renders/Desktop.png';
 
 export default class Featured extends Component {
+    constructor() {
+        super();
+
+        this.scrollAppear = this.scrollAppear.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.scrollAppear);
+    }
+
+    scrollAppear() {
+        let content = document.querySelectorAll('.anim-rise, .anim-from-left, .anim-from-right');
+
+        content.forEach( (item) => {
+            let itemPosition = item.getBoundingClientRect().top;
+            let screenPosition = window.innerHeight / 1.3;
+
+            if (itemPosition < screenPosition) {
+                item.classList.add('appear');
+            }
+        });
+    }
+
     render() {
         return (
             <div id="featured-container">
-                <div className="featured-text">
+                <div className="featured-text anim-rise">
                     <h2>Featured Works</h2>
                     <p>Web products that keep the user in mind</p>
                 </div>
@@ -28,7 +51,7 @@ export default class Featured extends Component {
                             <div className="project-image">
                                 <img alt="Music Mapper" src={MusicMapper} />
                             </div>
-                            <div className="card-text">
+                            <div className="card-text anim-from-right">
                                 <h3>Music Mapper</h3>
                                 <p>An application to let Spotify users visualize their musical tastes!</p>
                             </div>
@@ -41,7 +64,7 @@ export default class Featured extends Component {
                     <div className="project">
                         <div className="card">
                             <Flower3 className="flower"></Flower3>
-                            <div className="card-text">
+                            <div className="card-text anim-from-left">
                                 <h3>Hike With Me</h3>
                                 <p>A mobile app that allows users the ability to map the distance and area that they hike.</p>
                             </div>
@@ -60,7 +83,7 @@ export default class Featured extends Component {
                             <div className="project-image">
                                 <img alt="Island Shopper" src={IslandShopper} />
                             </div>
-                            <div className="card-text">
+                            <div className="card-text anim-from-right">
                                 <h3>Island Shopper</h3>
                                 <p>An e-commerce website that allows users to buy fictional islands.</p>
                             </div>
@@ -73,7 +96,7 @@ export default class Featured extends Component {
                 </div>
                 <div className="see-more">
                     <div className="card">
-                        <h3 className="see-more-text">
+                        <h3 className="see-more-text anim-rise">
                             Want to see more? <Nav.Link href="/works" className="colored-text">Click Here!</Nav.Link>
                         </h3>
                         <div className="background">

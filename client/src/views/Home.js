@@ -6,11 +6,13 @@ import Featured from '../components/Featured';
 import Contact from '../components/Contact';
 import FullPageNav from '../components/FullPageNav'
 
+// import Header from '../components/Header';
+
 class Home extends Component {
   render() {
     return (
       <div id="home-container">
-        <FullPageNav key={window.location.hash} location={window.location.pathname + window.location.hash}/>
+        <FullPageNav history={this.props.history}/>
         <section id="hero">
           <Hero />
         </section>

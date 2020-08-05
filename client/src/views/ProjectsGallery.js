@@ -10,12 +10,32 @@ export default class ProjectsGallery extends Component{
     this.state = {
       projects: []
     }
+
+    this.scrollAppear = this.scrollAppear.bind(this);
   }
+
   async componentDidMount(){
+    window.addEventListener("scroll", this.scrollAppear);
+
     const response = await axios.get('/api/works');
     const projectData = response.data;
     this.setState({
       projects: projectData
+    });
+  }
+
+  scrollAppear() {
+    let content = document.querySelectorAll('.anim-rise');
+
+    content.forEach( (item) => {
+      let itemPosition = item.getBoundingClientRect().top;
+      let screenPosition = window.innerHeight / 1.3;
+
+      console.log('item: ', item , 'position', itemPosition)
+
+      if (itemPosition < screenPosition) {
+          item.classList.add('appear');
+      }
     });
   }
   

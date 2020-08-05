@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Root from './Root';
+import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.scss';
 
-console.log('env: ', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
   if ((process.env.REACT_APP_HOST_URL === window.location.host) && (window.location.protocol !== "https:")){
     window.location.protocol = "https:";
@@ -14,7 +14,9 @@ if (process.env.NODE_ENV === 'production') {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Root />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );
