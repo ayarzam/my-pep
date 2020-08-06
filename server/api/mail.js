@@ -52,6 +52,7 @@ router.post('/send', (req, res, next) => {
   console.log(process.env.NM_USERNAME);
   const name = req.body.name
   const email = req.body.email
+  const subject = req.body.subject
   const message = req.body.message
   const content = `<div><p>Someone has visited your website and sent you a message! Be sure to respond in a timely manner!</p><p>Best,</p><p>Ayarza Manwaring (from the future)</p><br><p>----</p><p><b>Contact submission:</b></p><hr><p><b>Sender:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b><br><p>${message}</p></p><br></div> `
 
@@ -72,7 +73,7 @@ router.post('/send', (req, res, next) => {
        status: 'success'
       })
   
-      const responseMsg = `<div><p>Thank you for contacting me! This is an automated response confirming that the message you submitted to ayarzamanwaring.com has been received. I will get back to you as soon as possible.</p><p>Best,</p><p>Ayarza Manwaring</p><br><p>----</p><p><b>Contact submission:</b></p><hr><p><b>Sender:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b><br><p>${message}</p></p><br></div>`;
+      const responseMsg = `<div><p>Thank you for contacting me! This is an automated response confirming that the message you submitted to ayarzamanwaring.com has been received. I will get back to you as soon as possible.</p><p>Best,</p><p>Ayarza Manwaring</p><br><p>----</p><p><b>Contact submission:</b></p><hr><p><b>Sender:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Subject:</b> ${subject}</p><p><b>Message:</b><br><p>${message}</p></p><br></div>`;
       transporter.sendMail({
         from: process.env.NM_USERNAME,
         to: email,
