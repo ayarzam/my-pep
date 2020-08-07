@@ -8,6 +8,7 @@ export default class ContactForm extends Component {
         this.state = {
             name: '',
             email: '',
+            subject:'',
             message: ''
         }
 
@@ -24,6 +25,10 @@ export default class ContactForm extends Component {
 
     onEmailChange(event) {
         this.setState({ email: event.target.value })
+    }
+
+    onSubjectChange(event){
+        this.setState({ subject: event.target.value })
     }
 
     onMessageChange(event) {
@@ -49,6 +54,7 @@ export default class ContactForm extends Component {
         this.setState({
             name: '',
             email: '',
+            subject: '',
             message: ''
         });
     }
@@ -63,6 +69,10 @@ export default class ContactForm extends Component {
                 <div className="form-group">
                     <label htmlFor="contact-form-email">Email address</label>
                     <input id="contact-form-email" type="email" className="form-control" value={this.state.email} onChange={this.onEmailChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="contact-form-subject">Subject</label>
+                    <input id="contact-form-subject" type="subject" className="form-control" value={this.state.subject} onChange={this.onSubjectChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="contact-form-message">Message</label>
