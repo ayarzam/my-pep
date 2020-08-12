@@ -69,24 +69,28 @@ section#hero {
 
 /********** Small (landscape phones, 576px and up) and Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 767.98px) {
-    section#hero #hero-container {  
-        svg.flower {
-            display: none;
-        }
-
-        .background {
-            top: unset;
-            bottom: 0;
-            right: 0;
-        }
-
-        .hero-text {
-            width: 530px;
-            font-size: 1.25rem;
-
-            h1 {
-                font-size: 3rem;
-                line-height: 65px;
+    section#hero {
+        margin-bottom: 4rem;
+        
+        #hero-container {  
+            svg.flower {
+                display: none;
+            }
+    
+            .background {
+                top: unset;
+                bottom: 0;
+                right: 0;
+            }
+    
+            .hero-text {
+                width: 530px;
+                font-size: 1.25rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    line-height: 65px;
+                }
             }
         }
     }
