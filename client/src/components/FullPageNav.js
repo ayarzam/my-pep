@@ -8,22 +8,66 @@ export default class FullPageNav extends Component {
         this.state = {
             activeNav: this.props.history.location.pathname + this.props.history.location.hash
         };
-        
-        this.monitorHistory();
 
         this.monitorHistory = this.monitorHistory.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.checkPath = this.checkPath.bind(this);
+        this.setSectionActive = this.setSectionActive.bind(this);
+        this.selectSection = this.selectSection.bind(this);
     }
-    
+
+    // componentDidMount() {
+    //     this.monitorHistory();
+    //     window.addEventListener("scroll", this.setSectionActive);
+    // }
+
     // Look for history changes
     monitorHistory() {
         const history = this.props.history;
 
         history.listen((location) => {
-            console.log(location);
-            this.setState({ activeNav: location.pathname + location.hash })
+            const change = location.pathname + location.hash
+            if (this.state.activeNav !== change) {
+                this.setState({ activeNav: change })
+            }
         });
+    }
+
+    setSectionActive() {
+        let content = document.querySelectorAll('#hero, #about, #featured, #contact');
+
+        content.forEach( (item) => {
+            let itemTopPosition = item.getBoundingClientRect().top;
+            let itemBottomPosition = item.getBoundingClientRect().bottom;
+            let screenPosition = window.innerHeight / 1.3;
+
+            if (itemTopPosition < screenPosition && itemBottomPosition > screenPosition) {
+                this.selectSection(item.id);
+            }
+        });
+    }
+
+    selectSection(id) {
+        if ((id === 'hero' && this.state.activeNav !== '/') || (id !== 'hero' && this.state.activeNav !== '/#' + id)) {
+            switch (id) {
+                case 'hero':
+                    this.setState({ activeNav: '/' });
+                    break;
+                case 'about':
+                    this.setState({ activeNav: '/#about' });
+                    break;
+                case 'featured':
+                    this.setState({ activeNav: '/#featured' });
+                    break;
+                case 'contact':
+                    this.setState({ activeNav: '/#contact' });
+                    break;
+                default:
+                    this.setState({ activeNav: '/' });
+                    break;
+            }
+            console.log('fullpagenav set with: ',id)
+        }
     }
 
     // Set activeNav to the selected path
