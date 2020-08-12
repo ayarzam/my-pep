@@ -83,14 +83,16 @@ export default class SinglePageView extends Component {
               {this.renderSidebarLinks('github', 'Repository:')}
               <hr></hr>
             </div>
-            <div className="sidebar-content-container">
-              <div className="sidebar-content-title">Duration:</div>
-              <div>{this.state.project.duration}</div>
+            <div className="details">
+              <div className="sidebar-content-container">
+                <div className="sidebar-content-title">Duration:</div>
+                <div>{this.state.project.duration}</div>
+              </div>
+              {this.renderSidebarContent('role', 'Role:')}
+              {this.renderSidebarContent('frontend_technologies', 'Frontend Stack:')}
+              {this.renderSidebarContent('backend_technologies', 'Backend Stack:')}
+              {this.renderSidebarContent('testing_suite', 'Testing Suite:')}
             </div>
-            {this.renderSidebarContent('role', 'Role:')}
-            {this.renderSidebarContent('frontend_technologies', 'Frontend Stack:')}
-            {this.renderSidebarContent('backend_technologies', 'Backend Stack:')}
-            {this.renderSidebarContent('testing_suite', 'Testing Suite:')}
           </div>
         </div>
       </div>

@@ -62,8 +62,6 @@ section#about {
             }
 
             .about-text {
-                font-size: 1.25rem;
-                line-height: 38px;
                 text-align: left;
                 z-index: 2;
                 width: 55vw;
@@ -75,6 +73,8 @@ section#about {
                 }
 
                 p {
+                    font-size: 1.25rem;
+                    line-height: 38px;
                     margin-bottom: 0.5rem;
                 }
 
@@ -89,46 +89,60 @@ section#about {
 
 /********** Medium devices (tablets, 768px and up) **********/
 @media only screen and (max-width: 991.98px) {
-    section#about #about-container .card {
-        justify-content: center;
-        flex-flow: column;
-        padding: 1rem 2rem;
+    section#about {
+        height: 100%;
 
-        .background svg {
-            height: 90%;
-            width: 90%;
-            top: 2rem;
-            left: 2rem;
-            padding-top: 0;
-        }
+        #about-container .card {
+            height: 100%;
+            justify-content: center;
+            flex-flow: column;
+            padding: 4rem 2.5rem;
 
-        img {
-            height: 12rem;
-        }
-        
-        .about-text {
-            width: 100%;
-            font-size: 1.15rem;
-            line-height: 30px;
-            text-align: center;
+            svg.flower:first-child {
+                top: -4em;
+            }
 
-            h2 {
-                line-height: 70px;
+            .background svg {
+                display: none;
+            }
+
+            img {
+                height: 12rem;
+            }
+            
+            .about-text {
+                width: 100%;
+                text-align: center;
+
+                p {
+                    font-size: 1.15rem;
+                    line-height: 36px;
+                }
+
+                h2 {
+                    line-height: 70px;
+                }
             }
         }
     }
 }
 
-/********** Small and Extra small devices (landscape phones, 576px and up + portrait phones, less than 576px) **********/
+/********** Small (landscape phones, 576px and up) and Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 767.98px) {
     section#about #about-container .card {
+        svg.flower:first-child {
+            top: -3em;
+        }
+
         img {
             height: 10rem;
         }
 
         .about-text {
-            font-size: 1rem;
-            line-height: 30px;
+            p {
+                font-size: 1rem;
+                line-height: 30px;
+            }
 
             h2 {
                 line-height: 60px;
@@ -137,37 +151,16 @@ section#about {
     }
 }
 
-// /********** Extra small devices (portrait phones, less than 576px) **********/
+/********** Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 575.98px) {
-    section#about {
-        height: 100%;
-        
-        #about-container .card {
-            height: 100%;
-            padding: 2rem;
+    section#about #about-container .card .about-text {
+        p {
+            font-size: 1rem;
+            line-height: 28px;
+        }
 
-            svg.flower:first-child {
-                top: -3em;
-            }
-
-            .background svg {
-                display: none;
-            }
-
-            img {
-                height: 8rem;
-            }
-
-            .about-text {
-                p {
-                    font-size: 1rem;
-                    line-height: 28px;
-                }
-
-                h2 {
-                    line-height: 50px;
-                }
-            }
+        h2 {
+            line-height: 50px;
         }
     }
 }

@@ -18,12 +18,23 @@ footer .navbar {
         align-items: center;
 
         .copyright {
-            display: flex;
-            flex-flow: column;
             font-size: 0.6em;
+            display: flex;
+            flex-flow: column wrap;
 
-            .collab .heart {
-                color: color(accent3);
+            p {
+                margin-bottom: 0;
+            }
+
+            .collab {
+                display: flex;
+                flex-flow: row wrap;
+
+                .heart {
+                    padding-left: 0.25rem;
+                    padding-right: 0.25rem;
+                    color: color(accent3);
+                }
             }
         }
     }
