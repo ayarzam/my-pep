@@ -45,37 +45,30 @@ section#hero {
     }
 }
 
-
-/********** Large devices (desktops, 992px and up) **********/
-@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-    section#hero #hero-container .hero-text {
-        h1 {
-            font-size: 3.5rem;
-            line-height: 70px;
-        }
-    } 
-}
-
 /********** Medium devices (tablets, 768px and up) **********/
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-    section#hero #hero-container {  
-        svg.flower {
-            display: none;
-        }
+    section#hero {
+        margin-bottom: 4rem;
 
-        .hero-text {
-            width: 610px;
+        #hero-container {  
+            svg.flower {
+                display: none;
+            }
 
-            h1 {
-                font-size: 3.5rem;
-                line-height: 70px;
+            .hero-text {
+                width: 610px;
+
+                h1 {
+                    font-size: 3.5rem;
+                    line-height: 70px;
+                }
             }
         }
     }
 }
 
-/********** Small devices (landscape phones, 576px and up) **********/
-@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+/********** Small (landscape phones, 576px and up) and Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 767.98px) {
     section#hero #hero-container {  
         svg.flower {
             display: none;
@@ -107,15 +100,8 @@ section#hero {
         #hero-container {  
             height: 75vh;
 
-            svg.flower {
-                display: none;
-            }
-
             .background {
                 height: unset;
-                top: unset;
-                bottom: 0;
-                right: 0;
             }
 
             .hero-text {
@@ -124,8 +110,8 @@ section#hero {
                 padding: 3em 2em 0 2em;
 
                 h1 {
-                    font-size: 2rem;
-                    line-height: 50px;
+                    font-size: 2.5rem;
+                    line-height: 60px;
                 }
             }
         }

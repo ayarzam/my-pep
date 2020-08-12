@@ -5,7 +5,7 @@ $overlay-bg: #827a7a47;
   .single-project-header {
     background: $header-bg;
     width: 100vw;
-    height: 60vh;
+    height: 28rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,30 +136,86 @@ $overlay-bg: #827a7a47;
 
 /********** Small devices (landscape phones, 576px and up) **********/
 @media only screen and (max-width: 767.98px) {
-
-  #single-project-container .single-project-content-container {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    
-    .single-project-content {
-      grid-column: 1;
-      grid-row: 2;
+  #single-project-container {
+    .single-project-header {
+      text-align: center;
+      overflow: hidden;
     }
+    
+    .single-project-content-container {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      
+      .single-project-content {
+        grid-column: 1;
+        grid-row: 2;
 
-    .single-project-sidebar {
-      grid-column: 1;
-      grid-row: 1;
+        .main-content-container:last-child {
+          padding-bottom: 5rem;
+        }
+      }
+
+      .single-project-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+
+        .sidebar-content-container {
+          padding: 2rem 3rem 0 3rem;
+        }
+        .sidebar-content-container:first-child {
+          grid-column: 1 / span 5;
+          grid-row: 1;
+        }
+
+        .details {
+          display: flex;
+          padding: 0 3rem;
+          flex-flow: row wrap;
+
+          .sidebar-content-container {
+            max-width: 50%;
+            padding: 0;
+            padding-bottom: 2rem;
+
+            .sidebar-content {
+              list-style: disc;
+            }
+          }
+        }
+
+        .details .sidebar-content-container:first-child {
+          max-width: 100%;
+        }
+
+        .details .sidebar-content-container:nth-child(2), .details .sidebar-content-container:nth-child(4) {
+        padding-right: 1rem;
+        }
+      }
     }
   }
-
 }
-
-// /********** Small devices (landscape phones, 576px and up) **********/
-// @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-
-// }
 
 // /********** Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 575.98px) {
+  #single-project-container {
+    .single-project-header {
+      img {
+        height: 80%
+      }
 
+      h1 {
+        font-size: 5rem;
+      }
+    }
+
+    .single-project-content-container {
+      .single-project-content .main-content-container, .single-project-sidebar .sidebar-content-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
 }

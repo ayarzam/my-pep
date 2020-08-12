@@ -11,8 +11,8 @@ function Footer() {
                 <span className="navbar-brand" href="/">
                     <img className='logo' src={logo} alt="" />{' '}
                     <span className="copyright">
-                        <span className='logo-text'>&copy; 2020 Ayarza<b>Manwaring</b></span>
-                        <span className="collab">In collaboration with<span className="heart"> ❤ </span>Shinell Manwaring</span>
+                        <p className='logo-text'>&copy; 2020 Ayarza<b>Manwaring</b></p>
+                        <p className="collab">In collaboration with<p className="heart"> ❤ </p>Shinell Manwaring</p>
                     </span>
                 </span>
                 <Nav className="ml-auto">
