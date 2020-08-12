@@ -94,10 +94,21 @@ section#featured {
                 }
 
                 p {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-flow: column;
                     width: 90%;
                     margin-left: auto;
                     font-size: 1.5rem;
                     background-color: color(base2);
+
+                    a {
+                        padding: 0;
+                        padding-top: 0.5rem;
+                        text-decoration: underline;
+                        font-size: 1rem;
+                        font-weight: $bold;
+                    }
                 }
             }
 
@@ -162,6 +173,7 @@ section#featured {
                 margin-left: 0;
                 margin-right: auto;
                 text-align: right;
+                align-items: flex-end;
                 box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.25);
             }
         }
@@ -234,30 +246,6 @@ section#featured {
             svg.flower {
                 top: -11rem;
             }
-
-            .project:nth-of-type(2) .card  {
-                .project-image {
-                    margin: 0;
-                    order: 1;
-                }
-
-                .card-text {
-                    left: unset;
-                    order: 2;
-
-                    h3, p {
-                        background-color: unset;
-                        box-shadow: unset;
-                        padding: 0;
-                    }
-
-                    p {
-                        margin: 0;
-                        width: unset;
-                        text-align: center;
-                    }
-                }
-            }
                 
             .project {
                 height: unset;
@@ -311,6 +299,7 @@ section#featured {
                         h3, p {
                             background-color: unset;
                             box-shadow: unset;
+                            text-align: center;
                             padding: 0;
                         }
 
@@ -319,8 +308,33 @@ section#featured {
                             margin: 0;
                             width: unset;
                             max-width: 70%;
-                            text-align: center;
+                            align-items: center;
                         }
+                    }
+                }
+            }
+
+            .project:nth-of-type(2) .card  {
+                .project-image {
+                    margin: 0;
+                    order: 1;
+                }
+
+                .card-text {
+                    left: unset;
+                    order: 2;
+
+                    h3, p {
+                        background-color: unset;
+                        box-shadow: unset;
+                        text-align: center;
+                        padding: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        width: unset;
+                        align-items: center;
                     }
                 }
             }
@@ -435,14 +449,14 @@ section#featured {
 /********** Extra small devices (portrait phones, less than 576px) **********/
 @media only screen and (max-width: 575.98px) {
     #featured-container {
-        .featured-text {
-            // font-size: 1rem;
-        }
+        // .featured-text {
+        //     font-size: 1rem;
+        // }
     
         .featured-projects {
-            svg.flower {
-                // top: -9rem;
-            }
+            // svg.flower {
+            //     top: -9rem;
+            // }
 
             .project .card {
                 // .project-image {

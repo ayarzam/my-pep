@@ -30,6 +30,8 @@ export default class Featured extends Component {
             let itemPosition = item.getBoundingClientRect().top;
             let screenPosition = window.innerHeight / 1.3;
 
+            // console.log('screen: ',screenPosition,' , anim item: ',itemPosition)
+
             if (itemPosition < screenPosition) {
                 item.classList.add('appear');
             }
@@ -53,7 +55,9 @@ export default class Featured extends Component {
                             </div>
                             <div className="card-text anim-from-right">
                                 <h3>Music Mapper</h3>
-                                <p>An application to let Spotify users visualize their musical tastes!</p>
+                                <p>An application to let Spotify users visualize their musical tastes!
+                                <Nav.Link className="colored-text" href={`/works/1/#music-mapper`} > Learn More </Nav.Link>
+                                </p>
                             </div>
                             <div className="background">
                                 <div></div>
@@ -66,7 +70,9 @@ export default class Featured extends Component {
                             <Flower3 className="flower"></Flower3>
                             <div className="card-text anim-from-left">
                                 <h3>Hike With Me</h3>
-                                <p>A mobile app that allows users the ability to map the distance and area that they hike.</p>
+                                <p>A mobile app that allows users the ability to map the distance and area that they hike.
+                                <Nav.Link className="colored-text" href={`/works/2/#hike-with-me`} > Learn More </Nav.Link>
+                                </p>
                             </div>
                             <div className="project-image">
                                 <img alt="Hike With Me" src={HikeWithMe} />
@@ -85,7 +91,9 @@ export default class Featured extends Component {
                             </div>
                             <div className="card-text anim-from-right">
                                 <h3>Island Shopper</h3>
-                                <p>An e-commerce website that allows users to buy fictional islands.</p>
+                                <p>An e-commerce website that allows users to buy fictional islands.
+                                <Nav.Link className="colored-text" href={`/works/3/#island-shopper`} > Learn More </Nav.Link>
+                                </p>
                             </div>
                             <div className="background">
                                 <div></div>

@@ -12,22 +12,26 @@ export default class Header extends Component {
             expanded: false
         };
         
-        this.monitorHistory();
-        
         this.monitorHistory = this.monitorHistory.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.setExpanded = this.setExpanded.bind(this);
         this.checkPath = this.checkPath.bind(this);
         this.isActive = this.isActive.bind(this);
     }
+
+    // componentDidMount() {
+    //     this.monitorHistory();
+    // }
     
     // Look for history changes
     monitorHistory() {
         const history = this.props.history;
 
         history.listen((location) => {
-            console.log(location);
-            this.setState({ activeNav: location.pathname + location.hash })
+            const change = location.pathname + location.hash
+            if (this.state.activeNav !== change) {
+                this.setState({ activeNav: change })
+            }
         });
     }
 
