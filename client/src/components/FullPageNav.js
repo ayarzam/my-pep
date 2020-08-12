@@ -16,10 +16,10 @@ export default class FullPageNav extends Component {
         this.selectSection = this.selectSection.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.monitorHistory();
-    //     window.addEventListener("scroll", this.setSectionActive);
-    // }
+    componentDidMount() {
+        this.monitorHistory();
+        window.addEventListener("scroll", this.setSectionActive);
+    }
 
     // Look for history changes
     monitorHistory() {
@@ -66,7 +66,6 @@ export default class FullPageNav extends Component {
                     this.setState({ activeNav: '/' });
                     break;
             }
-            console.log('fullpagenav set with: ',id)
         }
     }
 

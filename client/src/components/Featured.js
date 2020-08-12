@@ -30,8 +30,6 @@ export default class Featured extends Component {
             let itemPosition = item.getBoundingClientRect().top;
             let screenPosition = window.innerHeight / 1.3;
 
-            // console.log('screen: ',screenPosition,' , anim item: ',itemPosition)
-
             if (itemPosition < screenPosition) {
                 item.classList.add('appear');
             }
