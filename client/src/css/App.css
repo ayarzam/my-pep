@@ -6,15 +6,13 @@
           box-sizing: border-box;
 }
 
-html {
+html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
   margin: 0;
-  height: 100vh;
-  width: 100vw;
   font-size: 1em;
   line-height: 1.375em;
   font-weight: 500;

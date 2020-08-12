@@ -19,9 +19,9 @@ export default class Header extends Component {
         this.isActive = this.isActive.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.monitorHistory();
-    // }
+    componentDidMount() {
+        this.monitorHistory();
+    }
     
     // Look for history changes
     monitorHistory() {
