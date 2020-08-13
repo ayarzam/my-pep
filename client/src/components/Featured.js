@@ -54,7 +54,7 @@ export default class Featured extends Component {
                             <div className="card-text anim-from-right">
                                 <h3>Music Mapper</h3>
                                 <p>An application to let Spotify users visualize their musical tastes!
-                                <Nav.Link className="colored-text" href={`/works/1/#music-mapper`} > Learn More </Nav.Link>
+                                <Nav.Link className="colored-text" href={`/works/1/#music-mapper`} > View this Project! </Nav.Link>
                                 </p>
                             </div>
                             <div className="background">
@@ -69,7 +69,7 @@ export default class Featured extends Component {
                             <div className="card-text anim-from-left">
                                 <h3>Hike With Me</h3>
                                 <p>A mobile app that allows users the ability to map the distance and area that they hike.
-                                <Nav.Link className="colored-text" href={`/works/2/#hike-with-me`} > Learn More </Nav.Link>
+                                <Nav.Link className="colored-text" href={`/works/2/#hike-with-me`} > View this Project! </Nav.Link>
                                 </p>
                             </div>
                             <div className="project-image">
@@ -90,7 +90,7 @@ export default class Featured extends Component {
                             <div className="card-text anim-from-right">
                                 <h3>Island Shopper</h3>
                                 <p>An e-commerce website that allows users to buy fictional islands.
-                                <Nav.Link className="colored-text" href={`/works/3/#island-shopper`} > Learn More </Nav.Link>
+                                <Nav.Link className="colored-text" href={`/works/3/#island-shopper`} > View this Project! </Nav.Link>
                                 </p>
                             </div>
                             <div className="background">
@@ -103,7 +103,7 @@ export default class Featured extends Component {
                 <div className="see-more">
                     <div className="card">
                         <h3 className="see-more-text anim-rise">
-                            Want to see more? <Nav.Link href="/works" className="colored-text">Click Here!</Nav.Link>
+                            Want to see more? <Nav.Link href="/works" className="colored-text">Check out the Gallery!</Nav.Link>
                         </h3>
                         <div className="background">
                             <div></div>

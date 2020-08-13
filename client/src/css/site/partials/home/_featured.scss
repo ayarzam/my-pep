@@ -351,12 +351,12 @@ section#featured {
         }
 
         .featured-projects .project:nth-of-type(1) .card .project-image img {
-            height: 90%;
+            transform: scale(0.85);
             padding-left: 0.5em;
         }
 
         .featured-projects .project:nth-of-type(3) .card .project-image img {
-            height: 85%;
+            transform: scale(0.85);
             padding-top: 1.5em;        
         }
 
@@ -398,11 +398,13 @@ section#featured {
             height: unset;
 
             h3.see-more-text {
+                max-width: 75%;
                 font-size: 1.5rem;
                 padding: 1em 2em;
                 line-height: 1.25em;
                 flex-flow: row wrap;
                 justify-content: center;
+                text-align: center;
             }
         }
     }
