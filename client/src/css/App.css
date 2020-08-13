@@ -1359,11 +1359,13 @@ section#featured {
     background: none;
   }
   #featured-container .featured-projects .project:nth-of-type(1) .card .project-image img {
-    height: 90%;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
     padding-left: 0.5em;
   }
   #featured-container .featured-projects .project:nth-of-type(3) .card .project-image img {
-    height: 85%;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
     padding-top: 1.5em;
   }
   #featured-container .featured-projects .project:nth-of-type(2) .card svg.flower {
@@ -1402,6 +1404,7 @@ section#featured {
     height: unset;
   }
   #featured-container .see-more .card h3.see-more-text {
+    max-width: 75%;
     font-size: 1.5rem;
     padding: 1em 2em;
     line-height: 1.25em;
@@ -1412,6 +1415,7 @@ section#featured {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    text-align: center;
   }
 }
 
