@@ -1,0 +1,485 @@
+section#featured {
+    height: auto;
+}
+
+#featured-container .featured-text {
+    height: 30vh;
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    h2 {
+        font-weight: $bold;
+        font-size: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    svg:first-child {
+        position: absolute;
+        top: -8rem;
+        right: 0;
+    }
+}
+
+#featured-container .featured-projects {
+    position: relative;
+
+    svg.flower {
+        position: absolute;
+        top: -7rem;
+        left: 0;
+        z-index: 4;
+    }
+
+    .project {
+        height: 100vh;
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        .card {
+            height: 80vh;
+            align-items: center;
+            justify-content: unset;
+
+            svg.flower {
+                position: absolute;
+                z-index: 4;
+            }
+
+            .project-image {
+                height: 80%;
+                margin-left: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                background-color: white;
+                box-shadow: inset -2px 4px 4px rgba(0, 0, 0, 0.25);
+                z-index: 2;
+
+                img {
+                    height: 100%;
+                    background: linear-gradient(132.35deg,#c4c4c4 31.67%,rgba(196, 196, 196, 0) 100%);
+                }
+            }
+
+            .card-text {
+                height: 100%;
+                width: 40%;
+                display: flex;
+                flex-flow: column;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 3;
+
+                h3, p {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 1rem;
+                    box-shadow: -6px 4px 4px rgba(0, 0, 0, 0.25)
+                }
+
+                h3 {
+                    height: 15%;
+                    margin: 1rem 0;
+                    font-size: 2rem;
+                    font-weight: $bold;
+                    background-color: color(secondary);
+                }
+
+                p {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-flow: column;
+                    width: 90%;
+                    margin-left: auto;
+                    font-size: 1.5rem;
+                    background-color: color(base2);
+
+                    a {
+                        padding: 0;
+                        padding-top: 0.5rem;
+                        text-decoration: underline;
+                        font-size: 1rem;
+                        font-weight: $bold;
+                    }
+                }
+            }
+
+            .background {
+                overflow: hidden;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+
+                svg.dots {
+                    position: absolute;
+                    height: 100%;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+#featured-container .featured-projects {
+    .project:nth-of-type(1) .card svg.flower {
+        bottom: 0;
+        top: unset;
+    }
+
+    .project:nth-of-type(3) .card svg.flower {
+        bottom: 0;
+        top: unset;
+    }
+
+    .project:nth-of-type(2) .card {
+        svg.flower {
+            bottom: 0;
+            right: 0;
+            top: unset;
+            left: unset;
+        }
+
+        .project-image {
+            margin-left: auto;
+            margin-right: 2rem;
+            box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
+
+            img {
+                background: linear-gradient(-132.35deg, #c4c4c4 31.67%, rgba(196, 196, 196, 0) 100%);
+            }
+        }
+
+        .card-text {
+            right: unset;
+            top: unset;
+            left: 0;
+
+            h3 {
+                justify-content: flex-end;
+                box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            p {
+                margin-left: 0;
+                margin-right: auto;
+                text-align: right;
+                align-items: flex-end;
+                box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        .background {
+            svg {
+                height: 100%;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+#featured-container .see-more {
+    .card {
+        height: 12vh;
+        font-size: 1.5rem;
+        margin-bottom: 8rem;
+        justify-content: center;
+
+        h3.see-more-text {
+            margin: 0;
+            z-index: 1;
+            font-size: 1.5rem;
+            display: flex;
+
+            .colored-text {
+                font-weight: $bold;
+                padding: 0;
+                padding-left: 0.25rem;
+                text-decoration: underline;
+            }
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: color(accent1);
+                clip-path: polygon(10% 0,25% 100%,75% 100%,90% 0,100% 0,100% 100%,0 100%,0 0);
+            }
+
+            div:nth-child(1) {
+                background-color: color(base2);
+                clip-path: polygon(10% 100%,25% 0,75% 0,90% 100%,100% 100%,100% 0,0 0,0 100%);
+            }
+        }
+    }
+}
+
+/********** Medium, Small, and Extra Small devices (tablets, landscape & portrait phones, 768px and below) **********/
+@media only screen and (max-width: 991.98px) {
+    #featured-container {
+
+        .featured-text {
+            height: unset;
+            margin: 7rem 0;
+            padding: 0 2em;
+            font-size: 1.15rem;
+            text-align: center;
+        }
+        
+        .featured-projects {
+            svg.flower {
+                top: -11rem;
+            }
+                
+            .project {
+                height: unset;
+
+                .card {
+                    height: 100%;
+                    padding: 3em;
+                    margin-bottom: 8rem;
+                    flex-flow: column;
+                    justify-content: center;
+
+                    .background {
+                        div {
+                            clip-path: polygon(0 0, 0% 100%, 50% 50%);
+                            background-color: #88c5cc;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        svg.dots {
+                            display: none;
+                        }
+                    }
+
+                    .project-image {
+                        margin: 0;
+                        margin-left: 0;
+                        width: 25rem;
+                        height: 25rem;
+                        border-radius: 50%;
+                        box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
+                        border: 4px solid color(secondary);
+                    }
+    
+                    .background {
+                        div {
+                            width: 100%;
+                            height: 100%;
+                            clip-path: polygon(0 0, 0% 100%, 100% 0%);
+                        }
+                    }
+
+                    .card-text {
+                        height: unset;
+                        width: 100%;
+                        position: relative;
+                        align-items: center;
+                        right: unset;
+                        top: unset;
+
+                        h3, p {
+                            background-color: unset;
+                            box-shadow: unset;
+                            text-align: center;
+                            padding: 0;
+                        }
+
+                        p {
+                            font-size: 1.15rem;
+                            margin: 0;
+                            width: unset;
+                            max-width: 70%;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+
+            .project:nth-of-type(2) .card  {
+                .project-image {
+                    margin: 0;
+                    order: 1;
+                }
+
+                .card-text {
+                    left: unset;
+                    order: 2;
+
+                    h3, p {
+                        background-color: unset;
+                        box-shadow: unset;
+                        text-align: center;
+                        padding: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        width: unset;
+                        align-items: center;
+                    }
+                }
+            }
+        } 
+
+        .featured-projects .project:nth-of-type(1), .featured-projects .project:nth-of-type(3) {
+            .card .project-image {
+                background: linear-gradient(132.35deg, #c4c4c4 64.67%, rgba(196, 196, 196, 0) 100%);
+
+                img {
+                    background: none;
+                }
+            }
+        }
+
+        .featured-projects .project:nth-of-type(1) .card .project-image img {
+            transform: scale(0.85);
+            padding-left: 0.5em;
+        }
+
+        .featured-projects .project:nth-of-type(3) .card .project-image img {
+            transform: scale(0.85);
+            padding-top: 1.5em;        
+        }
+
+        .featured-projects .project:nth-of-type(2) .card {
+            svg.flower {
+                height: 11rem;
+                width: 11rem;
+            }
+
+            .project-image img {
+                margin: 0;
+                order: 1;
+                background: linear-gradient(132.35deg, #c4c4c4 64.67%, rgba(196, 196, 196, 0) 100%);
+            }
+
+            .card-text {
+                left: unset;
+                order: 2;
+
+                h3, p {
+                    background-color: unset;
+                    box-shadow: unset;
+                    padding: 0;
+                }
+
+                p {
+                    margin: 0;
+                    width: unset;
+                    text-align: center;
+                }
+            }
+
+            .background div {
+                clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+            }
+        }
+
+        .see-more .card {
+            height: unset;
+
+            h3.see-more-text {
+                max-width: 75%;
+                font-size: 1.5rem;
+                padding: 1em 2em;
+                line-height: 1.25em;
+                flex-flow: row wrap;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+/********** Small devices (landscape phones, 576px and up) and Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 767.98px) {
+    #featured-container {
+        .featured-text {
+            font-size: 1rem;
+        }
+    
+        .featured-projects {
+            svg.flower {
+                top: -9rem;
+            }
+
+            .project .card {
+                .project-image {
+                    width: 20rem;
+                    height: 20rem;
+                }
+
+                .card-text p {
+                    font-size: 1rem;
+                }
+            } 
+        }
+
+        .featured-projects .project:nth-of-type(2) .card {
+            svg.flower {
+                height: 9rem;
+                width: 8.25rem;
+            }
+        }   
+        
+        .see-more .card h3.see-more-text {
+            font-size: 1.25rem;
+            line-height: 1.25em;
+        }
+    }
+}
+
+/********** Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 575.98px) {
+    #featured-container {
+        // .featured-text {
+        //     font-size: 1rem;
+        // }
+    
+        .featured-projects {
+            // svg.flower {
+            //     top: -9rem;
+            // }
+
+            .project .card {
+                // .project-image {
+                //     width: 20rem;
+                //     height: 20rem;
+                // }
+
+                svg.flower {
+                    display: none;
+                }
+
+                .card-text p {
+                    // font-size: 1rem;
+                    max-width: 90%;
+                }
+            }
+        }
+        
+        // .see-more .card h3.see-more-text {
+        //     font-size: 1.25rem;
+        //     line-height: 1.25em;
+        // }
+    }
+}

@@ -1,0 +1,105 @@
+#projects-gallery-container {
+    min-height: 100vh;
+    padding: 3rem 3.5rem;
+
+    .card-columns {
+        .card {
+            overflow: hidden;
+
+            .image-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .card-body {
+                text-align: center;
+
+                .card-text .nav-link {
+                    display: inline-block;
+                    padding: 0;
+                }
+            }
+        }
+
+        .project.card {
+            border: 0;
+
+            .nav-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 0;            
+                
+                .card-img-overlay {
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-flow: column;
+                    text-align: center;
+                    color: color(base1);
+                    transition: all 0.25s ease-in-out;
+                }
+
+                .card-img-overlay:hover {
+                    background-color: #505050e0;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .card:nth-child(1) {
+            .image-container {
+                padding: 1em 0 0 0;
+
+                img {
+                    width: 60%;
+                    border-radius: 50%;
+                }
+            }
+
+            .card-body {
+                .card-title {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/********** Medium devices (tablets, 768px and up) **********/
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    #projects-gallery-container .card-columns {
+        column-count: 2;
+    }
+}
+
+/********** Small devices (landscape phones, 576px and up) and Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 767.98px) {
+    #projects-gallery-container {
+        padding: 3rem 2rem 4rem 2rem;
+
+        .card-columns {
+            column-count: 1;
+
+            .card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
+  
+/********** Extra small devices (portrait phones, less than 576px) **********/
+@media only screen and (max-width: 575.98px) {
+    #projects-gallery-container {
+        padding: 3rem 1rem 4rem 1rem;
+    }
+}
