@@ -12,7 +12,7 @@ function Footer() {
                     <img className='logo' src={logo} alt="" />{' '}
                     <span className="copyright">
                         <span className='logo-text'>&copy; 2020 Ayarza<b>Manwaring</b></span>
-                        <span className="collab">In collaboration with<span className="heart"> ❤ </span>Shinell Manwaring</span>
+                        <span className="collab">In collaboration with<span className="heart"> ❤ </span><Nav.Link className="social-logo" href="https://www.shinellmanwaring.com/" target="_blank">Shinell Manwaring</Nav.Link></span>
                     </span>
                 </span>
                 <Nav className="ml-auto">
