@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "mypep-development",
+    "host": "localhost",
+    "operatorsAliases": false,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": null,
+    "database": "database_test",
+    "host": "localhost",
+    "operatorsAliases": false,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": null,
+    "database": "mypep-production",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "use_env_variable": "DATABASE_URL"
+  }
+}

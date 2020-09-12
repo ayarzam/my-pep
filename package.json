@@ -3,25 +3,34 @@
   "name": "my-pep",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "react": "^16.9.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.9.0",
-    "react-mailto": "^0.4.0",
-    "react-protected-mailto": "^1.0.3",
-    "react-router-dom": "^5.1.0",
-    "react-scripts": "^3.3.0",
-    "typescript": "^3.7.5"
+    "chalk": "^4.1.0",
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "googleapis": "^56.0.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.10",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.3",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
+    "sequelize-cli": "^6.2.0",
+    "socket.io": "^2.3.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "dev": "run-p dev:**",
+    "dev:server": "nodemon server/index.js",
+    "dev:app": "cd client && npm start",
+    "start": "node server/index.js",
+    "build:app": "cd client && yarn build",
+    "seed": "node seed.js",
+    "predeploy": "cd client && npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +48,12 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^3.1.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": "14.4.0",
+    "npm": "6.14.6"
   }
 }
